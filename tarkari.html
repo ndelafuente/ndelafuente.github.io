@@ -1,34 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Tarkari Recipe Signup</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      background-color: #c18a45;
-      overflow: hidden;
-    }
+  <link rel="icon" type="image/x-icon" href="tarkari.ico">
 
-    body {
-      padding-top: env(safe-area-inset-top);
-      padding-bottom: env(safe-area-inset-bottom);
-    }
-
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
   <style>
     .centered {
       position: absolute;
@@ -38,6 +17,10 @@
       transform: translate(-50%, -50%);
     }
 
+    .hidden {
+      display: none;
+    }
+
     h1 {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       text-align: center;
@@ -45,52 +28,76 @@
     }
 
     #overlay {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       background: #c18a45;
-      width: 100%;
-      height: 100%;
-      z-index: 100;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1000;
     }
 
     #popup {
-      width: 600px;
-      z-index: 200;
+      z-index: 1100;
+    }
+
+    body:has(#loading:not(.hidden)) {
+      overflow: hidden;
     }
   </style>
   <link rel="stylesheet" href="pan-loader.css">
+  <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-  <div id="popup" class="centered">
-    <div id="pancake" class="loader">
-      <div class="tall-stack">
-        <div class="butter falling-element"></div>
-        <div class="pancake falling-element"></div>
-        <div class="pancake falling-element"></div>
-        <div class="pancake falling-element"></div>
-        <div class="pancake falling-element"></div>
-        <div class="pancake falling-element"></div>
-        <div class="pancake falling-element"></div>
-        <div class="plate">
-          <div class="plate-bottom"></div>
-          <div class="shadow"></div>
+  <div id="main">
+    <h1>Nico's Cookbook Club</h1>
+
+    <form id="signupForm">
+      <h2 style="margin: 5px;">Tarkari Recipe Signup</h2>
+      <input type="text" id="recipe" list="recipes" autocomplete="off" placeholder="Choose a recipe" required>
+      <datalist id="recipes"></datalist>
+      <input type="text" id="category" placeholder="Category" disabled>
+      <input type="text" id="chef" autocomplete="given-name name" placeholder="Chef" required>
+      <input type="text" id="sous-chef" placeholder="Sous-chef (optional)">
+      <input type="tel" id="phone" autocomplete="tel" placeholder="Phone (optional)">
+      <input type="text" id="notes" placeholder="Notes (optional)">
+      <button type="submit">Claim Recipe</button>
+    </form>
+    <div id="claimAgain" class="hidden">
+      <h2>Success!</h2>
+      <button type="reset">Claim Another</button>
+    </div>
+
+    <h2>Claimed Recipes</h2>
+    <div id="list"></div>
+  </div>
+
+  <div id="loading" class="hidden">
+    <div id="popup" class="centered">
+      <div id="pancake" class="loader">
+        <div class="tall-stack">
+          <div class="butter falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="plate">
+            <div class="plate-bottom"></div>
+            <div class="shadow"></div>
+          </div>
         </div>
       </div>
+      <h1 style="color:white">Welcome to the party!<br />Please be patient :3</h1>
     </div>
-    <h1 style="color:white">Welcome to the party!<br/>Please be patient :3</h1>
-	</div>
-	<div id="overlay"></div>
-  <script>
-    const iframe = document.createElement('iframe');
-    iframe.src = atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4VE1XOTFueFJNV2U3b081bXIwaGdpdV9RaEtmZ0hMVzJjT2FubzlHMTdLYVU5QkdBcHZIdjZjQkxJRE1Wc2FxeHlYQS9leGVj');
-    iframe.onload = () => {
-			document.getElementById("overlay").style.display = 'none';
-			document.getElementById("popup").style.display = 'none';
-      document.body.style.background = '#d8b98cff';
-      iframe.style.background = '#d8b98cff';
-    };
-    document.body.append(iframe);
-  </script>
+
+    <div id="overlay"></div>
+  </div>
+
+  <script src="main.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+:root {
+    --butterscotch: #c18a45;
+    /* warmer and punchier orange */
+    --earth-yellow: #e0ab3aff;
+    /* richer golden tone */
+    --ecru: #d4b078ff;
+    /* slightly deeper, more vibrant beige */
+    --dun: #d8b98cff;
+    /* warmer and more lively */
+    --citron: #c5c066ff;
+    --citron-light: #d2c87dff;
+    --cadet-gray: #5f9caaff;
+    /* more saturated muted blue-gray */
+    --blue-munsell: #3591a6ff;
+    /* deeper, livelier blue */
+    --cerulean: #1f8fbfff;
+    /* slightly more intense teal-blue */
+    --raisin-black: #272223ff;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: var(--dun);
+    color: var(--raisin-black);
+    margin: 0;
+    padding: 1.5em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    color: var(--cerulean);
+    margin-bottom: 1em;
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--blue-munsell);
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+form {
+    background: var(--ecru);
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(39, 34, 35, 0.2);
+    margin-bottom: 1.5em;
+}
+
+input,
+button {
+    width: 100%;
+    padding: 0.75em;
+    margin: 0.4em 0;
+    font-size: 1em;
+    border: 1px solid var(--cadet-gray);
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+input {
+    font-family: "Comic Neue";
+}
+
+#recipe {
+    text-transform: uppercase;
+}
+
+#chef,
+#sous-chef {
+    text-transform: lowercase;
+}
+
+input:focus {
+    border-color: var(--cerulean);
+    outline: none;
+    box-shadow: 0 0 4px var(--cerulean);
+}
+
+button {
+    background-color: var(--butterscotch);
+    width: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: "Comic Neue";
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: var(--earth-yellow);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.entry {
+    background: var(--citron);
+    color: var(--cerulean);
+    font-family: "Comic Neue";
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.75em 1em;
+    margin-bottom: 0.5em;
+    box-shadow: 0 1px 3px rgba(39, 34, 35, 0.1);
+}
+
+.entry:nth-child(even) {
+    background: var(--citron-light);
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 1em;
+    }
+
+    h1 {
+        font-size: 1.4em;
+    }
+}
+
+div {
+    text-align: center;
+}
