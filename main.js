@@ -22,17 +22,6 @@ async function refreshList() {
     console.log("Claimed", claimed);
 }
 
-
-const headers = {
-    recipe: "Recipe",
-    category: "Category",
-    chef: "Chef",
-    sous_chef: "Sous-chef",
-    pone: "Phone",
-    notes: "Notes",
-    date: "Date",
-}
-
 const initialRefreshPromise = refreshList();
 
 document.getElementById("signupForm").addEventListener("submit", async (e) => {
@@ -45,9 +34,8 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
     const category = document.getElementById("category").value;
     const chef = document.getElementById("chef").value;
     const sous_chef = document.getElementById("sous-chef").value;
-    const phone = document.getElementById("phone").value;
     const notes = document.getElementById("notes").value;
-    const submitData = btoa(JSON.stringify({ recipe, category, chef, sous_chef, phone, notes }));
+    const submitData = btoa(JSON.stringify({ recipe, category, chef, sous_chef, notes }));
     console.log({ submitData });
     try {
         const res = await fetch(`${API_URL}?mode=submit&data=${encodeURIComponent(submitData)}`);
