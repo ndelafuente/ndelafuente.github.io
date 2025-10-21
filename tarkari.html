@@ -17,6 +17,13 @@
       transform: translate(-50%, -50%);
     }
 
+    .centered-hz {
+      position: absolute;
+      left: 50%;
+      -ms-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%);
+    }
+
     .hidden {
       display: none;
     }
@@ -51,7 +58,7 @@
 
 <body>
   <div id="main">
-    <h1>Nico's Cookbook Club</h1>
+    <h1>Nico's<br/>Cookbook Club</h1>
 
     <form id="signupForm">
       <h2 style="margin: 5px;">Tarkari Recipe Signup</h2>
@@ -70,9 +77,15 @@
     </div>
 
     <h2>Claimed Recipes</h2>
+
+    <!-- Snake Loading GIF from https://briankuhnart.myportfolio.com/ -->
+    <div id="recipeLoading" class="centered-hz" style="width: 80vw">
+      <img src="slithering-snake.gif" style="max-width: 100%; max-height: 100%;" />
+    </div>
     <div id="list"></div>
   </div>
 
+  <!-- Pancake Loader by https://dariocorsi.com/ -->
   <div id="loading" class="hidden">
     <div id="popup" class="centered">
       <div id="pancake" class="loader">
@@ -90,7 +103,7 @@
           </div>
         </div>
       </div>
-      <h1 style="color:white">Welcome to the party!<br />Please be patient :3</h1>
+      <h2 style="color:white">Welcome to the party!<br />Please be patient :3</h2>
     </div>
 
     <div id="overlay"></div>

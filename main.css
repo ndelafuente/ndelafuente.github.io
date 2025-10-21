@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
+@font-face {
+    font-family: Groen;
+    src: url(groen-california-sans.ttf);
+}
+
 :root {
     --butterscotch: #c18a45;
     /* warmer and punchier orange */
@@ -22,7 +27,10 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: var(--dun);
+    background: #EDAD53;
+    background-image: linear-gradient(180deg, rgba(33, 38, 105, 1) 0%, rgba(47, 100, 143, 1) 11%, rgba(64, 119, 161, 1) 50%, rgba(237, 173, 83, 1) 100%);
+    background-attachment: fixed;
+    height: 100vh;
     color: var(--raisin-black);
     margin: 0;
     padding: 1.5em;
@@ -31,19 +39,28 @@ body {
     margin-right: auto;
 }
 
-h1 {
+h1,
+h2 {
     text-align: center;
-    color: var(--cerulean);
+    font-family: Groen, fantasy;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
     margin-bottom: 1em;
-    font-size: 1.8em;
-    font-weight: 700;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: xx-large;
+    text-shadow: rgba(33, 38, 105, 0.8) 0 0 42px;
 }
 
 h2 {
-    color: var(--blue-munsell);
-    font-size: 1.4em;
-    margin-bottom: 0.5em;
-    text-align: center;
+    font-size: x-large;
+}
+
+form > h2 {
+    text-shadow: var(--butterscotch) 0.1em 0.1em;
 }
 
 form {
@@ -76,6 +93,10 @@ input {
 #chef,
 #sous-chef {
     text-transform: lowercase;
+}
+
+#list {
+    padding-bottom: 20px;
 }
 
 input:focus {
@@ -121,16 +142,6 @@ button:active {
 
 .entry:nth-child(even) {
     background: var(--citron-light);
-}
-
-@media (max-width: 480px) {
-    body {
-        padding: 1em;
-    }
-
-    h1 {
-        font-size: 1.4em;
-    }
 }
 
 div {

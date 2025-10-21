@@ -1,3 +1,5 @@
+/* Pancake Loader by https://dariocorsi.com/ */
+
 .loader {
 	position: absolute;
 	top: 50%;
@@ -109,7 +111,9 @@
 }
 
 @keyframes element-drop {
-	0%, 100% {
+
+	0%,
+	100% {
 		transform: translateY(-100vh) scaleY(0.7);
 		opacity: 1;
 	}
@@ -122,7 +126,8 @@
 		transform: translateY(-30%) scaleY(0.9);
 	}
 
-	14%, 67% {
+	14%,
+	67% {
 		transform: translateY(0%) scaleY(1);
 		opacity: 1;
 	}
@@ -139,7 +144,8 @@
 		transform: translateX(100vw);
 	}
 
-	15%, 100% {
+	15%,
+	100% {
 		transform: translateX(0);
 	}
 }
@@ -149,7 +155,8 @@
 		transform: translateX(0);
 	}
 
-	85%, 100% {
+	85%,
+	100% {
 		transform: translateX(-100vw);
 	}
 }

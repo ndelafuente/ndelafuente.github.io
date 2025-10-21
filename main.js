@@ -1,15 +1,13 @@
 const API_URL = atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4VE1XOTFueFJNV2U3b081bXIwaGdpdV9RaEtmZ0hMVzJjT2FubzlHMTdLYVU5QkdBcHZIdjZjQkxJRE1Wc2FxeHlYQS9leGVj');
-const S = 'bmljb25pY29uaWNv';
 
 const claimed = {};
 async function refreshList() {
     const list = document.getElementById("list");
-    list.innerHTML = "loading";
-    const loadingAnimationID = setInterval(() => list.innerHTML += ' .', 500)
+    show('recipeLoading');
     const res = await fetch(API_URL + '?mode=entries');
     const data = await res.json();
     console.log("SheetData", data);
-    clearInterval(loadingAnimationID);
+    hide('recipeLoading');
     list.innerHTML = "";
     data?.forEach(entry => {
         claimed[entry.Recipe] = entry.Chef;
