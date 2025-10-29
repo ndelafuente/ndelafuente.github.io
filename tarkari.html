@@ -60,7 +60,7 @@
     }
   </style>
   <link rel="stylesheet" href="assets/pan-loader.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="tarkari.css">
 </head>
 
 <body>
@@ -81,9 +81,9 @@
       <h2>Success!</h2>
       <button type="reset">Claim Another</button>
     </div>
-    <div id="eventPassed" class="hidden">
+    <form id="eventPassed" class="hidden">
       <h2>The event has passed :(</h2>
-    </div>
+    </form>
 
     <h2>Claimed Recipes</h2>
 
@@ -122,6 +122,106 @@
     const CONFIG = {
       API_URL: atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4VE1XOTFueFJNV2U3b081bXIwaGdpdV9RaEtmZ0hMVzJjT2FubzlHMTdLYVU5QkdBcHZIdjZjQkxJRE1Wc2FxeHlYQS9leGVj'),
       EVENT_DATE: new Date('10/26/2025'),
+      VALIDATE_RECIPES: true,
+    }
+    
+    const categories = {
+        Nashta: "Nashta: Breakfast and Snacks",
+        Chakna: "Chakna: Small Sharing Plates",
+        Rassa: "Rassa: Curries",
+        DalSabzi: "Dal & Sabzi: Side Dishes",
+        RotiChawal: "Roti & Chawal: Rice and Breads",
+        AcharChutney: "Achar & Chutney: Pickles and Dips",
+        Meetha: "Meetha: Desserts",
+    }
+    const recipes = {
+        "AKURI MASALA": categories.Nashta,
+        "ALOO PARATHA": categories.Nashta,
+        "CHOLE BHATURE": categories.Nashta,
+        "PESARATTU": categories.Nashta,
+        "IDLI SAMBHAR": categories.Nashta,
+        "MISAL PAO": categories.Nashta,
+        "PUNJABI SAMOSA": categories.Nashta,
+        "VERMICELLI UPMA": categories.Nashta,
+        "CHILLA": categories.Nashta,
+        "SABUDANA KHICHDI": categories.Nashta,
+        "BREAD PAKORA": categories.Nashta,
+        "POHA MASALA": categories.Nashta,
+        "POORI BHAJI": categories.Nashta,
+        "BEDAI BHAJI": categories.Nashta,
+        "ALOO PYAZ MIRCH BHAJIA": categories.Chakna,
+        "TAREKO ALOO (CRISPY FRIED POTATOES)": categories.Chakna,
+        "VANGI BHAAT": categories.Chakna,
+        "CHICKPEA AND SAMPHIRE SALAD": categories.Chakna,
+        "CHANDNI CHOWK KI ALOO TIKKI": categories.Chakna,
+        "STUFFED SWEET PEPPERS": categories.Chakna,
+        "TAWA SALAD": categories.Chakna,
+        "LOTUS ROOT CHILLI FRY": categories.Chakna,
+        "BEETROOT CUTLETS": categories.Chakna,
+        "APPLE AND ROOTS DHOKLA SALAD": categories.Chakna,
+        "SUN-DRIED TOMATO AND ASPARAGUS ROLLS": categories.Chakna,
+        "KIDNEY BEAN KEBAB": categories.Chakna,
+        "MALABAR CAULIFLOWER": categories.Chakna,
+        "DAL CHAWAL AUR ACHAR": categories.Chakna,
+        "BHARWAN GUCHHI (STUFFED MORELS)": categories.Chakna,
+        "TOFU AND GREEN PEA TIKKI": categories.Chakna,
+        "SEASONAL GREENS COUSCOUS SALAD": categories.Chakna,
+        "JACKFRUIT MASALA": categories.Rassa,
+        "GUNCHO KEEMA": categories.Rassa,
+        "LOTUS ROOT KOFTA": categories.Rassa,
+        "COURGETTE MUSSALAM": categories.Rassa,
+        "KADAI TOFU": categories.Rassa,
+        "KADHI PAKORA": categories.Rassa,
+        "MUSHROOM AND TRUFFLE KHICHADI": categories.Rassa,
+        "BAINGAN KA BHARTA": categories.Rassa,
+        "DUM ALOO": categories.Rassa,
+        "PANEER ANARDANA": categories.Rassa,
+        "BHARLELI VANGI": categories.Rassa,
+        "BOTTLEGOURD KOFTA": categories.Rassa,
+        "KHUBANI SOYA KEEMA": categories.Rassa,
+        "PANEER MAKHANI": categories.Rassa,
+        "BAINGAN MIRCH KA SALAN": categories.Rassa,
+        "CARROT KOSHAMBIR": categories.DalSabzi,
+        "JEERA ALOO": categories.DalSabzi,
+        "JAIPURI BHINDI": categories.DalSabzi,
+        "KWATI": categories.DalSabzi,
+        "BRUSSELS SPROUT PORIYAL": categories.DalSabzi,
+        "ALOO GOBI": categories.DalSabzi,
+        "DAL MAKHANI": categories.DalSabzi,
+        "PALAK PANEER": categories.DalSabzi,
+        "PUNJABI RAJMA RASILA": categories.DalSabzi,
+        "PANEER BHURJI": categories.DalSabzi,
+        "TADKA DAL": categories.DalSabzi,
+        "PALUNGO KO SAAG": categories.DalSabzi,
+        "PINDI CHANA": categories.DalSabzi,
+        "BHUTEKO BHAT (NEPALESE FRIED RICE)": categories.RotiChawal,
+        "JACKFRUIT BIRYANI": categories.RotiChawal,
+        "MISSI ROTI": categories.RotiChawal,
+        "MAKKI KI ROTI": categories.RotiChawal,
+        "CHAPATI": categories.RotiChawal,
+        "ZARDA (SWEET PULAO)": categories.RotiChawal,
+        "BUTTER NAAN": categories.RotiChawal,
+        "VEG TEHRI (SEASONAL GREENS WITH RICE)": categories.RotiChawal,
+        "CHICKPEA AND MUSHROOM BIRYANI": categories.RotiChawal,
+        "CHUR CHUR PARATHA": categories.RotiChawal,
+        "COCONUT CHUTNEY": categories.AcharChutney,
+        "CAULIFLOWER PICKLE": categories.AcharChutney,
+        "RAW MANGO CHUTNEY (AAM KI LAUNJI)": categories.AcharChutney,
+        "GREEN MINT CHUTNEY": categories.AcharChutney,
+        "TOMATO CHUTNEY": categories.AcharChutney,
+        "MIXED WILD BERRY CHUTNEY": categories.AcharChutney,
+        "CORIANDER AND MINT CHUTNEY": categories.AcharChutney,
+        "TAMARIND CHUTNEY": categories.AcharChutney,
+        "MOOLI PICKLE": categories.AcharChutney,
+        "AVOCADO CHUTNEY": categories.AcharChutney,
+        "POACHED PEARS": categories.Meetha,
+        "AAMRAS POORI": categories.Meetha,
+        "ROSE AND CASHEW BARFI": categories.Meetha,
+        "MALPUA": categories.Meetha,
+        "RABRI KULFI": categories.Meetha,
+        "ANJEER KHEER": categories.Meetha,
+        "CARROT HALWA": categories.Meetha,
+        "PHIRNI": categories.Meetha,
     }
   </script>
   <script src="main.js"></script>
