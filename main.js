@@ -1,4 +1,13 @@
-const API_URL = atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4VE1XOTFueFJNV2U3b081bXIwaGdpdV9RaEtmZ0hMVzJjT2FubzlHMTdLYVU5QkdBcHZIdjZjQkxJRE1Wc2FxeHlYQS9leGVj');
+const {API_URL, EVENT_DATE} = CONFIG;
+if (!API_URL || !EVENT_DATE) {
+    console.warn(CONFIG, "missing value(s)");
+}
+
+if (new Date() > EVENT_DATE) {
+    hide('signupForm');
+    show('eventPassed');
+}
+
 
 const claimed = {};
 async function refreshList() {

@@ -81,12 +81,15 @@
       <h2>Success!</h2>
       <button type="reset">Claim Another</button>
     </div>
+    <div id="eventPassed" class="hidden">
+      <h2>The event has passed :(</h2>
+    </div>
 
     <h2>Claimed Recipes</h2>
 
     <!-- Snake Loading GIF from https://briankuhnart.myportfolio.com/ -->
     <div id="recipeLoading" class="centered-hz" style="width: 80vw">
-      <img src="slithering-snake.gif" style="max-width: 100%; max-height: 100%;" />
+      <img src="assets/slithering-snake.gif" style="max-width: 100%; max-height: 100%;" />
     </div>
     <div id="list"></div>
   </div>
@@ -115,6 +118,12 @@
     <div id="overlay"></div>
   </div>
 
+  <script>
+    const CONFIG = {
+      API_URL: atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4VE1XOTFueFJNV2U3b081bXIwaGdpdV9RaEtmZ0hMVzJjT2FubzlHMTdLYVU5QkdBcHZIdjZjQkxJRE1Wc2FxeHlYQS9leGVj'),
+      EVENT_DATE: new Date('10/26/2025'),
+    }
+  </script>
   <script src="main.js"></script>
 
 </body>
