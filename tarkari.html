@@ -119,22 +119,21 @@
   </div>
 
   <script>
+    const categories = {
+      Nashta: "Nashta: Breakfast and Snacks",
+      Chakna: "Chakna: Small Sharing Plates",
+      Rassa: "Rassa: Curries",
+      DalSabzi: "Dal & Sabzi: Side Dishes",
+      RotiChawal: "Roti & Chawal: Rice and Breads",
+      AcharChutney: "Achar & Chutney: Pickles and Dips",
+      Meetha: "Meetha: Desserts",
+    }
+    
     const CONFIG = {
       API_URL: atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J4VE1XOTFueFJNV2U3b081bXIwaGdpdV9RaEtmZ0hMVzJjT2FubzlHMTdLYVU5QkdBcHZIdjZjQkxJRE1Wc2FxeHlYQS9leGVj'),
       EVENT_DATE: new Date('10/26/2025'),
       VALIDATE_RECIPES: true,
-    }
-    
-    const categories = {
-        Nashta: "Nashta: Breakfast and Snacks",
-        Chakna: "Chakna: Small Sharing Plates",
-        Rassa: "Rassa: Curries",
-        DalSabzi: "Dal & Sabzi: Side Dishes",
-        RotiChawal: "Roti & Chawal: Rice and Breads",
-        AcharChutney: "Achar & Chutney: Pickles and Dips",
-        Meetha: "Meetha: Desserts",
-    }
-    const recipes = {
+      RECIPES: {
         "AKURI MASALA": categories.Nashta,
         "ALOO PARATHA": categories.Nashta,
         "CHOLE BHATURE": categories.Nashta,
@@ -222,6 +221,7 @@
         "ANJEER KHEER": categories.Meetha,
         "CARROT HALWA": categories.Meetha,
         "PHIRNI": categories.Meetha,
+      }
     }
   </script>
   <script src="main.js"></script>

@@ -1,4 +1,6 @@
-const { API_URL, EVENT_DATE, VALIDATE_RECIPES } = CONFIG;
+const { API_URL, EVENT_DATE, VALIDATE_RECIPES, RECIPES } = CONFIG;
+const recipes = RECIPES;
+
 if (!API_URL || !EVENT_DATE) {
     console.warn(CONFIG, "missing value(s)");
 }
@@ -26,6 +28,7 @@ async function refreshList() {
         div.textContent = `${entry.Recipe} ↭ ${entry.Chef.toLowerCase()}`;
         if (entry['Sous-chef']) div.textContent += ' + ' + entry['Sous-chef'].toLowerCase();
         if (entry['Notes']) div.textContent += ` (${entry.Notes})`;
+        if (entry['Cuisine']) div.textContent = `${entry.Cuisine}: ${div.textContent}`;
         list.appendChild(div);
     });
     console.log("Claimed", claimed);
@@ -37,14 +40,15 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     await initialRefreshPromise; // ensure claimed recipes are populated
     const recipe = document.getElementById("recipe").value.trim().toUpperCase();
-    if (!(recipe in recipes)) { alert("Invalid recipe"); return }
+    if (VALIDATE_RECIPES && !(recipe in recipes)) { alert("Invalid recipe"); return }
     if (recipe in claimed && !confirm(`Recipe already claimed by ${claimed[recipe]}. Proceed?`)) { return }
     showLoading();
+    const cuisine = document.getElementById("cuisine").value;
     const category = document.getElementById("category").value;
     const chef = document.getElementById("chef").value;
     const sous_chef = document.getElementById("sous-chef").value;
     const notes = document.getElementById("notes").value;
-    const submitData = btoa(JSON.stringify({ recipe, category, chef, sous_chef, notes }));
+    const submitData = btoa(JSON.stringify({ recipe, category, cuisine, chef, sous_chef, notes }));
     console.log({ submitData });
     try {
         const res = await fetch(`${API_URL}?mode=submit&data=${encodeURIComponent(submitData)}`);

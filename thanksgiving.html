@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="rgba(33, 38, 105, 1)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Thanksgiving Recipe Signup</title>
+  <link rel="icon" type="image/x-icon" href="thanksgiving.ico">
+
+  <style>
+    html,
+    body {
+      padding-top: env(safe-area-inset-top);
+    }
+
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .centered-hz {
+      position: absolute;
+      left: 50%;
+      -ms-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    h1 {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      text-align: center;
+      font-size: 4vw;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #c18a45;
+      width: 100vw;
+      height: 100vh;
+      z-index: 1000;
+    }
+
+    #popup {
+      z-index: 1100;
+    }
+
+    body:has(#loading:not(.hidden)) {
+      overflow: hidden;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/pan-loader.css">
+  <link rel="stylesheet" href="thanksgiving.css">
+</head>
+
+<body>
+  <div id="main">
+    <h1>Bea's<br />Cookbook Club</h1>
+
+    <form id="signupForm">
+      <h2 style="margin: 5px;">Thanksgiving Recipe Signup</h2>
+      <input type="text" id="recipe" autocomplete="off" placeholder="Recipe" required>
+      <input type="text" id="cuisine" list="cuisines" placeholder="Cuisine" required>
+      <datalist id="cuisines">
+        <option>Thanksgiving</option>
+        <option>Italian</option>
+        <option>Mexican</option>
+        <option>Peruvian</option>
+        <option>Vietnamese</option>
+        <option>Thai</option>
+        <option>Japanese</option>
+        <option>Chinese</option>
+        <option>Korean</option>
+        <option>Filipino</option>
+        <option>Belizean</option>
+      </datalist>
+
+      <select id="category" required>
+        <option value="" disabled selected hidden>Category</option>
+        <option value="antipasto">Antipasto (appetizer)</option>
+        <option value="zuppa">Zuppa (soup)</option>
+        <option value="insalata">Insalata (salad)</option>
+        <option value="contorno">Contorno (side or vegetable)</option>
+        <option value="primo">Primo (pasta, dumpling, casserole etc.)</option>
+        <option value="secondo">Secondo (meat or fish)</option>
+        <option value="dolce">Dolce (dessert)</option>
+        <option value="bevanda">Bevanda (beverage)</option>
+      </select>
+
+
+      <input type="text" id="chef" autocomplete="given-name name" placeholder="Chef" required>
+      <input type="text" id="sous-chef" placeholder="Sous-chef (optional)">
+      <input type="text" id="notes" placeholder="Notes (optional)">
+      <button type="submit">Claim Recipe</button>
+    </form>
+    <div id="claimAgain" class="hidden" style="padding-bottom: 30px">
+      <h2>Success!</h2>
+      <button type="reset">Claim Another</button>
+    </div>
+    <div id="eventPassed" class="hidden">
+      <h2>The event has passed :(</h2>
+    </div>
+
+    <h2>Claimed Recipes</h2>
+
+    <!-- Snake Loading GIF from https://briankuhnart.myportfolio.com/ -->
+    <div id="recipeLoading" class="centered-hz" style="width: 80vw">
+      <img src="assets/slithering-snake.gif" style="max-width: 100%; max-height: 100%;" />
+    </div>
+    <div id="list"></div>
+  </div>
+
+  <!-- Pancake Loader by https://dariocorsi.com/ -->
+  <div id="loading" class="hidden">
+    <div id="popup" class="centered">
+      <div id="pancake" class="loader">
+        <div class="tall-stack">
+          <div class="butter falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="plate">
+            <div class="plate-bottom"></div>
+            <div class="shadow"></div>
+          </div>
+        </div>
+      </div>
+      <h2>Welcome to the party!<br />Please be patient :3</h2>
+    </div>
+
+    <div id="overlay"></div>
+  </div>
+
+  <script>
+    const CONFIG = {
+      API_URL: atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3X1BOcXg2U2M5SjAxWjBtMWxuQTJvb1NTVHBvTGNjNy0ySUNaSnBURDZTRm5kMG1pRWVNU1V4V0FMbkMwWGRJbTcvZXhlYw=='),
+      EVENT_DATE: new Date('11/15/2025'),
+    }
+  </script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
