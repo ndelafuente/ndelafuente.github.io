@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Health Tracker</title>
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --card: #fff;
+      --muted: #888;
+      --accent: #0b84ff
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #111
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 14px 16px;
+      text-align: center
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #e3e3e3;
+      background: var(--card)
+    }
+
+    .tab {
+      flex: 1;
+      padding: 12px 14px;
+      text-align: center;
+      border: none;
+      background: transparent;
+      font-size: 16px;
+      cursor: pointer
+    }
+
+    .tab.active {
+      border-bottom: 3px solid var(--accent);
+      color: var(--accent);
+      font-weight: 600
+    }
+
+    main {
+      padding: 16px
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px
+    }
+
+    @media(min-width:720px) {
+      .grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    .card {
+      background: var(--card);
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(16, 24, 40, 0.04)
+    }
+
+    .big-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: space-around
+    }
+
+    .big-action {
+      padding: 18px;
+      border-radius: 10px;
+      border: 1px solid #eee;
+      font-size: 28px;
+      background: #fafafa;
+      cursor: pointer;
+      flex: 1;
+      text-align: center
+    }
+
+    .form-row {
+      margin-bottom: 10px
+    }
+
+    input[type="text"],
+    input[type="datetime-local"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 15px
+    }
+
+    .emoji-row {
+      display: flex;
+      gap: 8px
+    }
+
+    .emoji {
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #eee;
+      text-align: center;
+      font-size: 20px;
+      cursor: pointer;
+      background: #f7f7f7
+    }
+
+    .emoji.selected {
+      outline: 3px solid rgba(11, 132, 255, 0.12);
+      background: #fff
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse
+    }
+
+    th,
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #f0f0f0;
+      text-align: left
+    }
+
+    th {
+      background: #fafafa;
+      font-weight: 600
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .row-actions {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end
+    }
+
+    .btn {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background: #fff;
+      cursor: pointer
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 style="margin:0;font-size:18px">Health Tracker</h1>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button id="tabAdd" class="tab active" role="tab" aria-selected="true">Add Data</button>
+    <button id="tabView" class="tab" role="tab">View Data</button>
+  </div>
+
+  <main>
+    <section id="addPanel" class="grid">
+      <div class="card">
+        <div class="big-actions">
+          <button class="big-action" data-open="food">🍽️</button>
+          <button class="big-action" data-open="bowel">🚽</button>
+          <button class="big-action" data-open="sleep">🛏️</button>
+          <button class="big-action" data-open="exercise">🤸</button>
+          <button class="big-action" data-open="illness">🤒</button>
+        </div>
+      </div>
+
+      <div id="formCard" class="card" aria-live="polite">
+        <div id="formInner" class="form-content">
+          <p class="small">Choose a category to add an entry.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="viewPanel" style="display:none">
+      <div class="card">
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center">
+          <div class="small muted">Show:</div>
+          <select id="viewSelect">
+            <option value="all">All (combined timeline)</option>
+            <option value="food">Food</option>
+            <option value="bowel">Bowel</option>
+            <option value="sleep">Sleep</option>
+            <option value="exercise">Exercise</option>
+            <option value="illness">Illness</option>
+          </select>
+          <div style="margin-left:auto" class="row-actions">
+            <button id="clearStorage" class="btn">Clear all</button>
+          </div>
+        </div>
+        <div id="viewContent"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Wrap script to ensure it runs after DOM is ready
+    window.addEventListener('DOMContentLoaded', () => {
+      // Elements
+      const tabAdd = document.getElementById('tabAdd');
+      const tabView = document.getElementById('tabView');
+      const addPanel = document.getElementById('addPanel');
+      const viewPanel = document.getElementById('viewPanel');
+      const formInner = document.getElementById('formInner');
+      const viewSelect = document.getElementById('viewSelect');
+      const viewContent = document.getElementById('viewContent');
+      const clearStorage = document.getElementById('clearStorage');
+
+      // Tab switching
+      function switchView(v) {
+        if (v === 'add') {
+          tabAdd.classList.add('active'); tabAdd.setAttribute('aria-selected', 'true');
+          tabView.classList.remove('active'); tabView.setAttribute('aria-selected', 'false');
+          addPanel.style.display = '';
+          viewPanel.style.display = 'none';
+        } else {
+          tabView.classList.add('active'); tabView.setAttribute('aria-selected', 'true');
+          tabAdd.classList.remove('active'); tabAdd.setAttribute('aria-selected', 'false');
+          addPanel.style.display = 'none';
+          viewPanel.style.display = '';
+          renderView();
+        }
+      }
+
+      tabAdd.addEventListener('click', () => switchView('add'));
+      tabView.addEventListener('click', () => switchView('view'));
+
+      // Helpers
+      function nowRounded() {
+        const d = new Date();
+        d.setMinutes(Math.floor(d.getMinutes() / 15) * 15);
+        d.setSeconds(0); d.setMilliseconds(0);
+        const off = -d.getTimezoneOffset();
+        const pad = n => String(n).padStart(2, '0');
+        return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + 'T' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+      }
+
+      function save(type, data) {
+        const arr = JSON.parse(localStorage.getItem(type) || '[]');
+        arr.push(data);
+        localStorage.setItem(type, JSON.stringify(arr));
+        // simple feedback
+        formInner.innerHTML = '<p class="small">Saved ✓</p>';
+        setTimeout(() => formInner.innerHTML = '<p class="small">Choose a category to add an entry.</p>', 900);
+      }
+
+      // Renderers
+      function renderFoodForm() {
+        formInner.innerHTML = '';
+        const el = document.createElement('div');
+        el.innerHTML = `
+          <h3>Food Intake</h3>
+          <div class="form-row"><label class="small">Meal</label>
+            <div class="emoji-row" id="mealRow">
+              <div class="emoji" data-val="Breakfast">🍳</div>
+              <div class="emoji" data-val="Lunch">🥪</div>
+              <div class="emoji" data-val="Dinner">🍲</div>
+              <div class="emoji" data-val="Dessert">🍰</div>
+              <div class="emoji" data-val="Snack">🍟</div>
+            </div>
+          </div>
+          <div class="form-row"><label class="small">What did you eat?</label><input id="foodDesc" type="text" placeholder="What did you eat?"/></div>
+          <div class="form-row"><label class="small">Quantity</label>
+            <div class="emoji-row" id="quantityRow">
+              <div class="emoji" data-val="nothing">☠️</div>
+              <div class="emoji" data-val="undereaten">😕</div>
+              <div class="emoji" data-val="just enough">😋</div>
+              <div class="emoji" data-val="overeaten">🫄</div>
+            </div>
+          </div>
+          <div class="form-row"><label class="small">Time</label><input id="foodTime" type="datetime-local" value="${nowRounded()}"/></div>
+          <div style="display:flex;gap:8px;justify-content:flex-end"><button id="submitFood" class="btn">Submit</button></div>
+        `;
+        formInner.appendChild(el);
+
+        let mealVal = null, quantityVal = null;
+
+        el.querySelectorAll('#mealRow .emoji').forEach(em => em.addEventListener('click', ev => {
+          el.querySelectorAll('#mealRow .emoji').forEach(e => e.classList.remove('selected'));
+          ev.currentTarget.classList.add('selected');
+          mealVal = ev.currentTarget.getAttribute('data-val');
+        }));
+
+        el.querySelectorAll('#quantityRow .emoji').forEach(em => em.addEventListener('click', ev => {
+          el.querySelectorAll('#quantityRow .emoji').forEach(e => e.classList.remove('selected'));
+          ev.currentTarget.classList.add('selected');
+          quantityVal = ev.currentTarget.getAttribute('data-val');
+        }));
+
+        el.querySelector('#submitFood').addEventListener('click', () => {
+          const data = {
+            meal: mealVal,
+            desc: el.querySelector('#foodDesc').value,
+            quantity: quantityVal,
+            barcode: el.querySelector('#barcode').value,
+            time: el.querySelector('#foodTime').value || new Date().toISOString()
+          };
+          save('food', data);
+        });
+      }
+
+      function renderBowelForm() {
+        formInner.innerHTML = '';
+        let start = null; let duration = null; let timerInt = null; let chosenQuality = null;
+        const el = document.createElement('div');
+        el.innerHTML = `
+        <h3>Bowel Movement</h3>
+        <div style="display:flex;gap:8px;margin-bottom:8px">
+          <button id="startBtn" class="btn">Start Pooping</button>
+          <button id="stopBtn" class="btn" disabled>Stop Pooping</button>
+        </div>
+        <div id="poopTimer" class="small muted">Not started</div>
+        <div id="finalInputs" style="display:none;margin-top:10px">
+          <h4 class="small">Quality</h4>
+          <div class="emoji-row">
+            <div class="emoji" data-q="solid">🪨</div>
+            <div class="emoji" data-q="normal">💩</div>
+            <div class="emoji" data-q="loose">🍦</div>
+            <div class="emoji" data-q="watery">💦</div>
+            <div class="emoji" data-q="explosive">💥</div>
+          </div>
+          <div class="form-row"><textarea id="poopNotes" rows="3" placeholder="Notes"></textarea></div>
+          <div style="display:flex;justify-content:flex-end"><button id="submitPoop" class="btn">Submit</button></div>
+        </div>
+        <div style="margin-top:8px" class="small">You can also add past poop entries by using "Start Pooping" then editing times before submitting.</div>
+      `;
+        formInner.appendChild(el);
+
+        const startBtn = el.querySelector('#startBtn');
+        const stopBtn = el.querySelector('#stopBtn');
+        const timerDiv = el.querySelector('#poopTimer');
+        const finalInputs = el.querySelector('#finalInputs');
+
+        function updateTimer() {
+          if (!start) return; const diff = Math.round((Date.now() - start) / 1000);
+          timerDiv.textContent = 'Duration: ' + diff + 's';
+        }
+
+        startBtn.addEventListener('click', () => {
+          start = Date.now(); startBtn.disabled = true; stopBtn.disabled = false; timerDiv.textContent = 'Pooping...';
+          timerInt = setInterval(updateTimer, 1000);
+        });
+
+        stopBtn.addEventListener('click', () => {
+          if (!start) return; duration = Math.round((Date.now() - start) / 1000); stopBtn.disabled = true; clearInterval(timerInt); timerDiv.textContent = 'Duration: ' + duration + 's'; finalInputs.style.display = '';
+        });
+
+        el.querySelectorAll('.emoji').forEach(em => em.addEventListener('click', (ev) => {
+          el.querySelectorAll('.emoji').forEach(e => e.classList.remove('selected'));
+          ev.currentTarget.classList.add('selected');
+          chosenQuality = ev.currentTarget.getAttribute('data-q');
+        }));
+
+        el.querySelector('#submitPoop').addEventListener('click', () => {
+          const notes = el.querySelector('#poopNotes').value;
+          const data = {
+            start: start ? new Date(start).toISOString() : null,
+            duration: duration,
+            quality: chosenQuality,
+            notes: notes
+          };
+          save('bowel', data);
+        });
+      }
+
+      function renderSleepForm() {
+        formInner.innerHTML = '';
+        let bed = null, lights = null, wake = null, interruptions = [];
+        const el = document.createElement('div');
+        el.innerHTML = `
+          <h3>Sleep</h3>
+          <div style="display:flex;gap:8px;margin-bottom:8px">
+            <button id="bedBtn" class="btn">Get into bed</button>
+            <button id="lightsBtn" class="btn" disabled>Lights out</button>
+            <button id="interruptBtn" class="btn" disabled>Sleep interrupted</button>
+            <button id="wakeBtn" class="btn" disabled>Wake up</button>
+          </div>
+          <div id="sleepExtras" style="display:none;margin-top:10px">
+            <div class="form-row"><label class="small">How do you feel?</label>
+              <div class="emoji-row" id="feelingRow">
+                <div class="emoji" data-val="perfect">😇</div>
+                <div class="emoji" data-val="good">🙂</div>
+                <div class="emoji" data-val="meh">😐</div>
+                <div class="emoji" data-val="still exhausted">😵</div>
+              </div>
+            </div>
+            <div class="form-row"><label class="small">Trouble falling asleep?</label>
+              <div class="emoji-row" id="troubleRow">
+                <div class="emoji" data-val="No">😌</div>
+                <div class="emoji" data-val="Some">😕</div>
+                <div class="emoji" data-val="Lots">😫</div>
+              </div>
+            </div>
+            <div style="display:flex;justify-content:flex-end"><button id="submitSleep" class="btn">Submit</button></div>
+          </div>
+        `;
+        formInner.appendChild(el);
+
+        let feelingVal = null, troubleVal = null;
+
+        el.querySelectorAll('#feelingRow .emoji').forEach(em => em.addEventListener('click', ev => {
+          el.querySelectorAll('#feelingRow .emoji').forEach(e => e.classList.remove('selected'));
+          ev.currentTarget.classList.add('selected');
+          feelingVal = ev.currentTarget.getAttribute('data-val');
+        }));
+
+        el.querySelectorAll('#troubleRow .emoji').forEach(em => em.addEventListener('click', ev => {
+          el.querySelectorAll('#troubleRow .emoji').forEach(e => e.classList.remove('selected'));
+          ev.currentTarget.classList.add('selected');
+          troubleVal = ev.currentTarget.getAttribute('data-val');
+        }));
+
+        const bedBtn = el.querySelector('#bedBtn');
+        const lightsBtn = el.querySelector('#lightsBtn');
+        const interruptBtn = el.querySelector('#interruptBtn');
+        const wakeBtn = el.querySelector('#wakeBtn');
+        const extras = el.querySelector('#sleepExtras');
+
+        bedBtn.addEventListener('click', () => { bed = new Date().toISOString(); bedBtn.disabled = true; lightsBtn.disabled = false; });
+        lightsBtn.addEventListener('click', () => { lights = new Date().toISOString(); lightsBtn.disabled = true; interruptBtn.disabled = false; wakeBtn.disabled = false; });
+        interruptBtn.addEventListener('click', () => { interruptions.push(new Date().toISOString()); });
+        wakeBtn.addEventListener('click', () => { wake = new Date().toISOString(); wakeBtn.disabled = true; interruptBtn.disabled = true; extras.style.display = ''; });
+
+        el.querySelector('#submitSleep').addEventListener('click', () => {
+          const data = { bed, lights, wake, interruptions, feeling: feelingVal, trouble: troubleVal };
+          save('sleep', data);
+        });
+      }
+
+      function renderExerciseForm() {
+        formInner.innerHTML = '';
+        const el = document.createElement('div');
+        el.innerHTML = `
+          <h3>Exercise</h3>
+          <div class="form-row"><label class="small">Type</label>
+            <div class="emoji-row" id="exTypeRow">
+              <div class="emoji" data-val="walk">🚶</div>
+              <div class="emoji" data-val="run">🏃</div>
+              <div class="emoji" data-val="strength">🏋️</div>
+              <div class="emoji" data-val="stretch">🤸</div>
+            </div>
+          </div>
+          <div class="form-row"><label class="small">Start</label><input id="exStart" type="datetime-local" value="${nowRounded()}"/></div>
+          <div class="form-row"><label class="small">Duration (minutes)</label><select id="exDur"><option>5</option><option>15</option><option>30</option><option>45</option></select></div>
+          <div style="display:flex;justify-content:flex-end"><button id="submitEx" class="btn">Submit</button></div>
+        `;
+        formInner.appendChild(el);
+
+        let exTypeVal = null;
+        el.querySelectorAll('#exTypeRow .emoji').forEach(em => em.addEventListener('click', ev => {
+          el.querySelectorAll('#exTypeRow .emoji').forEach(e => e.classList.remove('selected'));
+          ev.currentTarget.classList.add('selected');
+          exTypeVal = ev.currentTarget.getAttribute('data-val');
+        }));
+
+        el.querySelector('#submitEx').addEventListener('click', () => {
+          const data = { type: exTypeVal, start: el.querySelector('#exStart').value, duration: Number(el.querySelector('#exDur').value) };
+          save('exercise', data);
+        });
+      }
+
+      function renderIllnessForm() {
+        formInner.innerHTML = '';
+        const el = document.createElement('div');
+        el.innerHTML = `
+          <h3>Illness</h3>
+          <div class="form-row"><label class="small">Start</label><input id="illStart" type="datetime-local" value="${nowRounded()}"/></div>
+          <div class="form-row"><label class="small">Type</label><input id="illType" list="illTypes" placeholder="headache"/><datalist id="illTypes"><option value="headache"><option value="throat sore"><option value="depression"><option value="stomachache"></datalist></div>
+          <div class="form-row"><label class="small">Duration (optional)</label><input id="illDur" type="text" placeholder="e.g. 2 days or 48h"/></div>
+          <div class="form-row"><label class="small">Severity</label>
+            <div class="emoji-row" id="illSeverityRow">
+              <div class="emoji" data-val="mild">😒</div>
+              <div class="emoji" data-val="moderate">🤒</div>
+              <div class="emoji" data-val="severe">🤢</div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:flex-end"><button id="submitIll" class="btn">Submit</button></div>
+        `;
+        formInner.appendChild(el);
+
+        let severityVal = null;
+        el.querySelectorAll('#illSeverityRow .emoji').forEach(em => em.addEventListener('click', ev => {
+          el.querySelectorAll('#illSeverityRow .emoji').forEach(e => e.classList.remove('selected'));
+          ev.currentTarget.classList.add('selected');
+          severityVal = ev.currentTarget.getAttribute('data-val');
+        }));
+
+        el.querySelector('#submitIll').addEventListener('click', () => {
+          const data = {
+            start: el.querySelector('#illStart').value,
+            type: el.querySelector('#illType').value,
+            duration: el.querySelector('#illDur').value,
+            severity: severityVal
+          };
+          save('illness', data);
+        });
+      }
+
+
+      // Attach big-action buttons
+      document.querySelectorAll('.big-action').forEach(btn => btn.addEventListener('click', () => {
+        const which = btn.getAttribute('data-open');
+        if (which === 'food') renderFoodForm();
+        if (which === 'bowel') renderBowelForm();
+        if (which === 'sleep') renderSleepForm();
+        if (which === 'exercise') renderExerciseForm();
+        if (which === 'illness') renderIllnessForm();
+      }));
+
+      // View rendering
+      function formatDateShort(iso) { if (!iso) return ''; try { const d = new Date(iso); return d.toLocaleString(); } catch (e) { return iso } }
+
+      function renderTableFor(type, data) {
+        if (!data || data.length === 0) return '<div class="small muted">No entries</div>';
+        // Determine columns by union of keys
+        const cols = Array.from(data.reduce((s, row) => { Object.keys(row).forEach(k => s.add(k)); return s }, new Set()));
+        let html = '<table><thead><tr>' + cols.map(c => `<th>${c}</th>`).join('') + '<th></th></tr></thead><tbody>';
+        data.forEach((row, idx) => {
+          html += '<tr>' + cols.map(c => `<td>${escapeHtml(String(row[c] === undefined ? '' : stringifyCell(row[c])))}</td>`).join('') + `<td><button data-type="${type}" data-idx="${idx}" class="btn">Delete</button></td></tr>`;
+        });
+        html += '</tbody></table>';
+        return html;
+      }
+
+      function stringifyCell(v) { if (v === null) return ''; if (Array.isArray(v)) return v.join(', '); if (typeof v === 'object') return JSON.stringify(v); return v; }
+      function escapeHtml(str) { return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+      function renderView() {
+        const sel = viewSelect.value;
+        if (sel === 'all') {
+          // gather all entries with type and time
+          const buckets = [];
+          ['food', 'bowel', 'sleep', 'exercise', 'illness'].forEach(type => {
+            const arr = JSON.parse(localStorage.getItem(type) || '[]');
+            arr.forEach(item => {
+              const time = item.time || item.start || item.wake || item.bed || item.start; // best effort
+              buckets.push({ type, time: time || '', data: item });
+            });
+          });
+          buckets.sort((a, b) => (a.time || '').localeCompare(b.time || ''));
+          // render as timeline table
+          if (buckets.length === 0) { viewContent.innerHTML = '<div class="small muted">No entries</div>'; return; }
+          let h = '<table><thead><tr><th>Time</th><th>Type</th><th>Summary</th><th></th></tr></thead><tbody>';
+          buckets.forEach((b, idx) => {
+            h += `<tr><td>${escapeHtml(formatDateShort(b.time))}</td><td>${escapeHtml(b.type)}</td><td>${escapeHtml(stringifyCell(b.data))}</td><td><button class="btn" data-type="${b.type}" data-idx="${idx}">Delete</button></td></tr>`;
+          });
+          h += '</tbody></table>';
+          viewContent.innerHTML = h;
+        } else {
+          const data = JSON.parse(localStorage.getItem(sel) || '[]');
+          viewContent.innerHTML = `<h4 style="margin-top:0">${sel}</h4>` + renderTableFor(sel, data);
+        }
+      }
+
+      // Delete handler (delegated)
+      viewContent.addEventListener('click', (ev) => {
+        const btn = ev.target.closest('button'); if (!btn) return;
+        const type = btn.getAttribute('data-type'); const idx = Number(btn.getAttribute('data-idx'));
+        if (!type || isNaN(idx)) return;
+        const arr = JSON.parse(localStorage.getItem(type) || '[]');
+        arr.splice(idx, 1); localStorage.setItem(type, JSON.stringify(arr)); renderView();
+      });
+
+      viewSelect.addEventListener('change', renderView);
+      clearStorage.addEventListener('click', () => { if (confirm('Clear all stored entries?')) { ['food', 'bowel', 'sleep', 'exercise', 'illness'].forEach(k => localStorage.removeItem(k)); renderView(); } });
+
+      // initialize default
+      switchView('add');
+    });
+  </script>
+</body>
+
+</html>
