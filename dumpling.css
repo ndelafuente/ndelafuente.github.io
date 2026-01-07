@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+@font-face {
+    font-family: Futuracha;
+    src: url(assets/futurachapro.otf);
+}
+
+:root {
+    --oxblood: #9b0d10;
+    --mahogany-red: #b21416;
+    --burnt-tangerine: #dc4027;
+    --racing-red: #ee2d24;
+    --dusty-rose: #cf887a;
+    --sunbeam-yellow: #ffe431;
+    --metallic-gold: #dfb553;
+    --golden-bronze: #c69527;
+    --raisin-black: #272223ff;
+
+    --primary: var(--mahogany-red);
+    --button-hover: var(--oxblood);
+    --secondary: var(--sunbeam-yellow);
+    --input-disabled: var(--dusty-rose);
+    --background: #CE5841;
+    --entry: #F1D96C;
+    --entry-light: #FFFA96;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: #EDAD53;
+    background-image: linear-gradient(180deg, rgba(33, 38, 105, 1) 0%, rgba(47, 100, 143, 1) 11%, rgba(64, 119, 161, 1) 50%, rgba(237, 173, 83, 1) 100%);
+    background-attachment: fixed;
+    height: 100vh;
+    color: var(--raisin-black);
+    margin: 0;
+    padding: 1.5em;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1,
+h2 {
+    text-align: center;
+    font-family: Futuracha, fantasy;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 1em;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: xx-large;
+    text-shadow: rgba(33, 38, 105, 0.8) 0 0 42px;
+}
+
+h2 {
+    font-size: x-large;
+}
+
+form>h2 {
+    text-shadow: var(--primary) 0.1em 0.1em;
+}
+
+#main>h2 {
+    text-shadow: var(--sunbeam-yellow) 0.75px 0.75px;
+
+}
+form {
+    background: var(--background);
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(39, 34, 35, 0.2);
+    margin-bottom: 1.5em;
+}
+
+select,
+input,
+button {
+    width: 100%;
+    padding: 0.75em;
+    margin: 0.4em 0;
+    font-size: 1em;
+    border: 1px solid var(--mahogany-red);
+    border-radius: 18px;
+    box-sizing: border-box;
+}
+
+select,
+input {
+    font-family: "Comic Neue";
+}
+
+input:disabled {
+    background-color: var(--input-disabled);
+}
+
+select:invalid {
+    color: grey;
+}
+
+input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 4px var(--primary);
+}
+
+#chef,
+#sous-chef {
+    text-transform: lowercase;
+}
+
+#list {
+    padding-bottom: 20px;
+}
+
+button {
+    background-color: var(--primary);
+    width: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-family: "Comic Neue";
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.entry {
+    color: var(--mahogany-red);
+    font-family: "Comic Neue";
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0.75em 1em;
+    margin-bottom: 0.5em;
+    box-shadow: 0 1px 3px rgba(39, 34, 35, 0.1);
+
+    background: linear-gradient(135deg, #FFD700 0%, #FFED4E 25%, #C5A028 50%, #FFD700 75%, #FFED4E 100%);
+
+}
+
+
+.entry:nth-child(even) {
+    background: linear-gradient(135deg, #CD7F32 0%, #E6A157 25%, #8B5A2B 50%, #CD7F32 75%, #E6A157 100%);
+    color: var(--entry-light)
+}
+
+div {
+    text-align: center;
+}

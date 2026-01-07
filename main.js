@@ -25,7 +25,9 @@ async function refreshList() {
 
         const div = document.createElement("div");
         div.className = "entry";
-        div.textContent = `${entry.Recipe} ↭ ${entry.Chef.toLowerCase()}`;
+        div.textContent = `${entry.Recipe}`;
+        if (entry['Translation']) div.textContent += ' - ' + entry['Translation'];
+        div.textContent += ` ↭ ${entry.Chef.toLowerCase()}`;
         if (entry['Sous-chef']) div.textContent += ' + ' + entry['Sous-chef'].toLowerCase();
         if (entry['Notes']) div.textContent += ` (${entry.Notes})`;
         if (entry['Cuisine']) div.textContent = `${entry.Cuisine}: ${div.textContent}`;
@@ -43,12 +45,13 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
     if (VALIDATE_RECIPES && !(recipe in recipes)) { alert("Invalid recipe"); return }
     if (recipe in claimed && !confirm(`Recipe already claimed by ${claimed[recipe]}. Proceed?`)) { return }
     showLoading();
-    const cuisine = document.getElementById("cuisine").value;
+    const translation = document.getElementById("translation")?.value;
+    const cuisine = document.getElementById("cuisine")?.value;
     const category = document.getElementById("category").value;
     const chef = document.getElementById("chef").value;
     const sous_chef = document.getElementById("sous-chef").value;
     const notes = document.getElementById("notes").value;
-    const submitData = btoa(JSON.stringify({ recipe, category, cuisine, chef, sous_chef, notes }));
+    const submitData = JSON.stringify({ recipe, translation, category, cuisine, chef, sous_chef, notes, ...recipes[recipe] });
     console.log({ submitData });
     try {
         const res = await fetch(`${API_URL}?mode=submit&data=${encodeURIComponent(submitData)}`);
@@ -97,7 +100,8 @@ if (VALIDATE_RECIPES) {
 
     function loadRecipes() {
         const dl = document.getElementById("recipes");
-        const recipeNames = Object.keys(recipes).sort()
+        const normalize = s => s.replace(/^[^a-z]+/gi, '').toUpperCase();
+        const recipeNames = Object.keys(recipes).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const recipe of recipeNames) {
             const opt = document.createElement("option");
             opt.value = recipe;
@@ -106,14 +110,13 @@ if (VALIDATE_RECIPES) {
     }
 
     loadRecipes();
-
     const recipeElement = document.getElementById("recipe");
     recipeElement.addEventListener("input", (event) => {
         const recipe = event.target.value.trim().toUpperCase();
         if (!recipe || recipe in recipes) event.target.style.background = "";
 
-        const category = (recipe in recipes) ? recipes[recipe] : "";
-        document.getElementById("category").value = category;
+        document.getElementById("category").value = recipes[recipe]?.category ?? "";
+        document.getElementById("translation").value = recipes[recipe]?.translation ?? "";
     });
     recipeElement.addEventListener("blur", (event) => {
         const recipe = event.target.value.trim().toUpperCase();
