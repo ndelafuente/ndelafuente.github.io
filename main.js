@@ -106,7 +106,7 @@ if (VALIDATE_RECIPES) {
             const opt = document.createElement("option");
             opt.value = recipes[recipe].recipe;
             if ('translation' in recipes[recipe]) {
-                opt.text = recipes[recipe].translation?.normalize('NFKD').replace(/([a-z])[^ a-z]+/ig, '$1');
+                opt.label = recipes[recipe].translation?.normalize('NFKD').replace(/([a-z])[^ a-z]+/ig, '$1');
             }
             dl.appendChild(opt);
         };
