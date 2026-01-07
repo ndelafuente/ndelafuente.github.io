@@ -104,7 +104,7 @@ if (VALIDATE_RECIPES) {
         const recipeNames = Object.keys(recipes).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const recipe of recipeNames) {
             const opt = document.createElement("option");
-            opt.value = recipes[recipe].recipe;
+            // opt.value = recipes[recipe].recipe;
             if ('translation' in recipes[recipe]) {
                 opt.text = recipes[recipe].translation?.normalize('NFKD');
             }
