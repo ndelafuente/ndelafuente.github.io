@@ -21,7 +21,7 @@ async function refreshList() {
     hide('recipeLoading');
     list.innerHTML = "";
     data?.forEach(entry => {
-        claimed[entry.Recipe] = entry.Chef;
+        claimed[entry.Recipe.toUpperCase()] = entry.Chef;
 
         const div = document.createElement("div");
         div.className = "entry";
@@ -104,7 +104,10 @@ if (VALIDATE_RECIPES) {
         const recipeNames = Object.keys(recipes).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const recipe of recipeNames) {
             const opt = document.createElement("option");
-            opt.value = recipe;
+            opt.value = recipes[recipe].recipe;
+            if ('translation' in recipes[recipe]) {
+                opt.text = recipes[recipe].translation?.normalize('NFKD');
+            }
             dl.appendChild(opt);
         };
     }
