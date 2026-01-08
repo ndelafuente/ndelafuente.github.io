@@ -42,12 +42,12 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     await initialRefreshPromise; // ensure claimed recipes are populated
     const recipe = document.getElementById("recipe").value.trim().toUpperCase();
-    if (VALIDATE_RECIPES && !(recipe in recipes)) { alert("Invalid recipe"); return }
+    if (VALIDATE_RECIPES && !(recipe in recipes) && !confirm(`Invalid recipe '${recipe}'. Proceed?`))  {return }
     if (recipe in claimed && !confirm(`Recipe already claimed by ${claimed[recipe]}. Proceed?`)) { return }
     showLoading();
     const translation = document.getElementById("translation")?.value;
     const cuisine = document.getElementById("cuisine")?.value;
-    const category = document.getElementById("category").value;
+    const category = document.getElementById("category").value || "Other";
     const chef = document.getElementById("chef").value;
     const sous_chef = document.getElementById("sous-chef").value;
     const notes = document.getElementById("notes").value;
@@ -123,6 +123,6 @@ if (VALIDATE_RECIPES) {
     });
     recipeElement.addEventListener("blur", (event) => {
         const recipe = event.target.value.trim().toUpperCase();
-        event.target.style.background = (!recipe || recipe in recipes) ? "" : "pink";
+        event.target.style.background = (!recipe || recipe in recipes) ? "" : "#fdfc99";
     });
 }

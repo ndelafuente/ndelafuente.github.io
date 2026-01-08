@@ -77,12 +77,12 @@ export const recipes = {
         "category": categories.PantryStaples,
         "page": 83
     },
-    "CHICKEN BROTH": {
-        "recipe": "Chicken Broth",
-        "translation": "Jīgāotāng 雞高湯",
-        "category": categories.PantryStaples,
-        "page": 85
-    },
+    // "CHICKEN BROTH": {
+    //     "recipe": "Chicken Broth",
+    //     "translation": "Jīgāotāng 雞高湯",
+    //     "category": categories.PantryStaples,
+    //     "page": 85
+    // },
     "TEA EGGS": {
         "recipe": "Tea Eggs",
         "translation": "Cháyè Dàn 茶葉蛋",
@@ -253,7 +253,7 @@ export const recipes = {
     },
     "STOVETOP STEAMED LONG- OR MEDIUM-GRAIN RICE": {
         "recipe": "Stovetop Steamed Long- or Medium-Grain Rice",
-        "translation": "supervision. Easier yet? The microwave makes surprisingly good rice.",
+        "translation": "",
         "category": categories.Rice,
         "page": 318
     },
