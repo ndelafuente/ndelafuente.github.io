@@ -121,12 +121,19 @@
 
   <script type="module">
     import { categories, recipes } from "./dumpling-recipes.js";
-
+    const discourageMsg = [
+      "Jack has marked this recipe as discouraged for one of the following reasons",
+      "(1) too small: if you are bringing, make sure it is accompanying a main dish,",
+      "(2) not the dim sum vibe: do not fear making a dumpling",
+      "(3) it contains eggplant: Jack thinks eggplant is 'F tier'",
+      "\nThis does not mean you cannot choose this recipe, just please only proceed after considering the above",
+    ].join('\n')
     window.CONFIG = {
       API_URL: atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J5aTFFS1dQbUFaN0hWSS1nSUtsZHJuQ3UzMDQtRUc2ajVVaTFraHFGT3JHLWxiaGwzd0xGMmxFNVJkNjZqOW92OEt0US9leGVj'),
       EVENT_DATE: new Date('01/26/2026'),
       VALIDATE_RECIPES: true,
       RECIPES: recipes,
+      DISCOURAGE_MSG: discourageMsg,
     }
   </script>
   <script type="module" src="main.js"></script>

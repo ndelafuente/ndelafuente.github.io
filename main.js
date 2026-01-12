@@ -1,4 +1,4 @@
-const { API_URL, EVENT_DATE, VALIDATE_RECIPES, RECIPES } = CONFIG;
+const { API_URL, EVENT_DATE, VALIDATE_RECIPES, RECIPES, DISCOURAGE_MSG } = CONFIG;
 const recipes = RECIPES;
 
 if (!API_URL || !EVENT_DATE) {
@@ -94,7 +94,7 @@ async function refreshList() {
         claimed[recipe.toUpperCase()] = entry.Chef;
         const div = document.createElement("div");
         div.className = "entry";
-        
+
         const span = document.createElement("span");
         let text = `${entry.Chef.toLowerCase()}`;
         if (entry['Sous-chef']) text += ' + ' + entry['Sous-chef'].toLowerCase();
@@ -130,6 +130,7 @@ async function onSubmit(e) {
     const recipe = document.getElementById("recipe").value.trim().toUpperCase();
     if (VALIDATE_RECIPES && !(recipe in recipes) && !confirm(`Invalid recipe '${recipe}'. Proceed?`)) { return }
     if (recipe in claimed && !confirm(`Recipe already claimed by ${claimed[recipe]}. Proceed?`)) { return }
+    if (recipes[recipe].discouraged && !confirm(DISCOURAGE_MSG) || alert("F*ck Jack?")) { return }
     showLoading();
     const translation = document.getElementById("translation")?.value;
     const cuisine = document.getElementById("cuisine")?.value;
