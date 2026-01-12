@@ -33,7 +33,8 @@ export const recipes = {
         "recipe": "Jeffrey's XO Sauce",
         "translation": "Pang Shu Wing XO Jiàng 彭書榮 XO 醬",
         "category": categories.PantryStaples,
-        "page": 75
+        "page": 75,
+        "discouraged": true
     },
     "SOY-VINEGAR DIPPING SAUCE": {
         "recipe": "Soy-Vinegar Dipping Sauce",
@@ -45,7 +46,8 @@ export const recipes = {
         "recipe": "Hoisin-Sesame Dipping Sauce",
         "translation": "Zhīmá Hăixiān Zhànjiàng 芝麻海鮮蘸醬",
         "category": categories.PantryStaples,
-        "page": 78
+        "page": 78,
+        "discouraged": true
     },
     "GINGER-SCALLION SAUCE": {
         "recipe": "Ginger-Scallion Sauce",
@@ -63,13 +65,15 @@ export const recipes = {
         "recipe": "Plum Sauce",
         "translation": "Sūméijiàng 蘇梅醬",
         "category": categories.PantryStaples,
-        "page": 81
+        "page": 81,
+        "discouraged": true
     },
     "MICROWAVE-FRIED SHALLOTS": {
         "recipe": "Microwave-Fried Shallots",
         "translation": "Yóucōngsū 油葱酥",
         "category": categories.PantryStaples,
-        "page": 82
+        "page": 82,
+        "discouraged": true
     },
     "STIR-FRIED PICKLED MUSTARD GREENS": {
         "recipe": "Stir-Fried Pickled Mustard Greens",
@@ -77,29 +81,33 @@ export const recipes = {
         "category": categories.PantryStaples,
         "page": 83
     },
-    // "CHICKEN BROTH": {
-    //     "recipe": "Chicken Broth",
-    //     "translation": "Jīgāotāng 雞高湯",
-    //     "category": categories.PantryStaples,
-    //     "page": 85
-    // },
+    "CHICKEN BROTH": {
+        "recipe": "Chicken Broth",
+        "translation": "Jīgāotāng 雞高湯",
+        "category": categories.PantryStaples,
+        "page": 85,
+        "discouraged": true
+    },
     "TEA EGGS": {
         "recipe": "Tea Eggs",
         "translation": "Cháyè Dàn 茶葉蛋",
         "category": categories.FingerFoods,
-        "page": 131
+        "page": 131,
+        "discouraged": true
     },
     "SICHUAN SNACK PEANUTS": {
         "recipe": "Sichuan Snack Peanuts",
         "translation": "Málà Huāshēng 麻辣花生",
         "category": categories.FingerFoods,
-        "page": 135
+        "page": 135,
+        "discouraged": true
     },
     "SHRIMP TOAST": {
         "recipe": "Shrimp Toast",
         "translation": "Xiā Tǔsī 蝦多士",
         "category": categories.FingerFoods,
-        "page": 141
+        "page": 141,
+        "discouraged": true
     },
     "AMERICAN-STYLE EGG ROLLS": {
         "recipe": "American-Style Egg Rolls",
@@ -159,19 +167,22 @@ export const recipes = {
         "recipe": "Winter Melon Soup with Meatballs",
         "translation": "Dōngguā Ròuwán Tāng 冬瓜肉丸湯",
         "category": categories.Soup,
-        "page": 205
+        "page": 205,
+        "discouraged": true
     },
     "WEST LAKE BEEF SOUP": {
         "recipe": "West Lake Beef Soup",
         "translation": "Xīhú Níuròu Gēng 西湖牛肉羹",
         "category": categories.Soup,
-        "page": 211
+        "page": 211,
+        "discouraged": true
     },
     "HOT AND SOUR SOUP": {
         "recipe": "Hot and Sour Soup",
         "translation": "Suānlà Tāng 酸辣湯",
         "category": categories.Soup,
-        "page": 215
+        "page": 215,
+        "discouraged": true
     },
     "HONG KONG-STYLE WONTON NOODLE SOUP": {
         "recipe": "Hong Kong-Style Wonton Noodle Soup",
@@ -183,25 +194,29 @@ export const recipes = {
         "recipe": "Hot Water Dough Dumpling Wrappers",
         "translation": "Tàngmiàn Jiăozipí 燙麵餃子皮",
         "category": categories.Dumplings,
-        "page": 237
+        "page": 237,
+        "discouraged": true
     },
     "PORK FILLING": {
         "recipe": "Pork Filling",
         "translation": "Zhūròu Xiàn 豬肉饀",
         "category": categories.Dumplings,
-        "page": 241
+        "page": 241,
+        "discouraged": true
     },
     "SHRIMP FILLING": {
         "recipe": "Shrimp Filling",
         "translation": "Xiānxiā Xiàn 鮮蝦饀",
         "category": categories.Dumplings,
-        "page": 242
+        "page": 242,
+        "discouraged": true
     },
     "VEGETABLE FILLING": {
         "recipe": "Vegetable Filling",
         "translation": "Shūcài Xiàn 蔬菜饀",
         "category": categories.Dumplings,
-        "page": 243
+        "page": 243,
+        "discouraged": true
     },
     "POT STICKERS": {
         "recipe": "Pot Stickers",
@@ -249,31 +264,36 @@ export const recipes = {
         "recipe": "100% Perfect Rice",
         "translation": "Báifàn 白飯",
         "category": categories.Rice,
-        "page": 317
+        "page": 317,
+        "discouraged": true
     },
     "STOVETOP STEAMED LONG- OR MEDIUM-GRAIN RICE": {
         "recipe": "Stovetop Steamed Long- or Medium-Grain Rice",
         "translation": "",
         "category": categories.Rice,
-        "page": 318
+        "page": 318,
+        "discouraged": true
     },
     "STOVETOP STEAMED SHORT-GRAIN RICE": {
         "recipe": "Stovetop Steamed Short-Grain Rice",
         "translation": "",
         "category": categories.Rice,
-        "page": 319
+        "page": 319,
+        "discouraged": true
     },
     "FAUX LEFTOVER RICE": {
         "recipe": "Faux Leftover Rice",
         "translation": "",
         "category": categories.Rice,
-        "page": 321
+        "page": 321,
+        "discouraged": true
     },
     "SIMPLE FRIED RICE": {
         "recipe": "Simple Fried Rice",
         "translation": "Jiănyì Chăofàn 簡易炒飯",
         "category": categories.Rice,
-        "page": 328
+        "page": 328,
+        "discouraged": true
     },
     "SHRIMP AND PORK FRIED RICE": {
         "recipe": "Shrimp and Pork Fried Rice",
@@ -285,19 +305,22 @@ export const recipes = {
         "recipe": "Stir-Fried Rice Cakes",
         "translation": "Chăo Niángāo 炒年糕",
         "category": categories.Rice,
-        "page": 352
+        "page": 352,
+        "discouraged": true
     },
     "CLAY POT CHICKEN RICE": {
         "recipe": "Clay Pot Chicken Rice",
         "translation": "Huájī Bāozăifàn 滑雞煲仔飯",
         "category": categories.Rice,
-        "page": 356
+        "page": 356,
+        "discouraged": true
     },
     "RICE COOKER CHICKEN RICE": {
         "recipe": "Rice Cooker Chicken Rice",
         "translation": "Diànguō Huájī Fàn 電鍋滑雞飯",
         "category": categories.Rice,
-        "page": 363
+        "page": 363,
+        "discouraged": true
     },
     "SESAME NOODLES": {
         "recipe": "Sesame Noodles",
@@ -309,25 +332,29 @@ export const recipes = {
         "recipe": "Scallion Oil Noodles",
         "translation": "Cōngyóu Bànmiàn 葱油拌麵",
         "category": categories.Noodles,
-        "page": 370
+        "page": 370,
+        "discouraged": true
     },
     "DAN DAN MIAN": {
         "recipe": "Dan Dan Mian",
         "translation": "Dàndànmiàn 擔擔麵",
         "category": categories.Noodles,
-        "page": 375
+        "page": 375,
+        "discouraged": true
     },
     "PORK STIR-FRIED NOODLES": {
         "recipe": "Pork Stir-Fried Noodles",
         "translation": "Ròusī Chăomiàn 肉絲炒麵",
         "category": categories.Noodles,
-        "page": 381
+        "page": 381,
+        "discouraged": true
     },
     "ZHA JIANG MIAN": {
         "recipe": "Zha Jiang Mian",
         "translation": "Zhájiàng Miàn 炸醬麵",
         "category": categories.Noodles,
-        "page": 385
+        "page": 385,
+        "discouraged": true
     },
     "BEEF HO FUN": {
         "recipe": "Beef Ho Fun",
@@ -339,43 +366,50 @@ export const recipes = {
         "recipe": "Singapore Noodles",
         "translation": "Xīngzhōu Chăomǐ 星洲炒米",
         "category": categories.Noodles,
-        "page": 392
+        "page": 392,
+        "discouraged": true
     },
     "FLAT HAND-PULLED NOODLES": {
         "recipe": "Flat Hand-Pulled Noodles",
         "translation": "Biángbiáng Miàn 奤奤麵",
         "category": categories.Noodles,
-        "page": 397
+        "page": 397,
+        "discouraged": true
     },
     "NOODLE SOUP WITH PORK AND PRESERVED MUSTARD": {
         "recipe": "Noodle Soup with Pork and Preserved Mustard",
         "translation": "Zhácài Ròusī Miàn 炸菜肉絲麵",
         "category": categories.Noodles,
-        "page": 405
+        "page": 405,
+        "discouraged": true
     },
     "TAIWANESE BEEF NOODLE SOUP": {
         "recipe": "Taiwanese Beef Noodle Soup",
         "translation": "Niúròu Miàn 牛肉麵",
         "category": categories.Noodles,
-        "page": 408
+        "page": 408,
+        "discouraged": true
     },
     "KUNG PAO CHICKEN": {
         "recipe": "Kung Pao Chicken",
         "translation": "Gōngbǎo Jīdīng 宮保雞丁",
         "category": categories.Poultry,
-        "page": 416
+        "page": 416,
+        "discouraged": true
     },
     "THREE-CUP CHICKEN": {
         "recipe": "Three-Cup Chicken",
         "translation": "Sānbēi Jī 三杯雞",
         "category": categories.Poultry,
-        "page": 420
+        "page": 420,
+        "discouraged": true
     },
     "SOY SAUCE CHICKEN": {
         "recipe": "Soy Sauce Chicken",
         "translation": "Chǐyóu Jī 豉油雞",
         "category": categories.Poultry,
-        "page": 424
+        "page": 424,
+        "discouraged": true
     },
     "STIR-FRIED CUMIN LAMB": {
         "recipe": "Stir-Fried Cumin Lamb",
@@ -405,25 +439,29 @@ export const recipes = {
         "recipe": "Taiwanese Pork Rice Bowl",
         "translation": "Lǔròu Fàn 滷肉飯",
         "category": categories.Meat,
-        "page": 455
+        "page": 455,
+        "discouraged": true
     },
     "MU SHU PORK": {
         "recipe": "Mu Shu Pork",
         "translation": "Mùxū Ròu 木須肉",
         "category": categories.Meat,
-        "page": 458
+        "page": 458,
+        "discouraged": true
     },
     "SPRING PANCAKES": {
         "recipe": "Spring Pancakes",
         "translation": "Chūnbǐng 春餅",
         "category": categories.Meat,
-        "page": 462
+        "page": 462,
+        "discouraged": true
     },
     "LION'S HEAD MEATBALLS": {
         "recipe": "Lion's Head Meatballs",
         "translation": "Shīzitóu 獅子頭",
         "category": categories.Meat,
-        "page": 468
+        "page": 468,
+        "discouraged": true
     },
     "STEAMED FISH FILLETS WITH SCALLIONS AND GINGER": {
         "recipe": "Steamed Fish Fillets with Scallions and Ginger",
@@ -441,13 +479,15 @@ export const recipes = {
         "recipe": "Oil-Exploded Shrimp",
         "translation": "Yóubào Xiā 油爆蝦",
         "category": categories.Fish,
-        "page": 480
+        "page": 480,
+        "discouraged": true
     },
     "STIR-FRIED CLAMS WITH BLACK BEAN SAUCE": {
         "recipe": "Stir-Fried Clams with Black Bean Sauce",
         "translation": "Chı̆jiāo Chăo Xiăn 豉椒炒蜆",
         "category": categories.Fish,
-        "page": 484
+        "page": 484,
+        "discouraged": true
     },
     "STIR-FRIED TENDER GREENS WITH GARLIC": {
         "recipe": "Stir-Fried Tender Greens with Garlic",
@@ -459,13 +499,15 @@ export const recipes = {
         "recipe": "Ong Choy with Fermented Bean Curd",
         "translation": "Fǔrǔ Jiāosī Tōngcài 腐乳椒絲通菜",
         "category": categories.Vegetables,
-        "page": 497
+        "page": 497,
+        "discouraged": true
     },
     "HOT AND SOUR NAPA CABBAGE": {
         "recipe": "Hot and Sour Napa Cabbage",
         "translation": "Suānlà Báicài 酸辣白菜",
         "category": categories.Vegetables,
-        "page": 501
+        "page": 501,
+        "discouraged": true
     },
     "BABY BOK CHOY WITH GINGER AND GARLIC": {
         "recipe": "Baby Bok Choy with Ginger and Garlic",
@@ -489,25 +531,29 @@ export const recipes = {
         "recipe": "Eggplant with Black Bean Sauce",
         "translation": "Chǐzhī Qiézi 豉汁茄子",
         "category": categories.Vegetables,
-        "page": 522
+        "page": 522,
+        "discouraged": true
     },
     "BRAISED EGGPLANT WITH SOY, GARLIC, AND GINGER": {
         "recipe": "Braised Eggplant with Soy, Garlic, and Ginger",
         "translation": "Suànróng Hóngshāo Qiézi 蒜蓉紅燒茄子",
         "category": categories.Vegetables,
-        "page": 525
+        "page": 525,
+        "discouraged": true
     },
     "SICHUAN HOT AND SOUR POTATOES": {
         "recipe": "Sichuan Hot and Sour Potatoes",
         "translation": "Chuānwèi Suānlà Tǔdòusī 川味酸辣土豆絲",
         "category": categories.Vegetables,
-        "page": 529
+        "page": 529,
+        "discouraged": true
     },
     "STIR-FRIED TOMATOES AND EGGS": {
         "recipe": "Stir-Fried Tomatoes and Eggs",
         "translation": "Xīhóngshì Chăo Jīdàn 西紅茄炒雞蛋",
         "category": categories.Vegetables,
-        "page": 533
+        "page": 533,
+        "discouraged": true
     },
     "HOMEMADE TOFU": {
         "recipe": "Homemade Tofu",
@@ -537,25 +583,29 @@ export const recipes = {
         "recipe": "Stir-Fried Chicken in Black Bean Sauce",
         "translation": "Dòuchǐ Jī 豆豉雞",
         "category": categories.Jeffry,
-        "page": 567
+        "page": 567,
+        "discouraged": true
     },
     "HONG KONG-STYLE PORTUGUESE CHICKEN": {
         "recipe": "Hong Kong-Style Portuguese Chicken",
         "translation": "Găngshì Pǔguó Jī 港式葡國雞",
         "category": categories.Jeffry,
-        "page": 572
+        "page": 572,
+        "discouraged": true
     },
     "SHRIMP-PASTE FRIED CHICKEN": {
         "recipe": "Shrimp-Paste Fried Chicken",
         "translation": "Xiājiàng Zhájī 蝦醬炸雞",
         "category": categories.Jeffry,
-        "page": 578
+        "page": 578,
+        "discouraged": true
     },
     "\"TASTE OF SICHUAN\" BEEF SHANK": {
         "recipe": "\"Taste of Sichuan\" Beef Shank",
         "translation": "Chuānwèi Niújiàn 川味牛 𦟌",
         "category": categories.Jeffry,
-        "page": 582
+        "page": 582,
+        "discouraged": true
     },
     "HONEY-WALNUT SHRIMP": {
         "recipe": "Honey-Walnut Shrimp",
@@ -579,13 +629,15 @@ export const recipes = {
         "recipe": "Hong Kong-Style Baked Pork Chop Rice",
         "translation": "Găngshì Jú Zhūpá Fàn 港式焗豬扒飯",
         "category": categories.Jeffry,
-        "page": 601
+        "page": 601,
+        "discouraged": true
     },
     "STICKY SPARERIBS WITH CHINKIANG VINEGAR": {
         "recipe": "Sticky Spareribs with Chinkiang Vinegar",
         "translation": "Zhēnjiāng Tángcù Páigǔ 鎭江糖醋排骨",
         "category": categories.Jeffry,
-        "page": 607
+        "page": 607,
+        "discouraged": true
     },
     "STIR-FRIED STICKY RICE": {
         "recipe": "Stir-Fried Sticky Rice",
@@ -597,67 +649,78 @@ export const recipes = {
         "recipe": "Radish Cake",
         "translation": "Luóbo Gāo 蘿蔔糕",
         "category": categories.Jeffry,
-        "page": 616
+        "page": 616,
+        "discouraged": true
     },
     "DRY CHILI CHICKEN": {
         "recipe": "Dry Chili Chicken",
         "translation": "Làzi Jī 辣子雞",
         "category": categories.DeepFried,
-        "page": 628
+        "page": 628,
+        "discouraged": true
     },
     "GENERAL TSO'S CHICKEN": {
         "recipe": "General Tso's Chicken",
         "translation": "Zuǒ Zōngtáng Jī 左宗棠雞",
         "category": categories.DeepFried,
-        "page": 631
+        "page": 631,
+        "discouraged": true
     },
     "ALMOND CHICKEN": {
         "recipe": "Almond Chicken",
         "translation": "Xìngrén Jī 杏仁雞",
         "category": categories.DeepFried,
-        "page": 636
+        "page": 636,
+        "discouraged": true
     },
     "CRISPY ORANGE BEEF": {
         "recipe": "Crispy Orange Beef",
         "translation": "Xiāngchéng Niúròu 香橙牛肉",
         "category": categories.DeepFried,
-        "page": 641
+        "page": 641,
+        "discouraged": true
     },
     "BEIJING-STYLE SWEET AND SOUR PORK": {
         "recipe": "Beijing-Style Sweet and Sour Pork",
         "translation": "Jīngshì Tángcù Lǐjǐ 京式糖醋里脊",
         "category": categories.DeepFried,
-        "page": 644
+        "page": 644,
+        "discouraged": true
     },
     "TAIWANESE FRIED PORK CHOPS": {
         "recipe": "Taiwanese Fried Pork Chops",
         "translation": "Zhá Paígǔ 炸排骨",
         "category": categories.DeepFried,
-        "page": 649
+        "page": 649,
+        "discouraged": true
     },
     "SICHUAN DEEP-FRIED FISH FILLETS": {
         "recipe": "Sichuan Deep-Fried Fish Fillets",
         "translation": "Sìchuān Zhá Yúlı̆u 四川炸魚柳",
         "category": categories.DeepFried,
-        "page": 653
+        "page": 653,
+        "discouraged": true
     },
     "SALTED EGG FRIED SHRIMP": {
         "recipe": "Salted Egg Fried Shrimp",
         "translation": "Jīnshā Xiā 金沙蝦",
         "category": categories.DeepFried,
-        "page": 663
+        "page": 663,
+        "discouraged": true
     },
     "SALT AND PEPPER SQUID": {
         "recipe": "Salt and Pepper Squid",
         "translation": "Jiāoyán Xiānyóu 椒鹽鮮魷",
         "category": categories.DeepFried,
-        "page": 669
+        "page": 669,
+        "discouraged": true
     },
     "HAINANESE CHICKEN RICE": {
         "recipe": "Hainanese Chicken Rice",
         "translation": "Hăinán Jī Fàn 海南雞飯",
         "category": categories.SpecialOccasion,
-        "page": 675
+        "page": 675,
+        "discouraged": true
     },
     "ROAST DUCK": {
         "recipe": "Roast Duck",
@@ -687,61 +750,71 @@ export const recipes = {
         "recipe": "Sichuan Boiled Fish",
         "translation": "Sìchuān Shuǐzhŭ Yú 四川水煮魚",
         "category": categories.SpecialOccasion,
-        "page": 714
+        "page": 714,
+        "discouraged": true
     },
     "GINGER-SCALLION LOBSTER": {
         "recipe": "Ginger-Scallion Lobster",
         "translation": "Jiāngcōng Lóngxiā 薑葱龍蝦",
         "category": categories.SpecialOccasion,
-        "page": 718
+        "page": 718,
+        "discouraged": true
     },
     "MILK TEA": {
         "recipe": "Milk Tea",
         "translation": "Găngshì Năichá 港式奶茶",
         "category": categories.Breakfast,
-        "page": 731
+        "page": 731,
+        "discouraged": true
     },
     "CONDENSED MILK TOAST": {
         "recipe": "Condensed Milk Toast",
         "translation": "Năiyóu Duō 奶油多",
         "category": categories.Breakfast,
-        "page": 733
+        "page": 733,
+        "discouraged": true
     },
     "SOY MILK": {
         "recipe": "Soy Milk",
         "translation": "Dòujiāng 豆漿",
         "category": categories.Breakfast,
-        "page": 736
+        "page": 736,
+        "discouraged": true
     },
     "CONGEE": {
         "recipe": "Congee",
         "translation": "Zhōu 粥",
         "category": categories.Breakfast,
-        "page": 738
+        "page": 738,
+        "discouraged": true
     },
     "STIR-FRIED GROUND PORK TOPPING": {
         "recipe": "Stir-Fried Ground Pork Topping",
         "translation": "Xiàzhōu Ròusuì 下粥肉碎",
         "category": categories.Breakfast,
-        "page": 740
+        "page": 740,
+        "discouraged": true
     },
     "BOLO BAO": {
         "recipe": "Bolo Bao",
         "translation": "Bōluó Bāo 菠蘿包",
         "category": categories.Breakfast,
-        "page": 745
+        "page": 745,
+        "discouraged": true
     },
     "LAP CHEONG ROLLS": {
         "recipe": "Lap Cheong Rolls",
         "translation": "Làchángjuăn 臘腸卷",
         "category": categories.Breakfast,
-        "page": 755
+        "page": 755,
+        "discouraged": true
     },
     "YOUTIAO": {
         "recipe": "Youtiao",
         "translation": "Yóutiáo 油條",
         "category": categories.Breakfast,
-        "page": 759
+        "page": 759,
+        "discouraged": true
     },
     "EGG TARTS": {
         "recipe": "Egg Tarts",

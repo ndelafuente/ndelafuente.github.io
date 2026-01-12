@@ -21,7 +21,7 @@
     --secondary: var(--sunbeam-yellow);
     --input-disabled: var(--dusty-rose);
     --background: #CE5841;
-    --entry: #F1D96C;
+    --entry: var(--mahogany-red);
     --entry-light: #FFFA96;
 }
 
@@ -67,6 +67,7 @@ form>h2 {
     text-shadow: var(--sunbeam-yellow) 0.75px 0.75px;
 
 }
+
 form {
     background: var(--background);
     padding: 1em;
@@ -111,7 +112,7 @@ input:focus {
     text-transform: lowercase;
 }
 
-#list {
+#recipeList {
     padding-bottom: 20px;
 }
 
@@ -139,7 +140,9 @@ button:active {
 }
 
 .entry {
-    color: var(--mahogany-red);
+    display: flex;
+    flex: 1;
+    color: var(--entry);
     font-family: "Comic Neue";
     font-weight: bold;
     border-radius: 10px;
@@ -149,7 +152,6 @@ button:active {
     box-shadow: 0 1px 3px rgba(39, 34, 35, 0.1);
 
     background: linear-gradient(135deg, #FFD700 0%, #FFED4E 25%, #C5A028 50%, #FFD700 75%, #FFED4E 100%);
-
 }
 
 
@@ -158,6 +160,26 @@ button:active {
     color: var(--entry-light)
 }
 
+.entry > span {
+  flex: 1;              /* takes remaining space */
+  min-width: 0;         /* allows text to wrap */
+}
+
 div {
     text-align: center;
+}
+
+.delete-entry, .delete-entry:hover {
+    all: unset;
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin: auto
+}
+.delete-entry:hover {
+    color: var(--entry-light);
+}
+
+.entry:nth-child(even) .delete-entry:hover {
+    color: var(--entry);
 }
