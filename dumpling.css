@@ -65,7 +65,6 @@ form>h2 {
 
 #main>h2 {
     text-shadow: var(--sunbeam-yellow) 0.75px 0.75px;
-
 }
 
 form {
@@ -96,6 +95,9 @@ input {
 input:disabled {
     background-color: var(--input-disabled);
     opacity: 1;
+}
+
+input::placeholder {
     color: grey;
 }
 
@@ -162,22 +164,26 @@ button:active {
     color: var(--entry-light)
 }
 
-.entry > span {
-  flex: 1;              /* takes remaining space */
-  min-width: 0;         /* allows text to wrap */
+.entry>span {
+    flex: 1;
+    /* takes remaining space */
+    min-width: 0;
+    /* allows text to wrap */
 }
 
 div {
     text-align: center;
 }
 
-.delete-entry, .delete-entry:hover {
+.delete-entry,
+.delete-entry:hover {
     all: unset;
     float: right;
     width: 20px;
     height: 20px;
     margin: auto
 }
+
 .delete-entry:hover {
     color: var(--entry-light);
 }
