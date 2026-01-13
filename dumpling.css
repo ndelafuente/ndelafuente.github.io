@@ -10,7 +10,7 @@
     --mahogany-red: #b21416;
     --burnt-tangerine: #dc4027;
     --racing-red: #ee2d24;
-    --dusty-rose: #f0bfb5;
+    --dusty-rose: #df9182;
     --sunbeam-yellow: #ffe431;
     --metallic-gold: #dfb553;
     --golden-bronze: #c69527;
@@ -94,8 +94,8 @@ input {
 }
 
 input:disabled {
-    background-color: white;
-    color: grey;
+    background-color: var(--input-disabled);
+    opacity: 1;
 }
 
 select:invalid {
