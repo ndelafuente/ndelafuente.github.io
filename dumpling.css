@@ -98,7 +98,7 @@ input:disabled {
 }
 
 input:disabled::placeholder {
-    color: grey;
+    color: #606060 !important;
 }
 
 select:invalid {
