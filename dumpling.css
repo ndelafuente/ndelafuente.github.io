@@ -97,7 +97,7 @@ input:disabled {
     opacity: 1;
 }
 
-input::placeholder {
+input:disabled::placeholder {
     color: grey;
 }
 
