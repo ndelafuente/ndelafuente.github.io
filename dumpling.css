@@ -96,6 +96,7 @@ input {
 input:disabled {
     background-color: var(--input-disabled);
     opacity: 1;
+    color: grey;
 }
 
 select:invalid {
