@@ -88,12 +88,9 @@ button {
 }
 
 input[list] {
-    all: initial !important;
-    border-width: unset !important;
-    border-style: unset !important;
-    border-color: unset !important;
-    border-radius: unset !important;
-    box-sizing: unset !important;
+    border: revert !important;
+    border-radius: revert !important;
+    box-sizing: revert !important;
     width: 95%;
 }
 
