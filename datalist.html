@@ -40,8 +40,15 @@
 <pre>5. plus border <code>&lt;option value="N" label="Number"&gt;&lt;/option&gt;</code></pre>
 <input list="numbers-4" placeholder="Number" autocomplete="off" style="border: 1px solid black;">
 </br></br>
-<label>Border PX<input id="border" type="range" min="0" max="20" value="0" step="1" oninput="borderDatalist.style.borderWidth = this.value"></label>
+<label>Set Border Width: <input id="border" type="range" min="0" max="20" value="0" step="1" oninput="borderDatalist.style.borderWidth = this.value"></label>
 </br>
-<input id="borderDatalist" list="numbers-4" placeholder="Number" autocomplete="off">
-<button onclick="borderDatalist.style.borderWidth = '';">Reset</button>
+<label>Clear Border Width: <button onclick="borderDatalist.style.borderWidth = '';">Reset</button></label>
+</br></br>
+<input id="borderDatalist" list="numbers" placeholder="Number" autocomplete="off">
+<datalist id="numbers">
+  <option value="1" label="One"></option>
+  <option value="2" label="Two"></option>
+  <option value="3" label="Three"></option>
+</datalist>
+
 
