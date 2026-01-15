@@ -87,8 +87,10 @@ button {
     box-sizing: border-box;
 }
 
+/* For iOS Safari */
 input[list] {
     border: revert !important;
+    border-radius: rever !important;
 }
 
 select,
