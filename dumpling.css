@@ -89,6 +89,7 @@ button {
 
 input[list] {
     border-width: initial !important;
+    border-style: initial !important;
     border-radius: initial !important;
 }
 
