@@ -224,7 +224,7 @@ if (VALIDATE_RECIPES) {
             const opt = document.createElement("option");
             opt.value = recipes[recipe].recipe;
             if ('translation' in recipes[recipe]) {
-                opt.label = recipes[recipe].translation?.normalize('NFKD').replace(/([a-z])[^ a-z]+/ig, '$1');
+                opt.textContent = recipes[recipe].translation?.normalize('NFKD').replace(/([a-z])[^ a-z]+/ig, '$1');
             }
             dl.appendChild(opt);
         };
