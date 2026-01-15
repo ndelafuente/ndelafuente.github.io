@@ -88,10 +88,8 @@ button {
 }
 
 input[list] {
-    border: revert !important;
-    border-radius: revert !important;
-    box-sizing: revert !important;
-    width: 95%;
+    border-width: revert !important;
+    border-style: revert !important;
 }
 
 select,
