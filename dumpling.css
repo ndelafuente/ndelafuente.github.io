@@ -88,8 +88,7 @@ button {
 }
 
 input[list] {
-    border-width: revert !important;
-    border-style: revert !important;
+    border: revert !important;
 }
 
 select,
