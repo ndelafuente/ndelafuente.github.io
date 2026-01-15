@@ -90,7 +90,7 @@ button {
 /* For iOS Safari */
 input[list] {
     border: revert !important;
-    border-radius: rever !important;
+    border-radius: revert !important;
 }
 
 select,
