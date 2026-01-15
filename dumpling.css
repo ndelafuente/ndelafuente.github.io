@@ -78,19 +78,23 @@ form {
 select,
 input,
 button {
-    width: 95%;
+    width: 100%;
     padding: 0.75em;
     margin: 0.4em 0;
     font-size: 1em;
     border: 1px solid var(--mahogany-red);
     border-radius: 18px;
+    box-sizing: border-box;
 }
 
 input[list] {
-    border-width: initial;
-    border-style: initial;
-    border-color: initial;
-    border-radius: initial;
+    all: initial !important;
+    border-width: unset !important;
+    border-style: unset !important;
+    border-color: unset !important;
+    border-radius: unset !important;
+    box-sizing: unset !important;
+    width: 95%;
 }
 
 select,
