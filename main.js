@@ -128,9 +128,9 @@ async function onSubmit(e) {
     e.preventDefault();
     await initialRefreshPromise; // ensure claimed recipes are populated
     const recipe = document.getElementById("recipe").value.trim().toUpperCase();
-    if (VALIDATE_RECIPES && !(recipe in recipes) && !confirm(`Invalid recipe '${recipe}'. Proceed?`)) { return }
+    if (VALIDATE_RECIPES && !(recipe in recipes) && !confirm(`Recipe not in list '${recipe}'. Proceed?`)) { return }
     if (recipe in claimed && !confirm(`Recipe already claimed by ${claimed[recipe]}. Proceed?`)) { return }
-    if (recipes[recipe].discouraged && !(confirm(DISCOURAGE_MSG) && (confirm("F*ck Jack?") || !alert("Don't worry about it, I believe in you")))) { return }
+    if (recipes[recipe]?.discouraged && !(confirm(DISCOURAGE_MSG) && (confirm("F*ck Jack?") || !alert("Don't worry about it, I believe in you")))) { return }
     showLoading();
     const translation = document.getElementById("translation")?.value;
     const cuisine = document.getElementById("cuisine")?.value;
