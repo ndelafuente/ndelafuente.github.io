@@ -802,6 +802,19 @@ export const recipes = {
         "page": 745,
         "discouraged": true
     },
+    "CHAR SIU BOLO BAO": {
+        "recipe": "Char Siu Bolo Bao",
+        "translation": "Chāshāo Bōluó Bāo 叉燒菠蘿包",
+        "category": categories.Breakfast,
+        "page": 745,
+        "discouraged": true
+    },
+    "BOLO BAO WITH CUSTARD FILLING": {
+        "recipe": "Bolo Bao with Custard Filling",
+        "translation": "Năihuáng Bōluó Bāo 奶黃菠蘿包",
+        "category": categories.Breakfast,
+        "page": 752,
+    },
     "LAP CHEONG ROLLS": {
         "recipe": "Lap Cheong Rolls",
         "translation": "Làchángjuăn 臘腸卷",
