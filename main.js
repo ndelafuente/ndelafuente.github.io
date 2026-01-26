@@ -8,7 +8,9 @@ if (!API_URL || !EVENT_DATE) {
     console.warn(CONFIG, "missing value(s)");
 }
 
-if (new Date() > EVENT_DATE) {
+const eventIsActive = () => new Date() <= EVENT_DATE;
+
+if (!eventIsActive()) {
     hide('signupForm');
     show('eventPassed');
     await new Promise((resolve, reject) => {
@@ -52,6 +54,7 @@ async function saveDeletionToken(id, token) {
 }
 
 async function getDeletionToken(id) {
+    if (!eventIsActive()) { return '' }
     const db = await openDB();
 
     return new Promise((resolve, reject) => {
@@ -223,8 +226,8 @@ if (VALIDATE_RECIPES) {
         const recipeNames = Object.keys(recipes).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const recipe of recipeNames) {
             const opt = document.createElement("option");
-            opt.value = recipes[recipe].recipe;
-            if ('translation' in recipes[recipe]) {
+            opt.value = recipes[recipe].recipe || recipes[recipe];
+            if (recipes[recipe].translation) {
                 opt.textContent = recipes[recipe].translation?.normalize('NFKD').replace(/([a-z])[^ a-z]+/ig, '$1');
             }
             dl.appendChild(opt);

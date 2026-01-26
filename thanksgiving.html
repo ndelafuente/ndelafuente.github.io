@@ -96,9 +96,9 @@
       <h2>Success!</h2>
       <button type="reset">Claim Another</button>
     </div>
-    <div id="eventPassed" class="hidden">
+    <form id="eventPassed" class="hidden">
       <h2>The event has passed :(</h2>
-    </div>
+    </form>
 
     <h2>Claimed Recipes</h2>
 
@@ -106,7 +106,7 @@
     <div id="recipeLoading" class="centered-hz" style="width: 80vw">
       <img src="assets/slithering-snake.gif" style="max-width: 100%; max-height: 100%;" />
     </div>
-    <div id="list"></div>
+    <div id="recipeList"></div>
   </div>
 
   <!-- Pancake Loader by https://dariocorsi.com/ -->
@@ -133,13 +133,13 @@
     <div id="overlay"></div>
   </div>
 
-  <script>
-    const CONFIG = {
+  <script type="module">
+    window.CONFIG = {
       API_URL: atob('aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J3X1BOcXg2U2M5SjAxWjBtMWxuQTJvb1NTVHBvTGNjNy0ySUNaSnBURDZTRm5kMG1pRWVNU1V4V0FMbkMwWGRJbTcvZXhlYw=='),
       EVENT_DATE: new Date('11/15/2025'),
     }
   </script>
-  <script src="main.js"></script>
+  <script src="main.js" type="module"></script>
 
 </body>
 
