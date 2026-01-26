@@ -1,6 +1,9 @@
 const { API_URL, EVENT_DATE, VALIDATE_RECIPES, RECIPES, DISCOURAGE_MSG } = CONFIG;
 const recipes = RECIPES;
 
+const DB_NAME = 'deletion_tokens';
+const DB_VERSION = 1;
+
 if (!API_URL || !EVENT_DATE) {
     console.warn(CONFIG, "missing value(s)");
 }
@@ -18,8 +21,6 @@ if (new Date() > EVENT_DATE) {
 /***
  * Indexed DB functions
  */
-const DB_NAME = 'deletion_tokens';
-const DB_VERSION = 1;
 
 function initalizeDB(event) {
     console.log('initializing DB')
