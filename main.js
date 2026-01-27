@@ -9,8 +9,9 @@ if (!API_URL || !EVENT_DATE) {
 }
 
 const eventIsActive = () => new Date() <= EVENT_DATE;
+const isExpoMode = () => new URL(location.href).searchParams.get('mode') === 'expo'
 
-if (!eventIsActive()) {
+if (!eventIsActive() && !isExpoMode()) {
     hide('signupForm');
     show('eventPassed');
     await new Promise((resolve, reject) => {
