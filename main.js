@@ -1,29 +1,27 @@
 const { API_URL, EVENT_DATE, VALIDATE_RECIPES, RECIPES, DISCOURAGE_MSG } = CONFIG;
 const recipes = RECIPES;
 
-const DB_NAME = 'deletion_tokens';
-const DB_VERSION = 1;
-
 if (!API_URL || !EVENT_DATE) {
     console.warn(CONFIG, "missing value(s)");
 }
 
-const eventIsActive = () => new Date() <= EVENT_DATE;
+const eventIsActive = () => new Date() <= EVENT_DATE || isExpoMode();
 const isExpoMode = () => new URL(location.href).searchParams.get('mode') === 'expo'
 
-if (!eventIsActive() && !isExpoMode()) {
-    hide('signupForm');
-    show('eventPassed');
-    await new Promise((resolve, reject) => {
+
+/***
+ * Indexed DB functions
+ */
+const DB_NAME = 'deletion_tokens';
+const DB_VERSION = 1;
+
+function deleteDB() {
+    return new Promise((resolve, reject) => {
         const request = indexedDB.deleteDatabase(DB_NAME);
         request.onsuccess = () => resolve();
         request.onerror = () => reject(request.error);
     });
 }
-
-/***
- * Indexed DB functions
- */
 
 function initalizeDB(event) {
     console.log('initializing DB')
@@ -68,6 +66,30 @@ async function getDeletionToken(id) {
     });
 }
 
+async function removeDeletionToken(id) {
+    const db = await openDB();
+
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction('tokens', 'readwrite');
+
+        const request = tx.objectStore('tokens').delete(id)
+
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+    });
+}
+
+async function hasDeletionTokens() {
+    const db = await openDB();
+
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction('tokens', 'readonly');
+
+        const request = tx.objectStore('tokens').count()
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => { console.error(request.error); resolve(false) }
+    });
+}
 
 /***
  * Backend operations
@@ -177,6 +199,7 @@ async function onDelete(id, recipe) {
     try {
         showLoading();
         const data = await doGet('delete', { id, token });
+        await removeDeletionToken(id);
 
         console.log("Response:", data);
 
@@ -184,6 +207,7 @@ async function onDelete(id, recipe) {
 
         await refreshList();
         alert(`Successfully unclaimed '${recipe}'`);
+        await init();
         hideLoading();
     } catch (err) {
         console.error(err);
@@ -194,11 +218,22 @@ async function onDelete(id, recipe) {
 /***
  * Visibility control
  */
+async function init() {
+    if (!eventIsActive()) {
+        hide('signupForm');
+        show('eventPassed');
+        await deleteDB();
+    }
+    else if (await hasDeletionTokens()) { submitSucceed() } // already claimed
+    else { showClaim() }
+}
+
 function hide(...ids) { ids.forEach(id => document.getElementById(id).classList.add('hidden')) }
 function show(...ids) { ids.forEach(id => document.getElementById(id).classList.remove('hidden')) }
 
 function showLoading() {
     show('loading');
+    window.scrollTo(0, 0);
 }
 
 function hideLoading() { hide('loading') }
@@ -208,10 +243,13 @@ function submitSucceed() {
     show('claimAgain');
 }
 
-document.getElementById('claimAgain').addEventListener('click', () => {
+function showClaim() {
     show('signupForm');
     hide('claimAgain');
-});
+}
+
+document.getElementById('claimAgain').addEventListener('click', showClaim);
+init();
 
 /***
  * Recipe validation

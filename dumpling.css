@@ -88,9 +88,11 @@ button {
 }
 
 /* For iOS Safari */
-input[list] {
-    border: revert !important;
-    border-radius: revert !important;
+@supports (-webkit-touch-callout: none) {
+    input[list] {
+        border: revert !important;
+        border-radius: revert !important;
+    }
 }
 
 select,
