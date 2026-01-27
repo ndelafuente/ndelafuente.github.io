@@ -36,22 +36,13 @@
       font-size: 4vw;
     }
 
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
+    #loading {
       background: #c18a45;
-      width: 100vw;
-      height: 100vh;
       z-index: 1000;
     }
 
     #popup {
       z-index: 1100;
-    }
-
-    body:has(#loading:not(.hidden)) {
-      overflow: hidden;
     }
   </style>
   <link rel="stylesheet" href="assets/pan-loader.css">
@@ -91,7 +82,7 @@
   </div>
 
   <!-- Pancake Loader by https://dariocorsi.com/ -->
-  <div id="loading" class="hidden">
+  <div id="loading" class="hidden fullscreen">
     <div id="popup" class="centered">
       <div id="pancake" class="loader">
         <div class="tall-stack">
@@ -110,8 +101,6 @@
       </div>
       <h2>Welcome to the party!<br />Please be patient :3</h2>
     </div>
-
-    <div id="overlay"></div>
   </div>
 
   <script type="module">

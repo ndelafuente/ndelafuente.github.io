@@ -33,15 +33,21 @@ body {
     margin: 0;
 }
 
+.fullscreen,
 body::before {
-    content: "";
     position: fixed;
-    inset: 0;
     z-index: -1;
 
-    /* Expand into safe area explicitly */
-    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    /* Expand beyond the safe area */
+    top: calc(0px - env(safe-area-inset-top));
+    left: calc(0px - env(safe-area-inset-left));
+    right: calc(0px - env(safe-area-inset-right));
+    bottom: calc(0px - env(safe-area-inset-bottom));
+    inset: 0;
+}
 
+body::before {
+    content: "";
     background-image: linear-gradient(180deg, rgb(33, 38, 105) 0%, rgb(47, 100, 143) 11%, rgb(64, 119, 161) 50%, rgb(237, 173, 83) 85%);
     background-size: cover;
     background-repeat: no-repeat;
