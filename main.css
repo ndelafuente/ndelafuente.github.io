@@ -1,3 +1,6 @@
+/* ---- Color variables defined in HTML ---- */
+
+/* ---- Fonts ---- */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
 
 @font-face {
@@ -5,26 +8,25 @@
     src: url(assets/futurachapro.otf);
 }
 
-:root {
-    --oxblood: #9b0d10;
-    --mahogany-red: #b21416;
-    --burnt-tangerine: #dc4027;
-    --racing-red: #ee2d24;
-    --dusty-rose: #df9182;
-    --sunbeam-yellow: #ffe431;
-    --metallic-gold: #dfb553;
-    --golden-bronze: #c69527;
-    --raisin-black: #272223ff;
-
-    --primary: var(--mahogany-red);
-    --button-hover: var(--oxblood);
-    --secondary: var(--sunbeam-yellow);
-    --input-disabled: var(--dusty-rose);
-    --background: #CE5841;
-    --entry: var(--mahogany-red);
-    --entry-light: #FFFA96;
+/* ---- Layout ---- */
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
+.centered-hz {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.hidden {
+    display: none;
+}
+
+/* ---- Content/Layout ---- */
 body {
     font-family: sans-serif;
     min-height: 100dvh;
@@ -48,7 +50,7 @@ body::before {
 
 body::before {
     content: "";
-    background-image: linear-gradient(180deg, rgb(33, 38, 105) 0%, rgb(47, 100, 143) 11%, rgb(64, 119, 161) 50%, rgb(237, 173, 83) 85%);
+    background-image: var(--background-gradient);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -58,6 +60,15 @@ body::before {
     padding: 1.5em;
     max-width: 600px;
     margin: 0 auto;
+}
+
+#loading {
+    background: var(--primary);
+    z-index: 1000;
+}
+
+#popup {
+    z-index: 1100;
 }
 
 h1,
@@ -73,7 +84,7 @@ h2 {
 
 h1 {
     font-size: xx-large;
-    text-shadow: rgba(33, 38, 105, 0.8) 0 0 42px;
+    text-shadow: var(--main-title-shadow) 0 0 42px;
 }
 
 h2 {
@@ -81,11 +92,11 @@ h2 {
 }
 
 form>h2 {
-    text-shadow: var(--primary) 0.1em 0.1em;
+    text-shadow: var(--form-title-shadow) 0.1em 0.1em;
 }
 
 #main>h2 {
-    text-shadow: var(--sunbeam-yellow) 0.75px 0.75px;
+    text-shadow: var(--secondary-title-shadow) 0.75px 0.75px;
 }
 
 form {
@@ -103,7 +114,7 @@ button {
     padding: 0.75em;
     margin: 0.4em 0;
     font-size: 1em;
-    border: 1px solid var(--mahogany-red);
+    border: 1px solid var(--primary);
     border-radius: 18px;
     box-sizing: border-box;
 }
@@ -183,25 +194,17 @@ button:active {
     padding: 0.75em 1em;
     margin-bottom: 0.5em;
     box-shadow: 0 1px 3px rgba(39, 34, 35, 0.1);
-
-    background: linear-gradient(135deg, #FFD700 0%, #FFED4E 25%, #C5A028 50%, #FFD700 75%, #FFED4E 100%);
+    background: var(--gradient-entry-odd);
 }
 
-
 .entry:nth-child(even) {
-    background: linear-gradient(135deg, #CD7F32 0%, #E6A157 25%, #8B5A2B 50%, #CD7F32 75%, #E6A157 100%);
-    color: var(--entry-light)
+    background: var(--gradient-entry-even);
+    color: var(--entry-light);
 }
 
 .entry>span {
     flex: 1;
-    /* takes remaining space */
     min-width: 0;
-    /* allows text to wrap */
-}
-
-div {
-    text-align: center;
 }
 
 .delete-entry,
@@ -210,7 +213,7 @@ div {
     float: right;
     width: 20px;
     height: 20px;
-    margin: auto
+    margin: auto;
 }
 
 .delete-entry:hover {
