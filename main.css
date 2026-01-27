@@ -37,19 +37,12 @@ body {
 
 .fullscreen {
     position: fixed;
-    z-index: -1;
-
-    /* Expand beyond the safe area */
-    top: calc(0px - env(safe-area-inset-top));
-    left: calc(0px - env(safe-area-inset-left));
-    right: calc(0px - env(safe-area-inset-right));
-    bottom: calc(0px - env(safe-area-inset-bottom));
     inset: 0;
 }
 
 #background {
-    content: "";
-    background-image: var(--background-gradient);
+    z-index: -1;
+    background: var(--background-gradient);
     background-size: cover;
     background-repeat: no-repeat;
 }
