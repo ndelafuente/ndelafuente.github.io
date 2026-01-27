@@ -11,56 +11,49 @@
   <link rel="icon" type="image/x-icon" href="thanksgiving.ico">
 
   <style>
-    html,
-    body {
-      padding-top: env(safe-area-inset-top);
+    @font-face {
+      font-family: Groen;
+      src: url(assets/groen-california-sans.ttf);
     }
 
-    .centered {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-    }
+    :root {
+      /* Core colors */
+      --butterscotch: #c18a45;
+      --earth-yellow: #e0ab3aff;
+      --ecru: #d4b078ff;
+      --dun: #d8b98cff;
+      --citron: #c5c066ff;
+      --citron-light: #d2c87dff;
+      --cadet-gray: #5f9caaff;
+      --blue-munsell: #3591a6ff;
+      --cerulean: #1f8fbfff;
+      --raisin-black: #272223ff;
 
-    .centered-hz {
-      position: absolute;
-      left: 50%;
-      -ms-transform: translate(-50%, 0%);
-      transform: translate(-50%, 0%);
-    }
+      /* Theme Defintion */
+      --primary: var(--butterscotch);
+      --button-hover: var(--earth-yellow);
+      --input-disabled: var(--dun);
+      --background: var(--ecru);
+      --entry-text-odd: var(--cerulean);
+      --entry-background-odd: var(--citron);
+      --entry-text-even: var(--cerulean);
+      --entry-background-even: var(--citron-light);
+      --raisin-black: var(--raisin-black);
+      --header-font: Groen;
 
-    .hidden {
-      display: none;
-    }
+      /* Gradients */
+      --background-gradient: linear-gradient(180deg, rgb(33, 38, 105) 0%, rgb(47, 100, 143) 11%, rgb(64, 119, 161) 50%, rgb(237, 173, 83) 85%);
+      --gradient-entry-odd: var(--citron);
+      --gradient-entry-even: var(--citron-light);
 
-    h1 {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      text-align: center;
-      font-size: 4vw;
-    }
-
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      background: #c18a45;
-      width: 100vw;
-      height: 100vh;
-      z-index: 1000;
-    }
-
-    #popup {
-      z-index: 1100;
-    }
-
-    body:has(#loading:not(.hidden)) {
-      overflow: hidden;
+      /* Text shadows */
+      --form-title-shadow: var(--butterscotch);
+      --main-title-shadow: rgba(33, 38, 105, 0.8);
+      --secondary-title-shadow: var(--earth-yellow);
     }
   </style>
   <link rel="stylesheet" href="assets/pan-loader.css">
-  <link rel="stylesheet" href="thanksgiving.css">
+  <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -110,7 +103,7 @@
   </div>
 
   <!-- Pancake Loader by https://dariocorsi.com/ -->
-  <div id="loading" class="hidden">
+  <div id="loading" class="hidden fullscreen">
     <div id="popup" class="centered">
       <div id="pancake" class="loader">
         <div class="tall-stack">
@@ -129,8 +122,6 @@
       </div>
       <h2>Welcome to the party!<br />Please be patient :3</h2>
     </div>
-
-    <div id="overlay"></div>
   </div>
 
   <script type="module">

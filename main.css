@@ -74,7 +74,7 @@ body::before {
 h1,
 h2 {
     text-align: center;
-    font-family: Futuracha, fantasy;
+    font-family: var(--header-font, Futuracha), fantasy;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: white;
@@ -186,7 +186,7 @@ button:active {
 .entry {
     display: flex;
     flex: 1;
-    color: var(--entry);
+    color: var(--entry-text-odd);
     font-family: "Comic Neue";
     font-weight: bold;
     border-radius: 10px;
@@ -194,12 +194,12 @@ button:active {
     padding: 0.75em 1em;
     margin-bottom: 0.5em;
     box-shadow: 0 1px 3px rgba(39, 34, 35, 0.1);
-    background: var(--gradient-entry-odd);
+    background: var(--entry-background-odd);
 }
 
 .entry:nth-child(even) {
-    background: var(--gradient-entry-even);
-    color: var(--entry-light);
+    background: var(--entry-background-even);
+    color: var(--entry-text-even);
 }
 
 .entry>span {

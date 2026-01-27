@@ -132,7 +132,7 @@ async function refreshList() {
         span.textContent = text;
         div.appendChild(span);
 
-        const deleteToken = await getDeletionToken(id);
+        const deleteToken = id && await getDeletionToken(id);
         if (deleteToken) {
             const deleteButton = document.createElement("button");
             deleteButton.className = "delete-entry";
@@ -157,7 +157,7 @@ async function onSubmit(e) {
     const recipe = document.getElementById("recipe").value.trim().toUpperCase();
     if (VALIDATE_RECIPES && !(recipe in recipes) && !confirm(`Recipe not in list '${recipe}'. Proceed?`)) { return }
     if (recipe in claimed && !confirm(`Recipe already claimed by ${claimed[recipe]}. Proceed?`)) { return }
-    if (recipes[recipe]?.discouraged && !(confirm(DISCOURAGE_MSG) && (confirm("F*ck Jack?") || !alert("Don't worry about it, I believe in you")))) { return }
+    if (recipes?.[recipe]?.discouraged && !(confirm(DISCOURAGE_MSG) && (confirm("F*ck Jack?") || !alert("Don't worry about it, I believe in you")))) { return }
     showLoading();
     const translation = document.getElementById("translation")?.value;
     const cuisine = document.getElementById("cuisine")?.value;
@@ -165,7 +165,7 @@ async function onSubmit(e) {
     const chef = document.getElementById("chef").value;
     const sous_chef = document.getElementById("sous-chef").value;
     const notes = document.getElementById("notes").value;
-    const submitData = { recipe, translation, category, cuisine, chef, sous_chef, notes, ...recipes[recipe] };
+    const submitData = { recipe, translation, category, cuisine, chef, sous_chef, notes, ...recipes?.[recipe] };
     console.log({ submitData });
     try {
         const data = await doGet("submit", submitData);
@@ -185,7 +185,12 @@ async function onSubmit(e) {
 
     } catch (err) {
         console.error(err);
-        alert("Failed to submit recipe.\n" + err.message);
+        alert([
+            'Failed to submit recipe. Please notify Nico.',
+            `Error '${err.message}'`,
+            `With data: ${JSON.stringify(submitData, null, 4)}`
+        ].join('\n'));
+        hideLoading();
     }
 }
 
@@ -265,7 +270,7 @@ if (VALIDATE_RECIPES) {
         const recipeNames = Object.keys(recipes).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const recipe of recipeNames) {
             const opt = document.createElement("option");
-            opt.value = recipes[recipe].recipe || recipes[recipe];
+            opt.value = recipes[recipe].recipe || recipe;
             if (recipes[recipe].translation) {
                 opt.textContent = recipes[recipe].translation?.normalize('NFKD').replace(/([a-z])[^ a-z]+/ig, '$1');
             }
@@ -279,11 +284,14 @@ if (VALIDATE_RECIPES) {
         const recipe = event.target.value.trim().toUpperCase();
         if (!recipe || recipe in recipes) event.target.style.background = "";
 
-        document.getElementById("category").value = recipes[recipe]?.category ?? "";
-        document.getElementById("translation").value = recipes[recipe]?.translation ?? "";
+        document.getElementById("category").value = recipes[recipe]?.category || recipes[recipe] || "";
+        const translationElement = document.getElementById("translation")
+        if (translationElement) {
+            translationElement.value = recipes[recipe]?.translation ?? "";
+        }
     });
     recipeElement.addEventListener("blur", (event) => {
         const recipe = event.target.value.trim().toUpperCase();
-        event.target.style.background = (!recipe || recipe in recipes) ? "" : "#fdfc99";
+        event.target.style.background = (!recipe || recipe in recipes) ? "" : "rgb(255, 254, 167)";
     });
 }
