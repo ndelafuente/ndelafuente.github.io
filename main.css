@@ -35,8 +35,7 @@ body {
     margin: 0;
 }
 
-.fullscreen,
-body::before {
+.fullscreen {
     position: fixed;
     z-index: -1;
 
@@ -48,7 +47,7 @@ body::before {
     inset: 0;
 }
 
-body::before {
+#background {
     content: "";
     background-image: var(--background-gradient);
     background-size: cover;
