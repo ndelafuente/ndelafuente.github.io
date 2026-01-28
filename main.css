@@ -43,8 +43,6 @@ body {
 #background {
     z-index: -1;
     background: var(--background-gradient);
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 #main {
