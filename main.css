@@ -47,7 +47,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
 #main {
     padding: 1.5em;
     max-width: 600px;
@@ -57,6 +56,15 @@ body {
 #loading {
     background: var(--primary);
     z-index: 1000;
+}
+
+html,
+body {
+    &:has(#loading:not(.hidden)) {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+    }
 }
 
 #popup {
