@@ -165,7 +165,8 @@ async function onSubmit(e) {
     const chef = document.getElementById("chef").value;
     const sous_chef = document.getElementById("sous-chef").value;
     const notes = document.getElementById("notes").value;
-    const submitData = { recipe, translation, category, cuisine, chef, sous_chef, notes, ...recipes?.[recipe] };
+    const additional = (typeof recipes?.[recipe] === "string") ? {} : (recipes?.[recipe] || {});
+    const submitData = { recipe, translation, category, cuisine, chef, sous_chef, notes, ...additional};
     console.log({ submitData });
     try {
         const data = await doGet("submit", submitData);
