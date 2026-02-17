@@ -157,7 +157,7 @@ async function onSubmit(e) {
     const recipe = document.getElementById("recipe").value.trim().toUpperCase();
     if (VALIDATE_RECIPES && !(recipe in recipes) && !confirm(`Recipe not in list '${recipe}'. Proceed?`)) { return }
     if (recipe in claimed && !confirm(`Recipe already claimed by ${claimed[recipe]}. Proceed?`)) { return }
-    if (recipes?.[recipe]?.discouraged && !(confirm(DISCOURAGE_MSG) && (confirm("F*ck Jack?") || !alert("Don't worry about it, I believe in you")))) { return }
+    if (recipes?.[recipe]?.discouraged && !confirm(DISCOURAGE_MSG)) { return }
     showLoading();
     const translation = document.getElementById("translation")?.value;
     const cuisine = document.getElementById("cuisine")?.value;
@@ -166,7 +166,7 @@ async function onSubmit(e) {
     const sous_chef = document.getElementById("sous-chef").value;
     const notes = document.getElementById("notes").value;
     const additional = (typeof recipes?.[recipe] === "string") ? {} : (recipes?.[recipe] || {});
-    const submitData = { recipe, translation, category, cuisine, chef, sous_chef, notes, ...additional};
+    const submitData = { recipe, translation, category, cuisine, chef, sous_chef, notes, ...additional };
     console.log({ submitData });
     try {
         const data = await doGet("submit", submitData);
