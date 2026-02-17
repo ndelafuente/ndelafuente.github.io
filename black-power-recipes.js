@@ -47,6 +47,12 @@ export const recipes = {
         "page": 20,
         "chapter_idx": 0,
     },
+    "CORNBREAD": {
+        "recipe": "Cornbread",
+        "category": categories.Savory,
+        "page": 20,
+        "chapter_idx": 0,
+    },
     "CHOPPED STEASE": {
         "recipe": "Chopped Stease",
         "alt": "Chopped cheese",
