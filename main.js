@@ -162,9 +162,9 @@ async function onSubmit(e) {
     const translation = document.getElementById("translation")?.value;
     const cuisine = document.getElementById("cuisine")?.value;
     const category = document.getElementById("category").value || "Other";
-    const chef = document.getElementById("chef").value;
-    const sous_chef = document.getElementById("sous-chef").value;
-    const notes = document.getElementById("notes").value;
+    const chef = document.getElementById("chef").value.trim();
+    const sous_chef = document.getElementById("sous-chef").value.trim();
+    const notes = document.getElementById("notes").value.trim();
     const additional = (typeof recipes?.[recipe] === "string") ? {} : (recipes?.[recipe] || {});
     const submitData = { recipe, translation, category, cuisine, chef, sous_chef, notes, ...additional };
     console.log({ submitData });
