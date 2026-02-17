@@ -106,7 +106,7 @@ form {
 }
 
 select,
-input,
+form > input,
 button {
     width: 100%;
     padding: 0.75em;
