@@ -274,7 +274,10 @@ if (VALIDATE_RECIPES) {
             opt.value = recipes[recipe].recipe || recipe;
             if (recipes[recipe].translation) {
                 opt.textContent = recipes[recipe].translation?.normalize('NFKD').replace(/([a-z])[^ a-z]+/ig, '$1');
+            } else if (recipes[recipe].alt) {
+                opt.textContent = recipes[recipe].alt;
             }
+
             dl.appendChild(opt);
         };
     }
