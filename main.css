@@ -32,6 +32,7 @@ body {
     min-height: 100dvh;
     height: auto;
     color: var(--raisin-black);
+    background: var(--background);
     margin: 0;
 }
 
@@ -98,7 +99,7 @@ form>h2 {
 }
 
 form {
-    background: var(--background);
+    background: var(--form-background);
     padding: 1em;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(39, 34, 35, 0.2);
