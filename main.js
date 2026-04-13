@@ -1,9 +1,15 @@
-const { API_URL, EVENT_DATE, VALIDATE_RECIPES, RECIPES, DISCOURAGE_MSG } = CONFIG;
+const API_URL = atob(
+    "aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYW" +
+    "Nyb3Mvcy9BS2Z5Y2J3TTlGdEJKYlJxYkRHQVJI" +
+    "dEoyRFpyYk8wV2Y3N0czVTd0WkpYRjBKR2pmTG" +
+    "VxbkF5QzVySU9ITXBSUWlvcDh2cFlvQS9leGVj"
+);
+
+const { CLUB_ID, EVENT_DATE, VALIDATE_RECIPES, RECIPES, DISCOURAGE_MSG } = CONFIG;
 const recipes = RECIPES;
 
-if (!API_URL || !EVENT_DATE) {
-    console.warn(CONFIG, "missing value(s)");
-}
+const requiredFields = [CLUB_ID, EVENT_DATE];
+if (!requiredFields.every(Boolean)) { throw new Error('missing one or more required fields') }
 
 const eventIsActive = () => new Date() <= EVENT_DATE || isExpoMode();
 const isExpoMode = () => new URL(location.href).searchParams.get('mode') === 'expo'
@@ -97,6 +103,7 @@ async function hasDeletionTokens() {
 async function doGet(mode, params = {}) {
     const endpoint = new URL(API_URL);
     endpoint.search = new URLSearchParams({
+        club: CLUB_ID,
         mode: mode,
         data: encodeURIComponent(JSON.stringify(params)),
     });
