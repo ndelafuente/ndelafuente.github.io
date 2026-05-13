@@ -112,15 +112,16 @@
 
   <script type="module">
     import { categories, recipes } from "./tarkari-recipes.js";
+    import { App } from "./main.js";
 
-    window.CONFIG = {
+    const CONFIG = {
       CLUB_ID: "2510_tarkari",
       EVENT_DATE: new Date('2025-10-26 6:00 PM'),
       VALIDATE_RECIPES: true,
       RECIPES: recipes,
     }
+    App.init(CONFIG);
   </script>
-  <script src="main.js" type="module"></script>
 
 </body>
 

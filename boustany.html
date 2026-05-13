@@ -96,16 +96,17 @@
   </div>
   <script type="module">
     import { categories, recipes } from "./boustany-recipes.js";
+    import { App } from "./main.js";
     const discourageMsg = "This recipe is too small, make sure it is accompanying a main dish.";
-    window.CONFIG = {
+    const CONFIG = {
       CLUB_ID: "2605_boustany",
       EVENT_DATE: new Date('2026-05-24 6:30 PM'),
       VALIDATE_RECIPES: true,
       RECIPES: recipes,
       DISCOURAGE_MSG: discourageMsg,
     }
+    App.init(CONFIG);
   </script>
-  <script type="module" src="main.js"></script>
 
 </body>
 

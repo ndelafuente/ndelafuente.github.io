@@ -88,6 +88,7 @@
 
   <script type="module">
     import { categories, recipes } from "./dumpling-recipes.js";
+    import { App } from "./main.js";
     const discourageMsg = [
       "Jack discourages this recipe for one of the following reasons:",
       "🤏 too small - if bringing, make sure it is accompanying a main dish",
@@ -95,15 +96,15 @@
       "🍆 it contains eggplant - Jack thinks eggplant is 'F tier'",
       "\nThis does not mean you cannot choose this recipe, just please proceed with care",
     ].join('\n')
-    window.CONFIG = {
+    const CONFIG = {
       CLUB_ID: "2601_dim_sum_djanuari",
       EVENT_DATE: new Date('2026-01-25 6:30 PM'),
       VALIDATE_RECIPES: true,
       RECIPES: recipes,
       DISCOURAGE_MSG: discourageMsg,
     }
+    App.init(CONFIG);
   </script>
-  <script type="module" src="main.js"></script>
 
 </body>
 

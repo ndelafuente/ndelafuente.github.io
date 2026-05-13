@@ -126,12 +126,13 @@
   </div>
 
   <script type="module">
-    window.CONFIG = {
+    import { App } from "./main.js";
+    const CONFIG = {
       CLUB_ID: "2511_thanksgiving",
       EVENT_DATE: new Date('2025-11-11 6:30 PM'),
     }
+    App.init(CONFIG);
   </script>
-  <script src="main.js" type="module"></script>
 
 </body>
 
