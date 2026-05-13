@@ -10,12 +10,12 @@ export class App {
         const { CLUB_ID, EVENT_DATE, VALIDATE_RECIPES, RECIPES, DISCOURAGE_MSG } = config;
         const recipes = RECIPES;
 
+        const isValidDate = (d) => d instanceof Date && !isNaN(d.getTime());
         const requiredFields = [CLUB_ID, EVENT_DATE];
-        if (!requiredFields.every(Boolean)) { throw new Error('missing one or more required fields') }
-
+        if (!requiredFields.every(Boolean)) { alert('missing one or more required fields') }
+        if (!isValidDate(EVENT_DATE)) { alert('Invalid event date'); }
         const eventIsActive = () => new Date() <= EVENT_DATE || isExpoMode();
         const isExpoMode = () => new URL(location.href).searchParams.get('mode') === 'expo'
-
 
         /***
          * Indexed DB functions
