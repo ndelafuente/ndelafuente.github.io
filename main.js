@@ -191,7 +191,7 @@ export class App {
                 await refreshList();
 
                 e.target.reset(); // reset form contents
-                submitSucceed();
+                submitSucceed(submitData);
 
             } catch (err) {
                 console.error(err);
@@ -241,6 +241,7 @@ export class App {
             }
             else if (await hasDeletionTokens()) { submitSucceed() } // already claimed
             else { showClaim() }
+            show('main');
         }
 
         function hide(...ids) { ids.forEach(id => document.getElementById(id).classList.add('hidden')) }
@@ -253,14 +254,35 @@ export class App {
 
         function hideLoading() { hide('loading') }
 
-        function submitSucceed() {
+        function setTextByID(id, text) {
+            const element = document.getElementById(id)
+            if (element && text) { element.textContent = text; }
+        }
+
+        function submitSucceed(recipe) {
+            if (recipe) {
+                setTextByID("recipeName", recipe.recipe);
+                setTextByID("recipeTranslation", recipe.translation);
+                setTextByID("recipeCategory", recipe.category);
+                setTextByID("recipePage", recipe.page);
+                setTextByID("recipeYield", recipe.yield);
+
+                const ingredientList = document.getElementById("ingredientList");
+                ingredientList.innerHTML = '';
+                for (const ingredient of recipe.ingredients ?? []) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = ingredient;
+                    ingredientList.appendChild(listItem);
+                }
+                show('summary');
+            }
             hide('signupForm', 'loading',);
             show('claimAgain');
         }
 
         function showClaim() {
             show('signupForm');
-            hide('claimAgain');
+            hide('summary', 'claimAgain');
         }
 
         document.getElementById('claimAgain').addEventListener('click', showClaim);

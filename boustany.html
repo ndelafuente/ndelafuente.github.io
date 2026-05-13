@@ -21,7 +21,7 @@
       --text-color: white;
 
       --primary: #00940099;
-      --loading: #53711D;
+      --loading: #027A3D;
       --loading-text: white;
       --button-hover: #009400;
       --input-disabled: #ffffff88;
@@ -43,10 +43,10 @@
 
 <body>
   <div id="background" class="fullscreen"></div>
-  <div id="main">
+  <div id="main" class="hidden">
     <h1>Will & Bella's<br />Cookbook Club</h1>
 
-    <form id="signupForm">
+    <form id="signupForm" class="hidden">
       <h2 style="margin: 5px;">Recipe Signup</h2>
       <input type="text" id="translation" placeholder="Transliteration" disabled>
       <input type="search" id="recipe" list="recipes" autocomplete="off" placeholder="Choose a recipe" required>
@@ -57,6 +57,25 @@
       <input type="text" id="notes" placeholder="Notes (optional)">
       <button type="submit">Claim Recipe</button>
     </form>
+
+    <div id="summary" class="hidden">
+      <div class="card">
+        <h2>Claimed!</h2>
+        <p>
+          <b><span id="recipeName"></span></b>
+          </br>
+          <i><span id="recipeTranslation" style="opacity: 0.8;"></span></i>
+        </p>
+        <p>
+          <span id="recipeCategory"></span>
+          (page <span id="recipePage">0</span>)
+        </p>
+        <h2>Ingredients</h2>
+        <p><i><span id="recipeYield"></span></i></p>
+        <ul id="ingredientList" style="list-style: arabic-indic; padding-left: 20px"></ul>
+      </div>
+    </div>
+
     <div id="claimAgain" class="hidden" style="padding-bottom: 30px">
       <button type="reset">Claim Another</button>
     </div>
@@ -68,8 +87,7 @@
 
     <!-- Snake Loading GIF from https://briankuhnart.myportfolio.com/ -->
     <div id="recipeLoading" class="centered-hz" style="width: 80vw">
-      <img src="assets/slithering-snake.gif"
-        style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 0 8px white);" />
+      <img src="assets/slithering-snake.gif" style="max-width: 100%; max-height: 100%; opacity: 0.6;" />
     </div>
     <div id="recipeList"></div>
   </div>

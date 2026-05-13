@@ -101,18 +101,24 @@ h2 {
     text-shadow: var(--secondary-title-shadow) 0.75px 0.75px;
 }
 
+.card>h2,
 form>h2 {
     color: var(--form-title, white);
     text-shadow: var(--form-title-shadow) 0.5px .5px;
     font-weight: var(--form-title-weight);
 }
 
+.card,
 form {
     background: var(--form-background);
     padding: 1em;
     border-radius: 12px;
     box-shadow: 0 2px 4px rgba(39, 34, 35, 0.2);
     margin-bottom: 1.5em;
+
+    p {
+        text-align: center;
+    }
 }
 
 select,
