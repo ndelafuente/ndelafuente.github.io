@@ -12,8 +12,7 @@ export const categories = {
 
 export const recipes = {
     "QUICK MAKDOUS (PRESERVED EGGPLANT IN OLIVE OIL)": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 18,
         "recipe": "Quick makdous (preserved eggplant in olive oil)",
         "translation": "Makdous Bitinjan",
@@ -33,8 +32,7 @@ export const recipes = {
         ]
     },
     "EASY PICKLED BABY EGGPLANT": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 21,
         "recipe": "Easy pickled baby eggplant",
         "translation": "Makbus Bitinjan",
@@ -53,8 +51,7 @@ export const recipes = {
         ]
     },
     "PICKLED FRESH ZA’ATAR, CHILE & LEMON": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 22,
         "recipe": "Pickled fresh za’atar, chile & lemon",
         "translation": "Makbus Za’atar w Laymonn",
@@ -68,8 +65,7 @@ export const recipes = {
         ]
     },
     "LABNEH": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 23,
         "recipe": "Labneh",
         "translation": "Labneh",
@@ -81,8 +77,7 @@ export const recipes = {
         ]
     },
     "BURNT CHILE SALSA": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 24,
         "recipe": "Burnt chile salsa",
         "translation": "Shatta Mishwiyyeh",
@@ -97,11 +92,10 @@ export const recipes = {
             "salt"
         ]
     },
-    "SHATTA (RED OR GREEN CHILESAUCE)": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+    "SHATTA (RED OR GREEN CHILE SAUCE)": {
+        "category": categories.Pantry,
         "page": 26,
-        "recipe": "Shatta (red or green chilesauce)",
+        "recipe": "Shatta (red or green chile sauce)",
         "translation": "Shatta Hamrah w Khadra",
         "yield": "Makes a medium jar",
         "ingredients": [
@@ -113,8 +107,7 @@ export const recipes = {
         ]
     },
     "GREEN LEMON SAUCE": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 28,
         "recipe": "Green lemon sauce",
         "translation": "Tatbeelet Laymonn Khadra",
@@ -129,8 +122,7 @@ export const recipes = {
         ]
     },
     "RED PEPPER PASTE": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 29,
         "recipe": "Red pepper paste",
         "translation": "Dips al Filfil",
@@ -146,8 +138,7 @@ export const recipes = {
         ]
     },
     "TAHINI SAUCE": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 32,
         "recipe": "Tahini sauce",
         "translation": "Tahinia",
@@ -161,8 +152,7 @@ export const recipes = {
         ]
     },
     "SUMAC ONIONS": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 33,
         "recipe": "Sumac onions",
         "translation": "Basal bil Sumac",
@@ -177,8 +167,7 @@ export const recipes = {
         ]
     },
     "TOASTED NUTS & SEEDS": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 35,
         "recipe": "Toasted nuts & seeds",
         "translation": "Khaltet Mukassarat",
@@ -195,8 +184,7 @@ export const recipes = {
         ]
     },
     "GAZAN DUKKAH": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 36,
         "recipe": "Gazan dukkah",
         "translation": "Duqqa Ghazawiya",
@@ -214,8 +202,7 @@ export const recipes = {
         ]
     },
     "SWEET BAHARAT": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 38,
         "recipe": "Sweet baharat",
         "translation": "Baharat el Ka’ak",
@@ -228,8 +215,7 @@ export const recipes = {
         ]
     },
     "BAHARAT": {
-        "chapter_idx": 1,
-        "category": "Pantry: pickles, dairy, condiments and spice mixes",
+        "category": categories.Pantry,
         "page": 39,
         "recipe": "Baharat",
         "translation": "Baharat",
@@ -246,8 +232,7 @@ export const recipes = {
         ]
     },
     "BRAISED EGGS WITH PITA BREAD, TOMATOES & ZA’ATAR": {
-        "chapter_idx": 2,
-        "category": "Breakfast and brunch",
+        "category": categories.Breakfast,
         "page": 45,
         "recipe": "Braised eggs with pita bread, tomatoes & za’atar",
         "translation": "Beyd Makli ma’ Khobez w Za’atar",
@@ -264,8 +249,7 @@ export const recipes = {
         ]
     },
     "GAZAN FAVA BEAN FALAFEL": {
-        "chapter_idx": 2,
-        "category": "Breakfast and brunch",
+        "category": categories.Breakfast,
         "page": 46,
         "recipe": "Gazan fava bean falafel",
         "translation": "Falafel Ghazawi",
@@ -288,8 +272,7 @@ export const recipes = {
         ]
     },
     "CRUSHED LENTILS WITH TAHINI & SOFT-BOILED EGGS": {
-        "chapter_idx": 2,
-        "category": "Breakfast and brunch",
+        "category": categories.Breakfast,
         "page": 50,
         "recipe": "Crushed lentils with tahini & soft-boiled eggs",
         "translation": "Adas Medames",
@@ -312,8 +295,7 @@ export const recipes = {
         ]
     },
     "EGGPLANT & FAVA BEANS WITH EGGS": {
-        "chapter_idx": 2,
-        "category": "Breakfast and brunch",
+        "category": categories.Breakfast,
         "page": 53,
         "recipe": "Eggplant & fava beans with eggs",
         "translation": "Bitinjan w Ful ma’ Beyd",
@@ -340,8 +322,7 @@ export const recipes = {
         ]
     },
     "CARDAMOM PANCAKES WITH TAHINI, HALVA & CAROB": {
-        "chapter_idx": 2,
-        "category": "Breakfast and brunch",
+        "category": categories.Breakfast,
         "page": 54,
         "recipe": "Cardamom pancakes with tahini, halva & carob",
         "translation": "Fatayer ma’ kharroub w Halaweh",
@@ -366,8 +347,7 @@ export const recipes = {
         ]
     },
     "ZUCCHINI & LEEK IJEH (ARABIC FRITTATA)": {
-        "chapter_idx": 2,
-        "category": "Breakfast and brunch",
+        "category": categories.Breakfast,
         "page": 58,
         "recipe": "Zucchini & leek ijeh (Arabic frittata)",
         "translation": "Ijehet Kousa w Kurrath",
@@ -392,8 +372,7 @@ export const recipes = {
         ]
     },
     "SCRAMBLED EGG & BURNT CHILE CHERRY TOMATO TOAST": {
-        "chapter_idx": 2,
-        "category": "Breakfast and brunch",
+        "category": categories.Breakfast,
         "page": 60,
         "recipe": "Scrambled egg & burnt chile cherry tomato toast",
         "translation": "Beyd bil Shatta w al Banadoura ‘ala Toast",
@@ -415,8 +394,7 @@ export const recipes = {
         ]
     },
     "HERBY CRUSHED PEA & AVOCADO TOAST": {
-        "chapter_idx": 2,
-        "category": "Breakfast and brunch",
+        "category": categories.Breakfast,
         "page": 63,
         "recipe": "Herby crushed pea & avocado toast",
         "translation": "Bazilla w Avokado ‘ala Toast",
@@ -435,8 +413,7 @@ export const recipes = {
         ]
     },
     "FETA, SHAVED CUCUMBER & DUKKAH TOAST": {
-        "chapter_idx": 2,
-        "category": "Breakfast and brunch",
+        "category": categories.Breakfast,
         "page": 64,
         "recipe": "Feta, shaved cucumber & dukkah toast",
         "translation": "Jibnet Feta w Khiyar ‘ala Toast",
@@ -460,8 +437,7 @@ export const recipes = {
         ]
     },
     "GREEN KISHK (FERMENTED YOGURT & BULGUR)": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 72,
         "recipe": "Green kishk (fermented yogurt & bulgur)",
         "translation": "Kishk Akhdar",
@@ -481,8 +457,7 @@ export const recipes = {
         ]
     },
     "CHUNKY EGGPLANT M’TABBAL": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 74,
         "recipe": "Chunky eggplant m’tabbal",
         "translation": "M’tabbal Bitinjan",
@@ -498,11 +473,10 @@ export const recipes = {
             "2 tbsp fresh oregano or za’atar leaves"
         ]
     },
-    "ROASTED VEGETABLES WITH LEMON &ZA’ATAR": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+    "ROASTED VEGETABLES WITH LEMON & ZA’ATAR": {
+        "category": categories.SmallPlates,
         "page": 76,
-        "recipe": "Roasted vegetables with lemon &za’atar",
+        "recipe": "Roasted vegetables with lemon & za’atar",
         "translation": "Khudar bil Laymonn w al Za’atar",
         "yield": "Serves 6 as part of a spread",
         "ingredients": [
@@ -530,8 +504,7 @@ export const recipes = {
         ]
     },
     "CRUSHED BUTTER BEANS WITH ORANGE, MAKDOUS & MINT": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 79,
         "recipe": "Crushed butter beans with orange, makdous & mint",
         "translation": "Fasoulia beyda ma’ Makdous",
@@ -549,8 +522,7 @@ export const recipes = {
         ]
     },
     "CHOPPED SALAD FOR EVERY OCCASION": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 80,
         "recipe": "Chopped salad for every occasion",
         "translation": "Salata Mafrumeh",
@@ -570,8 +542,7 @@ export const recipes = {
         ]
     },
     "GHAZZAWI TAHINI CHOPPED SALAD": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 83,
         "recipe": "Ghazzawi tahini chopped salad",
         "translation": "Salata Ghazawiya",
@@ -594,8 +565,7 @@ export const recipes = {
         ]
     },
     "GREEN BEANS WITH LEEK & TOMATO": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 84,
         "recipe": "Green beans with leek & tomato",
         "translation": "Fasoulia Khadra bil zeit",
@@ -615,8 +585,7 @@ export const recipes = {
         ]
     },
     "SMOKY CHICKPEAS WITH CILANTRO TAHINI": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 88,
         "recipe": "Smoky chickpeas with cilantro tahini",
         "translation": "Hummus Hab bil Tahinia w al Kuzbara",
@@ -635,8 +604,7 @@ export const recipes = {
         ]
     },
     "TOMATO, ARUGULA & WALNUT SALAD": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 89,
         "recipe": "Tomato, arugula & walnut salad",
         "translation": "Salatet Jarjeer w Banadoura",
@@ -657,8 +625,7 @@ export const recipes = {
         ]
     },
     "TAHINI, TOMATO & MINT DIP": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 92,
         "recipe": "Tahini, tomato & mint dip",
         "translation": "Tahinia ma’ Banadoura w Na’na",
@@ -677,8 +644,7 @@ export const recipes = {
         ]
     },
     "FERMENTED TURNIP TOPS": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 95,
         "recipe": "Fermented turnip tops",
         "translation": "Huwairna",
@@ -693,8 +659,7 @@ export const recipes = {
         ]
     },
     "BRAISED CHARD WITH CRISPY ONIONS & SUMAC": {
-        "chapter_idx": 3,
-        "category": "Small plates and spreads",
+        "category": categories.SmallPlates,
         "page": 96,
         "recipe": "Braised chard with crispy onions & sumac",
         "translation": "Saleq ma’ Basal",
@@ -713,8 +678,7 @@ export const recipes = {
         ]
     },
     "GARLIC-INFUSED BROCCOLI & LABNEH DIP": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 102,
         "recipe": "Garlic-infused broccoli & labneh dip",
         "translation": "Broccoli bil Toum w al Labneh",
@@ -735,8 +699,7 @@ export const recipes = {
         ]
     },
     "BEETS WITH CUMIN LABNEH, TOASTED NUTS & SEEDS & CHIVES": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 104,
         "recipe": "Beets with cumin labneh, toasted nuts & seeds & chives",
         "translation": "Salatet Shamander bil Labneh",
@@ -758,11 +721,10 @@ export const recipes = {
             "heaping ¼ tsp ground turmeric"
         ]
     },
-    "CRUSHED FAVA BEANS WITH GOAT CHEESE & PRESERVED LEMONSALSA": {
-        "chapter_idx": 4,
-        "category": "Salads",
+    "CRUSHED FAVA BEANS WITH GOAT CHEESE & PRESERVED LEMON SALSA": {
+        "category": categories.Salads,
         "page": 108,
-        "recipe": "Crushed fava beans with goat cheese & preserved lemonsalsa",
+        "recipe": "Crushed fava beans with goat cheese & preserved lemon salsa",
         "translation": "M’tabbal Ful Akhdar",
         "yield": "Serve 4–6 as a side or part of a spread",
         "ingredients": [
@@ -784,8 +746,7 @@ export const recipes = {
         ]
     },
     "ROASTED EGGPLANT WITH TOMATO, POMEGRANATE & HERBS": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 112,
         "recipe": "Roasted eggplant with tomato, pomegranate & herbs",
         "translation": "Salatet Bitinjan",
@@ -804,8 +765,7 @@ export const recipes = {
         ]
     },
     "WATERMELON, CUCUMBER SALAD WITH FETA & LEMON VERBENA": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 113,
         "recipe": "Watermelon, cucumber salad with feta & lemon verbena",
         "translation": "Salatet Batikh w Khyar ma’ Jibneh",
@@ -828,8 +788,7 @@ export const recipes = {
         ]
     },
     "FRIDGE-RAID FATTOUSH": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 117,
         "recipe": "Fridge-raid fattoush",
         "translation": "Fattoush",
@@ -857,8 +816,7 @@ export const recipes = {
         ]
     },
     "CUCUMBER & FETA YOGURT WITH DILL, ALMONDS & ROSE": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 118,
         "recipe": "Cucumber & feta yogurt with dill, almonds & rose",
         "translation": "Khyar bil Laban",
@@ -882,8 +840,7 @@ export const recipes = {
         ]
     },
     "ROASTED ASPARAGUS WITH FETA, ALMONDS & MINT": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 121,
         "recipe": "Roasted asparagus with feta, almonds & mint",
         "translation": "Halyoun",
@@ -905,8 +862,7 @@ export const recipes = {
         ]
     },
     "BITTER LEAVES, FENNEL & ORANGE SALAD": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 122,
         "recipe": "Bitter leaves, fennel & orange salad",
         "translation": "Salatet Shumar w Burtuqal",
@@ -932,8 +888,7 @@ export const recipes = {
         ]
     },
     "TURMERIC CAULIFLOWER & CHICKPEAS WITH LEMON YOGURT": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 126,
         "recipe": "Turmeric cauliflower & chickpeas with lemon yogurt",
         "translation": "Zahra ma’ Hummus",
@@ -956,8 +911,7 @@ export const recipes = {
         ]
     },
     "FRIED EGGPLANT M’TABBAL WITH TOMATO & CILANTRO SALSA": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 127,
         "recipe": "Fried eggplant m’tabbal with tomato & cilantro salsa",
         "translation": "M’tabbal Bitinjan Makli",
@@ -976,8 +930,7 @@ export const recipes = {
         ]
     },
     "FENNEL, KOHLRABI & CILANTRO SALAD": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 131,
         "recipe": "Fennel, kohlrabi & cilantro salad",
         "translation": "Salatet Shumar w Kohlrabi",
@@ -997,11 +950,10 @@ export const recipes = {
             "1 tsp dried mint"
         ]
     },
-    "TOMATO, ZA’ATAR & SUMACSALAD": {
-        "chapter_idx": 4,
-        "category": "Salads",
+    "TOMATO, ZA’ATAR & SUMAC SALAD": {
+        "category": categories.Salads,
         "page": 132,
-        "recipe": "Tomato, za’atar & sumacsalad",
+        "recipe": "Tomato, za’atar & sumac salad",
         "translation": "Salatet Za’atar w Banadoura bil Sumac",
         "yield": "Serves 4",
         "ingredients": [
@@ -1020,8 +972,7 @@ export const recipes = {
         ]
     },
     "ROASTED CAULIFLOWER WITH TAHINI & CRUSHED TOMATOES": {
-        "chapter_idx": 4,
-        "category": "Salads",
+        "category": categories.Salads,
         "page": 135,
         "recipe": "Roasted cauliflower with tahini & crushed tomatoes",
         "translation": "Salatet Zahra bil Tahinia",
@@ -1042,8 +993,7 @@ export const recipes = {
         ]
     },
     "CHILLED TOMATO & AVOCADO SOUP WITH BURNT CHILE": {
-        "chapter_idx": 5,
-        "category": "Soups",
+        "category": categories.Soups,
         "page": 140,
         "recipe": "Chilled tomato & avocado soup with burnt chile",
         "translation": "Shorbet Banadoura w Avokado",
@@ -1069,8 +1019,7 @@ export const recipes = {
         ]
     },
     "RED LENTIL, DRIED MINT & LEMON SOUP": {
-        "chapter_idx": 5,
-        "category": "Soups",
+        "category": categories.Soups,
         "page": 142,
         "recipe": "Red lentil, dried mint & lemon soup",
         "translation": "Shorbet Adas bil Laymonn",
@@ -1094,8 +1043,7 @@ export const recipes = {
         ]
     },
     "JERUSALEMITE-ARMENIAN YOGURT SOUP": {
-        "chapter_idx": 5,
-        "category": "Soups",
+        "category": categories.Soups,
         "page": 144,
         "recipe": "Jerusalemite-Armenian yogurt soup",
         "translation": "Shorbet Laban Armaniya—Qudsiyy",
@@ -1117,8 +1065,7 @@ export const recipes = {
         ]
     },
     "CHILLED TABBOULEH SOUP": {
-        "chapter_idx": 5,
-        "category": "Soups",
+        "category": categories.Soups,
         "page": 147,
         "recipe": "Chilled tabbouleh soup",
         "translation": "Shorbet Tabbouleh",
@@ -1145,8 +1092,7 @@ export const recipes = {
         ]
     },
     "SWEETCORN, BEAN & GREEN CABBAGE SOUP": {
-        "chapter_idx": 5,
-        "category": "Soups",
+        "category": categories.Soups,
         "page": 148,
         "recipe": "Sweetcorn, bean & green cabbage soup",
         "translation": "Shorbet Dhurah w Malfoof",
@@ -1169,8 +1115,7 @@ export const recipes = {
         ]
     },
     "SWISS CHARD & MAFTOUL SOUP": {
-        "chapter_idx": 5,
-        "category": "Soups",
+        "category": categories.Soups,
         "page": 150,
         "recipe": "Swiss chard & maftoul soup",
         "translation": "Shorbet Saleq w Maftoul",
@@ -1189,11 +1134,10 @@ export const recipes = {
             "1 tbsp tahini paste (optional)"
         ]
     },
-    "BULGUR WHEAT DUMPLING & LENTILSOUP": {
-        "chapter_idx": 5,
-        "category": "Soups",
+    "BULGUR WHEAT DUMPLING & LENTIL SOUP": {
+        "category": categories.Soups,
         "page": 152,
-        "recipe": "Bulgur wheat dumpling & lentilsoup",
+        "recipe": "Bulgur wheat dumpling & lentil soup",
         "translation": "Kubbet al Raheb",
         "yield": "Serves 4",
         "ingredients": [
@@ -1217,11 +1161,10 @@ export const recipes = {
             "2 tbsp chopped fresh parsley"
         ]
     },
-    "LEMONY SPINACH SOUP WITH ZA’ATARBREADCRUMBS": {
-        "chapter_idx": 5,
-        "category": "Soups",
+    "LEMONY SPINACH SOUP WITH ZA’ATAR BREADCRUMBS": {
+        "category": categories.Soups,
         "page": 156,
-        "recipe": "Lemony spinach soup with za’atarbreadcrumbs",
+        "recipe": "Lemony spinach soup with za’atar breadcrumbs",
         "translation": "Shorbet Sabanikh bil Laymonn",
         "yield": "Serves 6–8",
         "ingredients": [
@@ -1246,8 +1189,7 @@ export const recipes = {
         ]
     },
     "FREEKEH & VEGETABLE SOUP": {
-        "chapter_idx": 5,
-        "category": "Soups",
+        "category": categories.Soups,
         "page": 158,
         "recipe": "Freekeh & vegetable soup",
         "translation": "Shorbet Freekeh ma’ al Khudar",
@@ -1267,11 +1209,10 @@ export const recipes = {
             "chopped fresh herbs (parsley, chives, green onions or more za’atar)"
         ]
     },
-    "FRIED HALLOUMI WITH PURSLANESALAD": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+    "FRIED HALLOUMI WITH PURSLANE SALAD": {
+        "category": categories.WeekdayDinners,
         "page": 164,
-        "recipe": "Fried halloumi with purslanesalad",
+        "recipe": "Fried halloumi with purslane salad",
         "translation": "Halloum Maklyeh ma’ Salatet Baqleh",
         "yield": "Serves 4",
         "ingredients": [
@@ -1292,8 +1233,7 @@ export const recipes = {
         ]
     },
     "ARTICHOKE & POTATO IN OLIVE OIL & PRESERVED LEMON": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+        "category": categories.WeekdayDinners,
         "page": 168,
         "recipe": "Artichoke & potato in olive oil & preserved lemon",
         "translation": "Yakhni Ardi Shauki wa Batata",
@@ -1318,8 +1258,7 @@ export const recipes = {
         ]
     },
     "TWO-LENTIL MEJADRA": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+        "category": categories.WeekdayDinners,
         "page": 169,
         "recipe": "Two-lentil mejadra",
         "translation": "Mejadara",
@@ -1349,11 +1288,10 @@ export const recipes = {
             "Greek yogurt"
         ]
     },
-    "CARROTS IN TAMARIND &MINT": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+    "CARROTS IN TAMARIND & MINT": {
+        "category": categories.WeekdayDinners,
         "page": 172,
-        "recipe": "Carrots in tamarind &mint",
+        "recipe": "Carrots in tamarind & mint",
         "translation": "Jazar bil Tamer Hindi",
         "yield": "Serves 4",
         "ingredients": [
@@ -1375,8 +1313,7 @@ export const recipes = {
         ]
     },
     "FAVA BEANS WITH LEMON & CILANTRO": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+        "category": categories.WeekdayDinners,
         "page": 175,
         "recipe": "Fava beans with lemon & cilantro",
         "translation": "Ful Akhdar",
@@ -1393,8 +1330,7 @@ export const recipes = {
         ]
     },
     "PALESTINIAN EGG & CHIPS": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+        "category": categories.WeekdayDinners,
         "page": 178,
         "recipe": "Palestinian egg & chips",
         "translation": "Batata w Beyd",
@@ -1413,8 +1349,7 @@ export const recipes = {
         ]
     },
     "EGGPLANT & CHICKPEAS WITH GREEN LEMON SAUCE": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+        "category": categories.WeekdayDinners,
         "page": 179,
         "recipe": "Eggplant & chickpeas with green lemon sauce",
         "translation": "Bitinjan ma’ Hummus",
@@ -1440,11 +1375,10 @@ export const recipes = {
             "1 recipe green lemon sauce (page 28; replace half the parsley with cilantro)"
         ]
     },
-    "LOADED SWEET POTATOES WITH BLACK-EYEDPEAS": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+    "LOADED SWEET POTATOES WITH BLACK-EYED PEAS": {
+        "category": categories.WeekdayDinners,
         "page": 182,
-        "recipe": "Loaded sweet potatoes with black-eyedpeas",
+        "recipe": "Loaded sweet potatoes with black-eyed peas",
         "translation": "Batata Helweh ma’ Loubia",
         "yield": "Serves 4",
         "ingredients": [
@@ -1468,8 +1402,7 @@ export const recipes = {
         ]
     },
     "CELERIAC & TOMATO BAKE": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+        "category": categories.WeekdayDinners,
         "page": 185,
         "recipe": "Celeriac & tomato bake",
         "translation": "Karfs w Banadoura bil Furn",
@@ -1493,8 +1426,7 @@ export const recipes = {
         ]
     },
     "RICE & LENTILS WET PILAF": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+        "category": categories.WeekdayDinners,
         "page": 186,
         "recipe": "Rice & lentils wet pilaf",
         "translation": "Sha’aktoura",
@@ -1522,8 +1454,7 @@ export const recipes = {
         ]
     },
     "POINTY CABBAGE & TAHINI BIL SINIYHE": {
-        "chapter_idx": 6,
-        "category": "Weekday dinners",
+        "category": categories.WeekdayDinners,
         "page": 191,
         "recipe": "Pointy cabbage & tahini bil siniyhe",
         "translation": "Malfoof bil Siniyeh",
@@ -1543,8 +1474,7 @@ export const recipes = {
         ]
     },
     "FREEKEH-STUFFED PEPPERS": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+        "category": categories.SpecialOccasions,
         "page": 196,
         "recipe": "Freekeh-stuffed peppers",
         "translation": "Mahshi Filfil bil Freekeh",
@@ -1572,8 +1502,7 @@ export const recipes = {
         ]
     },
     "TOMATO KUBBEH NEYEH": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+        "category": categories.SpecialOccasions,
         "page": 199,
         "recipe": "Tomato kubbeh neyeh",
         "translation": "Abu Amneh",
@@ -1597,8 +1526,7 @@ export const recipes = {
         ]
     },
     "GRILLED VEGETABLE SANDWICHES": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+        "category": categories.SpecialOccasions,
         "page": 202,
         "recipe": "Grilled vegetable sandwiches",
         "translation": "Makali",
@@ -1622,8 +1550,7 @@ export const recipes = {
         ]
     },
     "LENTIL FATTEH": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+        "category": categories.SpecialOccasions,
         "page": 206,
         "recipe": "Lentil fatteh",
         "translation": "Fattet Adas",
@@ -1644,11 +1571,10 @@ export const recipes = {
             "2 tbsp roughly chopped fresh parsley"
         ]
     },
-    "MAFTOUL WITH TOMATO, OKRA &YOGURT": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+    "MAFTOUL WITH TOMATO, OKRA & YOGURT": {
+        "category": categories.SpecialOccasions,
         "page": 208,
-        "recipe": "Maftoul with tomato, okra &yogurt",
+        "recipe": "Maftoul with tomato, okra & yogurt",
         "translation": "Maftoul bil Banadoura ma’ Bamia",
         "yield": "Serves 4",
         "ingredients": [
@@ -1670,8 +1596,7 @@ export const recipes = {
         ]
     },
     "SWEET POTATO KUBBEH WITH CHILE SALSA": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+        "category": categories.SpecialOccasions,
         "page": 212,
         "recipe": "Sweet potato kubbeh with chile salsa",
         "translation": "Kubbet Batata Helweh",
@@ -1705,11 +1630,10 @@ export const recipes = {
             "¼ cup / 60ml water"
         ]
     },
-    "BULGURKUBBEH": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+    "BULGUR KUBBEH": {
+        "category": categories.SpecialOccasions,
         "page": 216,
-        "recipe": "Bulgurkubbeh",
+        "recipe": "Bulgur kubbeh",
         "translation": "Kubbet Hileh",
         "yield": "Serves 4",
         "ingredients": [
@@ -1737,11 +1661,10 @@ export const recipes = {
             "tahini sauce (page 32)"
         ]
     },
-    "ASPARAGUS, LEEK & HAZELNUTGALETTE": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+    "ASPARAGUS, LEEK & HAZELNUT GALETTE": {
+        "category": categories.SpecialOccasions,
         "page": 218,
-        "recipe": "Asparagus, leek & hazelnutgalette",
+        "recipe": "Asparagus, leek & hazelnut galette",
         "translation": "Fattiret Halyoun",
         "yield": "Serves 6",
         "ingredients": [
@@ -1765,8 +1688,7 @@ export const recipes = {
         ]
     },
     "COUSCOUS FRITTERS WITH PRESERVED LEMON YOGURT": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+        "category": categories.SpecialOccasions,
         "page": 223,
         "recipe": "Couscous fritters with preserved lemon yogurt",
         "translation": "Aqras Kosukson",
@@ -1793,11 +1715,10 @@ export const recipes = {
             "salt and black pepper"
         ]
     },
-    "OUZI PHYLLOPARCELS": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+    "OUZI PHYLLO PARCELS": {
+        "category": categories.SpecialOccasions,
         "page": 224,
-        "recipe": "Ouzi phylloparcels",
+        "recipe": "Ouzi phyllo parcels",
         "translation": "Ouzi",
         "yield": "Serves 6",
         "ingredients": [
@@ -1826,8 +1747,7 @@ export const recipes = {
         ]
     },
     "ROASTED EGGPLANT FATTEH": {
-        "chapter_idx": 7,
-        "category": "Sharing and special occasions",
+        "category": categories.SpecialOccasions,
         "page": 228,
         "recipe": "Roasted eggplant fatteh",
         "translation": "Fattet Makdous",
@@ -1855,8 +1775,7 @@ export const recipes = {
         ]
     },
     "JERUSALEM SESAME BREAD NESTS": {
-        "chapter_idx": 8,
-        "category": "Bread",
+        "category": categories.Bread,
         "page": 238,
         "recipe": "Jerusalem sesame bread nests",
         "translation": "Ka’ak al Quds ma’ Beyd",
@@ -1876,8 +1795,7 @@ export const recipes = {
         ]
     },
     "PAN-FRIED TURMERIC BREAD": {
-        "chapter_idx": 8,
-        "category": "Bread",
+        "category": categories.Bread,
         "page": 241,
         "recipe": "Pan-fried turmeric bread",
         "translation": "Kubez Kimaaj",
@@ -1893,8 +1811,7 @@ export const recipes = {
         ]
     },
     "FENUGREEK & ONION BUNS": {
-        "chapter_idx": 8,
-        "category": "Bread",
+        "category": categories.Bread,
         "page": 242,
         "recipe": "Fenugreek & onion buns",
         "translation": "Aqras Helbeh",
@@ -1920,8 +1837,7 @@ export const recipes = {
         ]
     },
     "ZA’ATAR & ANISE CRACKERS": {
-        "chapter_idx": 8,
-        "category": "Bread",
+        "category": categories.Bread,
         "page": 246,
         "recipe": "Za’atar & anise crackers",
         "translation": "Malatit",
@@ -1943,8 +1859,7 @@ export const recipes = {
         ]
     },
     "CHEESE AND JAM PIE": {
-        "chapter_idx": 8,
-        "category": "Bread",
+        "category": categories.Bread,
         "page": 250,
         "recipe": "Cheese and jam pie",
         "translation": "Musafan",
@@ -1968,11 +1883,10 @@ export const recipes = {
             "6 oz / 170g feta cheese, crumbled (1¼ cups)"
         ]
     },
-    "OREGANO & CHEESELOAF": {
-        "chapter_idx": 8,
-        "category": "Bread",
+    "OREGANO & CHEESE LOAF": {
+        "category": categories.Bread,
         "page": 252,
-        "recipe": "Oregano & cheeseloaf",
+        "recipe": "Oregano & cheese loaf",
         "translation": "Kubez al Jeben w al Za’atar",
         "yield": "Serves 6 generously",
         "ingredients": [
@@ -1992,8 +1906,7 @@ export const recipes = {
         ]
     },
     "WHOLE-WHEAT BREAD": {
-        "chapter_idx": 8,
-        "category": "Bread",
+        "category": categories.Bread,
         "page": 256,
         "recipe": "Whole-wheat bread",
         "translation": "Kubez Asmar",
@@ -2011,8 +1924,7 @@ export const recipes = {
         ]
     },
     "TOASTED BREAD WITH TOMATO & SOUR GRAPES": {
-        "chapter_idx": 8,
-        "category": "Bread",
+        "category": categories.Bread,
         "page": 260,
         "recipe": "Toasted bread with tomato & sour grapes",
         "translation": "Mumalah",
@@ -2034,8 +1946,7 @@ export const recipes = {
         ]
     },
     "EGG, ONION & FETA OPEN PIE": {
-        "chapter_idx": 8,
-        "category": "Bread",
+        "category": categories.Bread,
         "page": 261,
         "recipe": "Egg, onion & feta open pie",
         "translation": "Aqras Beyd",
@@ -2061,8 +1972,7 @@ export const recipes = {
         ]
     },
     "CHEESE & SUMAC BITES": {
-        "chapter_idx": 8,
-        "category": "Bread",
+        "category": categories.Bread,
         "page": 265,
         "recipe": "Cheese & sumac bites",
         "translation": "Aqras Jeben",
@@ -2085,11 +1995,10 @@ export const recipes = {
             "3 tbsp olive oil"
         ]
     },
-    "APRICOT, ORANGE & ALMONDCAKE": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+    "APRICOT, ORANGE & ALMOND CAKE": {
+        "category": categories.Sweets,
         "page": 270,
-        "recipe": "Apricot, orange & almondcake",
+        "recipe": "Apricot, orange & almond cake",
         "translation": "Ka’ket Mishmash w Burtuqal",
         "yield": "Serves 8–10",
         "ingredients": [
@@ -2116,8 +2025,7 @@ export const recipes = {
         ]
     },
     "SPICED APPLE, WALNUT & LEMON CAKE": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 274,
         "recipe": "Spiced apple, walnut & lemon cake",
         "translation": "Ka’ket Tuffah w Jawz",
@@ -2141,8 +2049,7 @@ export const recipes = {
         ]
     },
     "PAN-BAKED TAHINI, HALVA & COFFEE BROWNIE": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 277,
         "recipe": "Pan-baked tahini, halva & coffee brownie",
         "translation": "Qahwa w Halaweh Brownie",
@@ -2166,11 +2073,10 @@ export const recipes = {
             "vanilla ice cream"
         ]
     },
-    "CHOCOLATE DATEBARS": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+    "CHOCOLATE DATE BARS": {
+        "category": categories.Sweets,
         "page": 278,
-        "recipe": "Chocolate datebars",
+        "recipe": "Chocolate date bars",
         "translation": "Ma’amoul bil Shukulata",
         "yield": "Makes 24",
         "ingredients": [
@@ -2191,8 +2097,7 @@ export const recipes = {
         ]
     },
     "DATE & NIGELLA SEED ROLLS": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 280,
         "recipe": "Date & nigella seed rolls",
         "translation": "Makrouta",
@@ -2220,8 +2125,7 @@ export const recipes = {
         ]
     },
     "ANISE & SESAME RUSKS": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 283,
         "recipe": "Anise & sesame rusks",
         "translation": "Arshaleh",
@@ -2241,8 +2145,7 @@ export const recipes = {
         ]
     },
     "LEMON & PISTACHIO COOKIES": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 286,
         "recipe": "Lemon & pistachio cookies",
         "translation": "Ma’akaroon",
@@ -2264,8 +2167,7 @@ export const recipes = {
         ]
     },
     "TAHINI RICE PUDDING WITH GRAPE COMPOTE": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 289,
         "recipe": "Tahini rice pudding with grape compote",
         "translation": "Helou al Ruz ma’ Antebikh",
@@ -2285,11 +2187,10 @@ export const recipes = {
             "2 tbsp toasted pine nuts"
         ]
     },
-    "MANGO & SALTED SEEDSPARFAIT": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+    "MANGO & SALTED SEEDS PARFAIT": {
+        "category": categories.Sweets,
         "page": 290,
-        "recipe": "Mango & salted seedsparfait",
+        "recipe": "Mango & salted seeds parfait",
         "translation": "Helou al Manga",
         "yield": "Serves 6",
         "ingredients": [
@@ -2307,8 +2208,7 @@ export const recipes = {
         ]
     },
     "CARAWAY & NUT PUDDING": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 294,
         "recipe": "Caraway & nut pudding",
         "translation": "Karawiyah",
@@ -2329,8 +2229,7 @@ export const recipes = {
         ]
     },
     "SUMAC ROAST PLUMS WITH CARDAMOM CREAM & PISTACHIO": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 295,
         "recipe": "Sumac roast plums with cardamom cream & pistachio",
         "translation": "Barquq bil Sumac w al Creama",
@@ -2354,8 +2253,7 @@ export const recipes = {
         ]
     },
     "LABNEH & POMEGRANATE ICE CREAM": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 298,
         "recipe": "Labneh & pomegranate ice cream",
         "translation": "Bouza bil Labneh w al Rumman",
@@ -2373,8 +2271,7 @@ export const recipes = {
         ]
     },
     "COCONUT, ROSE & CHOCOLATE TRUFFLES": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 301,
         "recipe": "Coconut, rose & chocolate truffles",
         "translation": "Jawz al Hind bil Shukulata",
@@ -2392,8 +2289,7 @@ export const recipes = {
         ]
     },
     "ASHTAH KNAFEH PIE": {
-        "chapter_idx": 9,
-        "category": "Sweets",
+        "category": categories.Sweets,
         "page": 302,
         "recipe": "Ashtah knafeh pie",
         "translation": "Knafeh bil Ashtah",
