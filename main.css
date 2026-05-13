@@ -57,7 +57,7 @@ body {
 
 #loading {
     h2 {
-        color: var(--loading-text);
+        color: var(--loading-text, white);
     }
 
     background: var(--loading, var(--primary));
@@ -101,7 +101,7 @@ h2 {
 }
 
 form>h2 {
-    color: var(--form-title);
+    color: var(--form-title, white);
     text-shadow: var(--form-title-shadow) 0.5px .5px;
     font-weight: var(--form-title-weight);
 }
