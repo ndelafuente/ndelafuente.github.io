@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#ab749a">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Boustany Recipe Signup</title>
+  <link rel="icon" type="image/x-icon" href="boustany.ico">
+
+  <style>
+    :root {
+      --onyx: #11120Dff;
+      --forest-moss: #53711Dff;
+      --sage-green: #589D35ff;
+      --forest-green: #009400ff;
+      --cayenne-red: #EB5E1Dff;
+
+      --primary: #00940099;
+      --loading: #53711D;
+      --loading-text: white;
+      --button-hover: #009400;
+      --input-disabled: #ffffff88;
+      --form-background: #589D35cb;
+      --background: url(boustany-bg.jpg);
+      --entry-text-even: white;
+      --entry-text-odd: white;
+      --entry-background-even: #EA912Dbb;
+      --entry-background-odd: #FAB550bb;
+      --main-title: #009400;
+      --main-title-drop-shadow: var(--primary);
+      --form-title: white;
+      --form-title-weight: bold;
+      --secondary-title: #009400;
+      --secondary-title-shadow: white;
+    }
+  </style>
+  <link rel="stylesheet" href="assets/pan-loader.css">
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <div id="background" class="fullscreen"></div>
+  <div id="main">
+    <h1>Will & Bella's<br />Cookbook Club</h1>
+
+    <form id="signupForm">
+      <h2 style="margin: 5px;">Recipe Signup</h2>
+      <input type="search" id="recipe" list="recipes" autocomplete="off" placeholder="Choose a recipe" required>
+      <datalist id="recipes"></datalist>
+      <input type="text" id="category" placeholder="Category" disabled>
+      <input type="text" id="chef" autocomplete="given-name name" placeholder="Chef" required>
+      <input type="text" id="sous-chef" placeholder="Sous-chef (optional)">
+      <input type="text" id="notes" placeholder="Notes (optional)">
+      <button type="submit">Claim Recipe</button>
+    </form>
+    <div id="claimAgain" class="hidden" style="padding-bottom: 30px">
+      <button type="reset">Claim Another</button>
+    </div>
+    <form id="eventPassed" class="hidden">
+      <h2>The event has passed :(</h2>
+    </form>
+
+    <h2>Claimed Recipes</h2>
+
+    <!-- Snake Loading GIF from https://briankuhnart.myportfolio.com/ -->
+    <div id="recipeLoading" class="centered-hz" style="width: 80vw">
+      <img src="assets/slithering-snake.gif"
+        style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 0 8px white);" />
+    </div>
+    <div id="recipeList"></div>
+  </div>
+
+  <!-- Pancake Loader by https://dariocorsi.com/ -->
+  <div id="loading" class="hidden fullscreen">
+    <div id="popup" class="centered">
+      <div id="pancake" class="loader">
+        <div class="tall-stack">
+          <div class="butter falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="pancake falling-element"></div>
+          <div class="plate">
+            <div class="plate-bottom"></div>
+            <div class="shadow"></div>
+          </div>
+        </div>
+      </div>
+      <h2>Welcome to the party!<br />Please be patient :3</h2>
+    </div>
+  </div>
+  <script type="module">
+    import { categories, recipes } from "./boustany-recipes.js";
+    const discourageMsg = "This recipe is too small, make sure it is accompanying a main dish.";
+    window.CONFIG = {
+      CLUB_ID: "2605_boustany",
+      EVENT_DATE: new Date('2026-05-24 6:30 PM'),
+      VALIDATE_RECIPES: true,
+      RECIPES: recipes,
+      DISCOURAGE_MSG: discourageMsg,
+    }
+  </script>
+  <script type="module" src="main.js"></script>
+
+</body>
+
+</html>
