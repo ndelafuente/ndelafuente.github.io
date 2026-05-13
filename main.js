@@ -260,6 +260,7 @@ export class App {
         }
 
         function submitSucceed(recipe) {
+            hide('summary');
             if (recipe) {
                 setTextByID("recipeName", recipe.recipe);
                 setTextByID("recipeTranslation", recipe.translation);
