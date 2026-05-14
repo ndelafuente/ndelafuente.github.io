@@ -242,7 +242,10 @@ export class App {
             else if (await hasDeletionTokens()) { submitSucceed() } // already claimed
             else { showClaim() }
             show('main');
+            scrollToTop();
         }
+
+        function scrollToTop() { window.scrollTo(0, 50); }
 
         function hide(...ids) { ids.forEach(id => document.getElementById(id).classList.add('hidden')) }
         function show(...ids) { ids.forEach(id => document.getElementById(id).classList.remove('hidden')) }
@@ -252,7 +255,7 @@ export class App {
             window.scrollTo(0, 0);
         }
 
-        function hideLoading() { hide('loading') }
+        function hideLoading() { scrollToTop(); hide('loading') }
 
         function setTextByID(id, text) {
             const element = document.getElementById(id)
