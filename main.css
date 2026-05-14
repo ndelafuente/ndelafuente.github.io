@@ -8,6 +8,12 @@
     src: url(assets/futurachapro.otf);
 }
 
+@font-face {
+    font-family: "CustomSymbols";
+    src: url('assets/custom-symbols.ttf') format("truetype");
+}
+
+
 /* ---- Layout ---- */
 .centered {
     position: absolute;
@@ -194,6 +200,7 @@ input:focus {
 
     li::marker {
         font-size: 1.2em;
+        font-family: CustomSymbols;
     }
 }
 
