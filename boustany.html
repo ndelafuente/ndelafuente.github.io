@@ -36,6 +36,7 @@
       --form-title-weight: bold;
       --secondary-title: #009400;
       --secondary-title-shadow: white;
+      --ingredient-list-style: "🗝 ";
     }
   </style>
   <link rel="stylesheet" href="assets/pan-loader.css">
@@ -66,14 +67,13 @@
           <b><span id="recipeName"></span></b>
           </br>
           <i><span id="recipeTranslation" style="opacity: 0.8;"></span></i>
-        </p>
-        <p>
+          </br></br>
           <span id="recipeCategory"></span>
           (page <span id="recipePage">0</span>)
         </p>
         <h2>Ingredients</h2>
         <p><i><span id="recipeYield"></span></i></p>
-        <ul id="ingredientList" style="list-style: arabic-indic; padding-left: 20px"></ul>
+        <ul id="ingredientList"></ul>
       </div>
     </div>
 

@@ -130,6 +130,8 @@ form {
 
     p {
         text-align: center;
+        width: 80%;
+        margin: auto;
     }
 }
 
@@ -185,6 +187,16 @@ input:focus {
 #recipeList {
     padding-bottom: 20px;
 }
+
+#ingredientList {
+    list-style: var(--ingredient-list-style, circle);
+    padding-left: 30px;
+
+    li::marker {
+        font-size: 1.2em;
+    }
+}
+
 
 button {
     background-color: var(--primary);
