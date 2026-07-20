@@ -270,6 +270,7 @@ export class App {
                 setTextByID("recipeCategory", recipe.category);
                 setTextByID("recipePage", recipe.page);
                 setTextByID("recipeYield", recipe.yield);
+                setTextByID("recipeDifficulty", recipe.difficulty);
 
                 const ingredientList = document.getElementById("ingredientList");
                 ingredientList.innerHTML = '';

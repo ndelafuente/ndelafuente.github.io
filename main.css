@@ -196,7 +196,7 @@ input:focus {
 
 #ingredientList {
     list-style: var(--ingredient-list-style, circle);
-    padding-left: 30px;
+    padding-left: var(--ingredient-list-padding, 30px);
 
     li::marker {
         font-size: 1.2em;
