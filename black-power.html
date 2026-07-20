@@ -42,7 +42,7 @@
       <input type="search" id="recipe" list="recipes" autocomplete="off" placeholder="Choose a recipe" required>
       <datalist id="recipes"></datalist>
       <input type="text" id="category" placeholder="Category" disabled>
-      <input type="text" id="chef" autocomplete="given-name name" placeholder="Chef" required>
+      <input type="text" id="chef" autocomplete="given-name" placeholder="Chef" required>
       <input type="text" id="sous-chef" placeholder="Sous-chef (optional)">
       <input type="text" id="notes" placeholder="Notes (optional)">
       <button type="submit">Claim Recipe</button>
@@ -59,7 +59,7 @@
 
     <!-- Snake Loading GIF from https://briankuhnart.myportfolio.com/ -->
     <div id="recipeLoading" class="centered-hz" style="width: 80vw">
-      <img src="assets/slithering-snake.gif" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 0 8px white);" />
+      <img src="assets/slithering-snake.gif" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 0 8px white);" title="Loading"/>
     </div>
     <div id="recipeList"></div>
   </div>
