@@ -124,7 +124,13 @@ export class App {
             hide('recipeLoading');
             show('recipeList');
             list.innerHTML = "";
+            const requiredKeys = ['ID', 'Recipe', 'Chef'];
             for (const entry of data) {
+                for (const key of requiredKeys) {
+                    if (!(key in entry)) {
+                        throw new Error("Poorly formed recipe entry.")
+                    }
+                }
                 const id = entry.ID;
                 const recipe = entry.Recipe;
                 claimed[recipe.toUpperCase()] = entry.Chef;
@@ -155,7 +161,12 @@ export class App {
             console.log("Claimed", claimed);
         }
 
-        const initialRefreshPromise = refreshList();
+        const initialRefreshPromise = refreshList().catch(err => {
+            alert([
+                'Failed to submit recipe. Please notify Nico.',
+                `Error '${err.message}'`,
+            ].join('\n'))
+        })
 
 
         document.getElementById("signupForm").addEventListener("submit", onSubmit);
