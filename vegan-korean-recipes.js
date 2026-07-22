@@ -1,13 +1,13 @@
 export const categories = {
-    BASICS: "the Basics",
-    BBANG: "BBANG (Breads)",
-    BANCHAN: "BANCHAN (Side Dishes)",
-    KIMCHI_and_SALADS: "Kimchi and Salads",
-    SOUPS_and_STEWS: "Soups and Stews",
-    NOODLES_and_PASTAS: "Noodles and Pastas",
-    BAR_and_STREET: "Bar and Street Foods",
-    MAIN: "Main Dishes",
-    SWEETS: "Sweets",
+    "BASICS": "theBASICS",
+    "BBANG": "BBANG(빵•Breads)",
+    "BANCHAN": "BANCHAN(반찬• SideDishes)",
+    "KIMCHI_and_SALADS": "KIMCHIandSALADS",
+    "SOUPS_and_STEWS": "SOUPSandSTEWS",
+    "NOODLES_and_PASTAS": "NOODLESandPASTAS",
+    "BAR_and_STREET": "BARandSTREET FOODS",
+    "MAIN": "MAIN DISHES",
+    "SWEETS": "SWEETS"
 }
 
 export const recipes = {
@@ -17,9 +17,11 @@ export const recipes = {
         "recipe": "MUSHROOM DASHI",
         "yield": "MAKES 4 CUPS",
         "difficulty": "Easy",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "6 large or 7 medium dried shiitake mushrooms"
-        ]
+        ],
+        "discouraged": true
     },
     "BAP": {
         "category": categories.BASICS,
@@ -28,12 +30,14 @@ export const recipes = {
         "translation": "밥 (Rice)",
         "yield": "SERVES 8 TO 12",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "1 cup short-grain brown rice",
             "1 cup short-grain sweet brown rice",
             "2 tablespoons black glutinous rice",
             "½ cup pearled barley"
-        ]
+        ],
+        "discouraged": true
     },
     "VEGETABLE BROTH": {
         "category": categories.BASICS,
@@ -41,6 +45,7 @@ export const recipes = {
         "recipe": "VEGETABLE BROTH",
         "yield": "MAKES 6 CUPS",
         "difficulty": "Easy",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "2 tablespoons sesame oil",
             "2 carrots, roughly chopped",
@@ -55,7 +60,8 @@ export const recipes = {
             "7 to 8 leaves light-colored cabbage",
             "1 large sheet dashima (see page 29 ), broken into smaller pieces to fit your pot",
             "1 tablespoon black peppercorns"
-        ]
+        ],
+        "discouraged": true
     },
     "OMMA'S KOREAN BBQ SAUCE": {
         "category": categories.BASICS,
@@ -63,6 +69,7 @@ export const recipes = {
         "recipe": "OMMA'S KOREAN BBQ SAUCE",
         "yield": "MAKES 3 CUPS",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "½ red onion, cut into chunks",
             "3 scallions, trimmed",
@@ -78,7 +85,8 @@ export const recipes = {
             "1 teaspoon freshly ground black pepper",
             "¼ cup Mushroom Dashi or water",
             "2 tablespoons potato starch"
-        ]
+        ],
+        "discouraged": true
     },
     "“FISHY” SAUCE": {
         "category": categories.BASICS,
@@ -86,6 +94,7 @@ export const recipes = {
         "recipe": "“FISHY” SAUCE",
         "yield": "MAKES 1½ CUPS",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1½ cups soy sauce",
             "4 large or 6 small dried shiitake mushrooms",
@@ -97,7 +106,8 @@ export const recipes = {
             "2 tablespoons balsamic vinegar",
             "2 tablespoons rice vinegar",
             "2 teaspoons black peppercorns"
-        ]
+        ],
+        "discouraged": true
     },
     "SPICY SOY SAUCE DRESSING": {
         "category": categories.BASICS,
@@ -105,6 +115,7 @@ export const recipes = {
         "recipe": "SPICY SOY SAUCE DRESSING",
         "yield": "MAKES 1½ CUPS",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 cup soy sauce",
             "2 tablespoons gochugaru",
@@ -118,7 +129,8 @@ export const recipes = {
             "1 tablespoon mirin",
             "1 teaspoon freshly ground black pepper",
             "½ teaspoon ground turmeric"
-        ]
+        ],
+        "discouraged": true
     },
     "SPICY GOCHUJANG DRESSING": {
         "category": categories.BASICS,
@@ -126,6 +138,7 @@ export const recipes = {
         "recipe": "SPICY GOCHUJANG DRESSING",
         "yield": "MAKES ½ CUP",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "¼ cup gochujang",
             "1 teaspoon yellow mustard",
@@ -133,7 +146,8 @@ export const recipes = {
             "1 tablespoon rice vinegar",
             "1 tablespoon maple syrup",
             "1 tablespoon soy sauce"
-        ]
+        ],
+        "discouraged": true
     },
     "BORICHA": {
         "category": categories.BASICS,
@@ -142,9 +156,11 @@ export const recipes = {
         "translation": "보리차 (Cold Barley Tea)",
         "yield": "SERVES 6 TO 8",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "16 ounces pearled barley"
-        ]
+        ],
+        "discouraged": true
     },
     "DOLSOT BBANG": {
         "category": categories.BBANG,
@@ -153,6 +169,7 @@ export const recipes = {
         "translation": "돌솥빵 (Stone Pot Bread)",
         "yield": "MAKES 1 LOAF",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "2½ cups (350g) all-purpose flour",
             "1 tablespoon sugar",
@@ -167,6 +184,7 @@ export const recipes = {
         "recipe": "PERILLA LEAF FOCACCIA",
         "yield": "SERVES 8",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "2¼ teaspoons active dry yeast",
             "1 tablespoon sugar",
@@ -186,6 +204,7 @@ export const recipes = {
         "translation": "팥빵 (Red Bean Paste Bread)",
         "yield": "MAKES 2 LOAVES",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "1 cup (240g) warm water (between 100°F and 110°F)",
             "½ cup (120g) plant milk, warmed (between 100°F to 110°F), plus 3 tablespoons plant milk",
@@ -206,6 +225,7 @@ export const recipes = {
         "recipe": "SEAWEED SESAME BAGELS",
         "yield": "MAKES 8 BAGELS",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "1⅓ cups (315g) warm water (between 100°F to 110°F)",
             "2¼ teaspoons active dry yeast",
@@ -227,6 +247,7 @@ export const recipes = {
         "recipe": "MILK BREAD",
         "yield": "MAKES 1 LOAF",
         "difficulty": "Practice makes perfect",
+        "allergens": ["NF"],
         "ingredients": [
             "1⁄5 cup (24g) bread flour",
             "2¾ cups (383g) bread flour",
@@ -249,6 +270,7 @@ export const recipes = {
         "translation": "빈대떡 (Mung Bean Pancakes)",
         "yield": "SERVES 8 TO 10",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 cups dried peeled split mung beans",
             "1 cup mung bean sprouts",
@@ -272,6 +294,7 @@ export const recipes = {
         "translation": "케일 무침 (Dressed Kale)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 cups chopped kale (see Note)",
             "1 tablespoon doenjang (see this page )",
@@ -286,6 +309,7 @@ export const recipes = {
         "recipe": "ROASTED DOENJANG-GLAZED ONIONS",
         "yield": "SERVES 8 TO 12",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 large white onions, sliced into ⅓-inch-thick rings",
             "Salt and freshly ground black pepper",
@@ -301,6 +325,7 @@ export const recipes = {
         "translation": "호박전 (Battered Squash)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GF", "NFO"],
         "ingredients": [
             "2 teaspoons salt",
             "2 Korean squash or regular zucchini, sliced into ¼-inch-thick pieces",
@@ -319,6 +344,7 @@ export const recipes = {
         "recipe": "BRAISED LION'S MANE MUSHROOMS",
         "yield": "SERVES 4 TO 6",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "3 heads lion's mane mushroom",
             "2 tablespoons extra-virgin olive oil",
@@ -340,6 +366,7 @@ export const recipes = {
         "recipe": "STIR-FRIED MUNG BEAN SPROUTS",
         "yield": "SERVES 2",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2½ ounces (70g) sweet potato vermicelli (about 1 handful)",
             "2 tablespoons extra-virgin olive oil",
@@ -362,6 +389,7 @@ export const recipes = {
         "translation": "도토리묵 (Acorn Jelly)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO"],
         "ingredients": [
             "½ cup ground acorn",
             "¼ cup blackberries, fresh or frozen",
@@ -387,6 +415,7 @@ export const recipes = {
         "translation": "계란말이 (Korean-Style Omelet)",
         "yield": "SERVES 1",
         "difficulty": "Medium",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "1 cup egg replacer (preferably JUST Egg)",
             "½ teaspoon salt",
@@ -405,6 +434,7 @@ export const recipes = {
         "translation": "두부전 (Tofu Cakes)",
         "yield": "MAKES 8 CAKES",
         "difficulty": "Easy",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "1 (16-ounce) block firm tofu, pressed (see Note)",
             "¼ cup finely diced carrot",
@@ -425,6 +455,7 @@ export const recipes = {
         "translation": "깻잎 부침개 (Perilla Leaf Pancakes)",
         "yield": "MAKES 12 TO 16 MEDIUM PANCAKES",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 cups all-purpose flour (see Note)",
             "½ cup potato starch",
@@ -449,6 +480,7 @@ export const recipes = {
         "translation": "감자조림 (Braised Potatoes)",
         "yield": "SERVES 4",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "4 medium Yukon Gold potatoes, cut into bite-size chunks",
             "2 tablespoons extra-virgin olive oil",
@@ -472,6 +504,7 @@ export const recipes = {
         "translation": "오이김치",
         "yield": "SERVES 6 TO 8",
         "difficulty": "Easy",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "1 pound Korean cucumbers, Kirby pickling cucumbers, or Persian (mini) cucumbers",
             "3 tablespoons coarse sea salt",
@@ -489,6 +522,7 @@ export const recipes = {
         "translation": "배추김치 (Napa Cabbage Kimchi)",
         "yield": "MAKES 1 HALF-GALLON JAR",
         "difficulty": "Hard",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 large heads napa cabbage",
             "½ cup kosher salt or coarse sea salt",
@@ -514,6 +548,7 @@ export const recipes = {
         "translation": "겉절이 (Barely Pickled Kimchi)",
         "yield": "MAKES 1 HALF-GALLON JAR",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 heads napa cabbage",
             "¼ cup kosher salt or coarse sea salt",
@@ -538,6 +573,7 @@ export const recipes = {
         "translation": "물김치 (Water Kimchi)",
         "yield": "MAKES 1 HALF-GALLON JAR",
         "difficulty": "Easy",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "1 pound Korean radish or daikon radish, trimmed, peeled, and cut into 2-inch batons",
             "2 tablespoons coarse sea salt",
@@ -556,6 +592,7 @@ export const recipes = {
         "translation": "총각김치 (Ponytail Kimchi)",
         "yield": "MAKES 1 HALF-GALLON JAR",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "10 to 12 baby daikon radishes, with leafy tops",
             "½ cup kosher salt or coarse sea salt",
@@ -578,6 +615,7 @@ export const recipes = {
         "recipe": "KALE AND RAMEN SALAD",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO"],
         "ingredients": [
             "1 tablespoon gochujang",
             "1 tablespoon maple syrup",
@@ -605,6 +643,7 @@ export const recipes = {
         "translation": "깻잎",
         "yield": "SERVES 5 OR 6",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "½ cup Spicy Soy Sauce Dressing",
             "40 perilla leaves"
@@ -616,6 +655,7 @@ export const recipes = {
         "recipe": "BRUSSELS SPROUT SALAD",
         "yield": "SERVES 8",
         "difficulty": "Easy",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "½ tablespoon extra-virgin olive oil",
             "¼ cup sliced cremini mushrooms",
@@ -645,6 +685,7 @@ export const recipes = {
         "recipe": "KOREAN PEAR SLAW",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO"],
         "ingredients": [
             "Juice of ½ lemon",
             "2 teaspoons brown rice syrup, agave syrup, or maple syrup",
@@ -670,6 +711,7 @@ export const recipes = {
         "recipe": "KOREAN POTATO SALAD WITH SCALLION AIOLI",
         "yield": "SERVES 6",
         "difficulty": "Easy",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "2 Yukon Gold potatoes, chopped",
             "1 Korean sweet potato, chopped",
@@ -699,6 +741,7 @@ export const recipes = {
         "translation": "육개장 (Spicy Scallion and Fernbrake Soup)",
         "yield": "SERVES 4",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "¼ cup gochugaru",
             "2 tablespoons soy sauce",
@@ -728,6 +771,7 @@ export const recipes = {
         "translation": "떡만두국 (Rice Cake Soup with Dumplings)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 tablespoon extra-virgin olive oil",
             "1 teaspoon sesame oil",
@@ -752,6 +796,7 @@ export const recipes = {
         "translation": "된장국 (Fermented Soybean Soup)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 tablespoon sesame oil",
             "½ bulb fennel, plus 1 stalk, thinly sliced",
@@ -772,6 +817,7 @@ export const recipes = {
         "translation": "된장찌개 (Fermented Soybean Stew)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 tablespoon sesame oil",
             "1 tablespoon gochugaru",
@@ -797,6 +843,7 @@ export const recipes = {
         "translation": "김치찌개 (Kimchi Stew)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 tablespoon sesame oil",
             "1 tablespoon extra-virgin olive oil",
@@ -822,6 +869,7 @@ export const recipes = {
         "translation": "순두부찌개 (Silken Tofu Stew)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 tablespoon sesame oil",
             "2 tablespoons gochugaru",
@@ -845,6 +893,7 @@ export const recipes = {
         "translation": "감자탕 (Potato Stew)",
         "yield": "SERVES 3 OR 4",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "4 cups Vegetable Broth",
             "1 teaspoon sliced fresh ginger",
@@ -874,6 +923,7 @@ export const recipes = {
         "translation": "미역국 (Seaweed Soup)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 ounce dried miyeok or undaria (see Note)",
             "1 tablespoon sesame oil",
@@ -892,6 +942,7 @@ export const recipes = {
         "translation": "감자국 (Potato and Leek Soup)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "1 tablespoon sesame oil",
             "2 medium Yukon Gold potatoes, julienned",
@@ -912,6 +963,7 @@ export const recipes = {
         "translation": "짜장면 (Black Soybean Noodles)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "3 large or 4 medium dried shiitake mushrooms",
             "3 tablespoons extra-virgin olive oil",
@@ -939,6 +991,7 @@ export const recipes = {
         "translation": "칼국수 (Knife-Cut Noodles)",
         "yield": "SERVES 4",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "2½ cups (350g) all-purpose flour, plus more for dusting",
             "2 tablespoons vegetable oil",
@@ -970,6 +1023,7 @@ export const recipes = {
         "translation": "냉면 (Cold Buckwheat Noodles)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "1 Korean pear, peeled and cut into chunks",
             "¼ red onion",
@@ -1003,6 +1057,7 @@ export const recipes = {
         "translation": "잡채 (Korean Glass Noodles)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "7 ounces (200g) sweet potato vermicelli",
             "4 cups adult raw spinach (do not use baby spinach)",
@@ -1029,6 +1084,7 @@ export const recipes = {
         "translation": "김치국수 (Kimchi Noodles)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "2 tablespoons extra-virgin olive oil",
             "2 cloves garlic, minced",
@@ -1048,6 +1104,7 @@ export const recipes = {
         "recipe": "ANGRY PENNE PASTA",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 (12-ounce) box penne pasta",
             "1 tablespoon extra-virgin olive oil",
@@ -1069,6 +1126,7 @@ export const recipes = {
         "translation": "수제비 (Spicy Torn Noodles)",
         "yield": "SERVES 4",
         "difficulty": "Practice makes perfect",
+        "allergens": ["NF"],
         "ingredients": [
             "2½ cups all-purpose flour",
             "¾ cup warm water",
@@ -1094,6 +1152,7 @@ export const recipes = {
         "translation": "콩나물 라면 (Bean Sprout)",
         "yield": "SERVES 4",
         "difficulty": "Practice makes perfect",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 cup bean sprouts, tails removed",
             "2-inch square of dashima (see page 29 )",
@@ -1111,6 +1170,7 @@ export const recipes = {
         "recipe": "TTEOKBOKKI ARRABBIATA",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 tablespoon extra-virgin olive oil",
             "1 red bell pepper, chopped",
@@ -1137,6 +1197,7 @@ export const recipes = {
         "translation": "김밥 (Seaweed Rice Roll)",
         "yield": "MAKES 4 ROLLS (8 TO 10 PIECES EACH)",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 tablespoon plus ½ teaspoon sesame oil",
             "2 carrots, julienned",
@@ -1156,6 +1217,7 @@ export const recipes = {
         "recipe": "OMMA'S EGG ROLLS",
         "yield": "MAKES 30 TO 40 EGG ROLLS (depending on how much stuffing you use for each one)",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "1 (16-ounce) block extra-firm tofu",
             "1 tablespoon extra-virgin olive oil, plus more as needed",
@@ -1185,6 +1247,7 @@ export const recipes = {
         "translation": "두부김치 (Tofu and Kimchi)",
         "yield": "SERVES 4",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 (16-ounce) block medium-firm tofu",
             "1½ tablespoons extra-virgin olive oil",
@@ -1209,6 +1272,7 @@ export const recipes = {
         "translation": "(Rice Balls)",
         "yield": "MAKES 7 OR 8 SUPPLI",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "Vegetable oil",
             "3 cups cooked rice",
@@ -1233,6 +1297,7 @@ export const recipes = {
         "recipe": "BULGOGI WASABI MELT",
         "yield": "MAKES 2 SANDWICHES",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 tablespoons hummus",
             "1½ teaspoons wasabi powder",
@@ -1251,6 +1316,7 @@ export const recipes = {
         "recipe": "KOREAN BBQ BLACK BEAN BURGERS",
         "yield": "MAKES 4 BURGERS",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NFO"],
         "ingredients": [
             "1 cup julienned red cabbage",
             "1 carrot, julienned",
@@ -1282,6 +1348,7 @@ export const recipes = {
         "recipe": "KOREAN-STYLE TOAST",
         "yield": "SERVES 2",
         "difficulty": "Practice makes perfect",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 cup egg replacer (preferably JUST Egg)",
             "½ teaspoon salt",
@@ -1313,6 +1380,7 @@ export const recipes = {
         "translation": "치즈 호떡 (Fried Stuffed Pancakes)",
         "yield": "MAKES 10 PANCAKES",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "2¼ teaspoons active dry yeast",
             "1 teaspoon sugar",
@@ -1337,6 +1405,7 @@ export const recipes = {
         "translation": "호떡 (Fried Stuffed Pancakes)",
         "yield": "MAKES 10 PANCAKES",
         "difficulty": "Medium",
+        "allergens": [],
         "ingredients": [
             "2¼ teaspoons active dry yeast",
             "1 teaspoon sugar",
@@ -1362,6 +1431,7 @@ export const recipes = {
         "translation": "카레떡꼬치 (Rice Cake)",
         "yield": "MAKES 12 TO 14 SKEWERS",
         "difficulty": "Medium",
+        "allergens": ["GFO"],
         "ingredients": [
             "2 tablespoons extra-virgin olive oil",
             "½ cup chopped onion",
@@ -1391,6 +1461,7 @@ export const recipes = {
         "translation": "불고기 (Grilled Steak)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 cup Soy Curls",
             "3 to 4 dried shiitake mushrooms",
@@ -1410,6 +1481,7 @@ export const recipes = {
         "translation": "갈비 (BBQ Short Ribs)",
         "yield": "MAKES 8 “RIBS”",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 large trumpet mushrooms",
             "1 cup Omma's Korean BBQ Sauce , plus more for basting",
@@ -1425,6 +1497,7 @@ export const recipes = {
         "translation": "깐풍기 (Spicy Crunchy Garlic Wings)",
         "yield": "MAKES 10 WINGS",
         "difficulty": "Practice makes perfect",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 (16-ounce) container extra-firm tofu",
             "2 (20-ounce) cans jackfruit in brine",
@@ -1459,6 +1532,7 @@ export const recipes = {
         "translation": "깐풍두부 (Spicy Crunchy Garlic Tofu)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "½ cup potato starch",
             "1 teaspoon salt",
@@ -1489,6 +1563,7 @@ export const recipes = {
         "translation": "탕수육 (Sweet and Sour Mushrooms)",
         "yield": "SERVES 4",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 cup plus 2 tablespoons potato starch",
             "1 teaspoon salt",
@@ -1521,6 +1596,7 @@ export const recipes = {
         "recipe": "POWER BOWL",
         "yield": "SERVES 1",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "½ tablespoon sesame oil",
             "1 carrot, julienned",
@@ -1540,6 +1616,7 @@ export const recipes = {
         "translation": "만두 (Dumplings)",
         "yield": "MAKES 40 TO 50 SMALL DUMPLINGS",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "1 tablespoon extra-virgin olive oil",
             "1 tablespoon sesame oil",
@@ -1565,6 +1642,7 @@ export const recipes = {
         "recipe": "TOFU HOT POT",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 tablespoon extra-virgin olive oil",
             "1 (16-ounce) block extra-firm tofu, sliced into ½-inch-thick pieces",
@@ -1583,6 +1661,7 @@ export const recipes = {
         "translation": "김치볶음밥 (Fried Rice)",
         "yield": "SERVES 2",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 tablespoons vegetable oil, plus more if needed",
             "1½ cups day-old cooked rice",
@@ -1607,6 +1686,7 @@ export const recipes = {
         "translation": "버섯죽 (Rice Porridge)",
         "yield": "SERVES 4",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 tablespoon extra-virgin olive oil",
             "3 large or 4 small to medium dried shiitake mushrooms, rehydrated and sliced",
@@ -1623,6 +1703,7 @@ export const recipes = {
         "recipe": "LASAGNA WITH GOCHUJANG RED SAUCE",
         "yield": "SERVES 6",
         "difficulty": "Medium",
+        "allergens": ["GFO"],
         "ingredients": [
             "2 tablespoons extra-virgin olive oil",
             "1 teaspoon gochujang",
@@ -1677,6 +1758,7 @@ export const recipes = {
         "translation": "오므라이스 (Omelet Rice)",
         "yield": "SERVES 2",
         "difficulty": "Medium",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "2 tablespoons vegetable oil or any high smoke-point oil",
             "2 cups day-old cooked rice",
@@ -1707,6 +1789,7 @@ export const recipes = {
         "translation": "두부조림 (Braised Tofu)",
         "yield": "SERVES 4",
         "difficulty": "Easy",
+        "allergens": ["GFO", "NF"],
         "ingredients": [
             "1 (16-ounce) block medium-firm tofu",
             "1 tablespoon extra-virgin olive oil",
@@ -1726,6 +1809,7 @@ export const recipes = {
         "translation": "마파두부 (Mapo Tofu)",
         "yield": "SERVES 4",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "5 large or 6 small to medium fresh shiitake mushrooms, stems discarded, caps finely chopped",
             "1 teaspoon sesame oil",
@@ -1751,6 +1835,7 @@ export const recipes = {
         "recipe": "OMMA'S CASSEROLE",
         "yield": "SERVES 6",
         "difficulty": "Easy",
+        "allergens": ["GFO"],
         "ingredients": [
             "3 tablespoons extra-virgin olive oil",
             "1 cup roughly chopped mushrooms (see Notes below)",
@@ -1789,6 +1874,7 @@ export const recipes = {
         "recipe": "CHOCOLATE SWEET POTATO CAKE",
         "yield": "SERVES 16",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "2⅔ cups (370g) all-purpose flour, sifted",
             "2 cups (400g) organic sugar",
@@ -1815,6 +1901,7 @@ export const recipes = {
         "recipe": "CHOCOLATE PERSIMMON CUPCAKES",
         "yield": "MAKES 12 CUPCAKES",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "1 cup soy or oat milk",
             "1 tablespoon white wine vinegar",
@@ -1839,6 +1926,7 @@ export const recipes = {
         "recipe": "PECAN PAHT PIE",
         "yield": "SERVES 8 TO 10",
         "difficulty": "Medium",
+        "allergens": ["GFO"],
         "ingredients": [
             "1½ cups (210g) all-purpose flour (see Note below)",
             "1 tablespoon sugar",
@@ -1863,6 +1951,7 @@ export const recipes = {
         "recipe": "DATE AND GINGER TEA",
         "yield": "SERVES 10",
         "difficulty": "Easy",
+        "allergens": ["GF"],
         "ingredients": [
             "30 to 40 dried jujubes (Korean dates)",
             "5 teaspoons minced fresh ginger",
@@ -1877,6 +1966,7 @@ export const recipes = {
         "translation": "꽈배기 (Twisty Sugar Donuts)",
         "yield": "MAKES 16 DONUTS",
         "difficulty": "Practice makes perfect",
+        "allergens": ["NF"],
         "ingredients": [
             "2¼ teaspoons active dry yeast",
             "2 tablespoons plus ¼ cup sugar",
@@ -1896,6 +1986,7 @@ export const recipes = {
         "translation": "떡 (Sweet Rice Cakes)",
         "yield": "SERVES 8 TO 10",
         "difficulty": "Medium",
+        "allergens": ["GF"],
         "ingredients": [
             "5 cups (800g) frozen wet sweet white rice flour (see Note below)",
             "3 tablespoons sugar",
@@ -1913,6 +2004,7 @@ export const recipes = {
         "recipe": "LEMON AND CORIANDER BLUEBERRY MUFFINS",
         "yield": "MAKES 6 JUMBO MUFFINS",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "1 tablespoon fresh lemon juice",
             "½ cup (120g) soy or oat milk",
@@ -1935,6 +2027,7 @@ export const recipes = {
         "recipe": "SWEET MAPLE-ROASTED CORN TEA",
         "yield": "SERVES 4 TO 6",
         "difficulty": "Easy",
+        "allergens": ["GF", "NF"],
         "ingredients": [
             "4 ears corn, unshucked",
             "2 tablespoons maple syrup",
@@ -1949,6 +2042,7 @@ export const recipes = {
         "translation": "(Sweet Red Bean)",
         "yield": "MAKES 12 COOKIES",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "4 tablespoons (57g) vegan butter (see Note)",
             "¼ cup (50g) light brown sugar",
@@ -1968,6 +2062,7 @@ export const recipes = {
         "recipe": "CHOCOLATE-COVERED SHORTBREAD STICKS",
         "yield": "MAKES 40 TO 50 STICKS",
         "difficulty": "Medium",
+        "allergens": [],
         "ingredients": [
             "¼ cup (57g) vegan butter",
             "2 tablespoons powdered sugar",
@@ -1987,6 +2082,7 @@ export const recipes = {
         "recipe": "MOTHER-IN-LAW'S ÉCLAIR CAKE",
         "yield": "SERVES 9",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "⅓ cup (76g) vegan butter",
             "½ cup (113g) soy or oat milk",
@@ -2014,6 +2110,7 @@ export const recipes = {
         "translation": "(Sweet Red Bean)",
         "yield": "MAKES 12 SLICES",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "1 cup (240g) soy or oat milk",
             "1 tablespoon white wine vinegar",
@@ -2035,6 +2132,7 @@ export const recipes = {
         "recipe": "CARDAMOM AND LEMON MADELEINES—THE SEXY COOKIE",
         "yield": "MAKES 12 MADELEINES",
         "difficulty": "Medium",
+        "allergens": ["NF"],
         "ingredients": [
             "1 cup (130g) cake flour",
             "2 teaspoons baking powder",
@@ -2055,6 +2153,7 @@ export const recipes = {
         "recipe": "OMMA'S COFFEE CAKE",
         "yield": "SERVES 9",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "¾ cup (105g) all-purpose flour",
             "¾ cup (150g) light brown sugar",
@@ -2084,6 +2183,7 @@ export const recipes = {
         "recipe": "GOCHUJANG-GLAZED PERSIMMON UPSIDE-DOWN CAKE",
         "yield": "SERVES 12",
         "difficulty": "Easy",
+        "allergens": ["NF"],
         "ingredients": [
             "¾ cup (180g) soy or oat milk",
             "1 tablespoon white wine vinegar",

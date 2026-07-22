@@ -133,7 +133,12 @@
   <script type="module">
     import { categories, recipes } from "./vegan-korean-recipes.js";
     import { App } from "./main.js";
-    const discourageMsg = "This recipe is too small, make sure it is accompanying a main dish.";
+    const discourageMsg = [
+      "This recipe is discouraged for one of the following reasons:",
+      "🤏 too small - if bringing, make sure it is accompanying a main dish",
+      "🍜 it is a soup - this will be difficult to serve :(",
+      "\nThis does not mean you cannot choose this recipe, just please proceed with care",
+    ].join('\n')
     const CONFIG = {
       CLUB_ID: "2607_vegan_korean",
       EVENT_DATE: new Date('2026-07-26T18:30'),
