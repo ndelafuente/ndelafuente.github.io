@@ -153,16 +153,6 @@ button {
     box-sizing: border-box;
 }
 
-/* For iOS Safari */
-@supports (-webkit-touch-callout: none) {
-    input[list] {
-        border: revert !important;
-        border-style: revert !important;
-        border-color: revert !important;
-        border-radius: revert !important;
-    }
-}
-
 select,
 input {
     font-family: "Comic Neue";
