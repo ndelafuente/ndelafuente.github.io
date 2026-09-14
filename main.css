@@ -157,7 +157,8 @@ button {
 @supports (-webkit-touch-callout: none) {
     input[list] {
         border: revert !important;
-        border-radius: revert !important;
+        /* border-radius: revert !important; */
+        /* box-shadow: revert !important; */
     }
 }
 
