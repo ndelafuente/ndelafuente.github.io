@@ -333,7 +333,7 @@ export class App {
             const recipeElement = document.getElementById("recipe");
             recipeElement.addEventListener("input", (event) => {
                 const recipeInput = event.target.value.trim().toUpperCase();
-                const recipe = recipes[recipe];
+                const recipe = recipes[recipeInput];
                 if (!recipeInput || recipeInput in recipes) event.target.style.background = "";
 
                 document.getElementById("category").value = recipe?.category || recipe || "";
