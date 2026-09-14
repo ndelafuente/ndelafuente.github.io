@@ -332,13 +332,18 @@ export class App {
             loadRecipes();
             const recipeElement = document.getElementById("recipe");
             recipeElement.addEventListener("input", (event) => {
-                const recipe = event.target.value.trim().toUpperCase();
-                if (!recipe || recipe in recipes) event.target.style.background = "";
+                const recipeInput = event.target.value.trim().toUpperCase();
+                const recipe = recipes[recipe];
+                if (!recipeInput || recipeInput in recipes) event.target.style.background = "";
 
-                document.getElementById("category").value = recipes[recipe]?.category || recipes[recipe] || "";
+                document.getElementById("category").value = recipe?.category || recipe || "";
                 const translationElement = document.getElementById("translation")
                 if (translationElement) {
-                    translationElement.value = recipes[recipe]?.translation ?? "";
+                    translationElement.value = recipe?.translation ?? "";
+                }
+                const altElement = document.getElementById("alt")
+                if (altElement) {
+                    altElement.value = recipe?.alt ?? "";
                 }
             });
             recipeElement.addEventListener("blur", (event) => {
